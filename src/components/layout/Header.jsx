@@ -24,83 +24,120 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
   return (
     <div className={menuClassName} id={id} role="region" aria-label={`${menu.label} menu`}>
       
-      <div className="mega-menu-main">
-        <div className="mega-menu-content">
-          {menu.type === "doctoral" ? (
-            <div className="doctoral-mega-layout">
-              <div className="doctoral-mega-tabs" role="tablist" aria-label="Doctoral route categories">
-                {menu.tabs.map((tab) => (
-                  <button
-                    key={tab.label}
-                    type="button"
-                    className={activeDoctoralTab?.label === tab.label ? "doctoral-mega-tab active" : "doctoral-mega-tab"}
-                    onMouseEnter={() => setActiveTab(tab.label)}
-                    onFocus={() => setActiveTab(tab.label)}
-                    onClick={() => setActiveTab(tab.label)}
-                    role="tab"
-                    aria-selected={activeDoctoralTab?.label === tab.label}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-              <div className="doctoral-mega-panel" role="tabpanel">
-                {activeDoctoralTab?.items.map((item) => (
-                  item.to ? (
-                    <Link
-                      key={item.title}
-                      to={item.to}
-                      navigate={navigate}
-                      className="doctoral-mega-item doctoral-mega-link"
-                      onNavigate={onNavigate}
-                    >
-                      <strong>{item.title}</strong>
-                      <p>{item.text}</p>
-                      <ArrowRight size={16} aria-hidden="true" />
-                    </Link>
-                  ) : (
-                    <article className="doctoral-mega-item" key={item.title}>
-                      <strong>{item.title}</strong>
-                      <p>{item.text}</p>
-                    </article>
-                  )
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className={menu.key === "tools-services" ? "mega-menu-grid mega-menu-grid-tools-services" : "mega-menu-grid"}>
-              {menu.columns.map((column) => (
-                <div className="mega-menu-column" key={column.title}>
-                  <strong>{column.title}</strong>
-                  {column.intro && <p className="mega-menu-column-intro">{column.intro}</p>}
-                  {column.items.map((item) => (
-                    item.to ? (
-                      <Link key={item.title} to={item.to} navigate={navigate} className="mega-menu-card" onNavigate={onNavigate}>
-                        <span>{item.title}</span>
-                        <p>{item.text}</p>
-                      </Link>
-                    ) : (
-                      <article className="mega-menu-card" key={item.title}>
-                        <span>{item.title}</span>
-                        <p>{item.text}</p>
-                      </article>
-                    )
-                  ))}
+      
+<div className="mega-menu-main">
+  <div className="mega-menu-content">
+    {menu.type === "doctoral" ? (
+      <div className="doctoral-mega-layout">
+
+        {/* LEFT: CATEGORIES */}
+        <div
+          className="doctoral-mega-tabs"
+          role="tablist"
+          aria-label="Doctoral route categories"
+        >
+          {menu.tabs.map((tab) => (
+            <button
+              key={tab.label}
+              type="button"
+              className={
+                activeDoctoralTab?.label === tab.label
+                  ? "doctoral-mega-tab active"
+                  : "doctoral-mega-tab"
+              }
+              onMouseEnter={() => setActiveTab(tab.label)}
+              onFocus={() => setActiveTab(tab.label)}
+              onClick={() => setActiveTab(tab.label)}
+              role="tab"
+              aria-selected={activeDoctoralTab?.label === tab.label}
+            >
+              <span>{tab.label}</span>
+              <ChevronDown
+                size={14}
+                aria-hidden="true"
+                className="doctoral-tab-arrow"
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* RIGHT: PROGRAMMES */}
+        <div className="doctoral-mega-panel" role="tabpanel">
+          {activeDoctoralTab?.items.map((item) =>
+            item.to ? (
+              <Link
+                key={item.title}
+                to={item.to}
+                navigate={navigate}
+                className="doctoral-mega-item doctoral-mega-link"
+                onNavigate={onNavigate}
+              >
+                <div>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
                 </div>
-              ))}
-            </div>
+
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            ) : (
+              <article
+                className="doctoral-mega-item"
+                key={item.title}
+              >
+                <div>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            )
           )}
         </div>
-        <Link className="mega-feature" to={menu.feature.to} navigate={navigate} onNavigate={onNavigate}>
-          <img src={menu.feature.image} alt="" />
-          <div className="mega-feature-copy">
-            <span>{menu.feature.eyebrow}</span>
-            <strong>{menu.feature.title}</strong>
-            <p>{menu.feature.text}</p>
-            <i><ArrowRight size={21} aria-hidden="true" /></i>
-          </div>
-        </Link>
       </div>
+    ) : (
+      <div
+        className={
+          menu.key === "tools-services"
+            ? "mega-menu-grid mega-menu-grid-tools-services"
+            : "mega-menu-grid"
+        }
+      >
+        {menu.columns.map((column) => (
+          <div className="mega-menu-column" key={column.title}>
+            <strong>{column.title}</strong>
+
+            {column.intro && (
+              <p className="mega-menu-column-intro">
+                {column.intro}
+              </p>
+            )}
+
+            {column.items.map((item) =>
+              item.to ? (
+                <Link
+                  key={item.title}
+                  to={item.to}
+                  navigate={navigate}
+                  className="mega-menu-card"
+                  onNavigate={onNavigate}
+                >
+                  <span>{item.title}</span>
+                  <p>{item.text}</p>
+                </Link>
+              ) : (
+                <article className="mega-menu-card" key={item.title}>
+                  <span>{item.title}</span>
+                  <p>{item.text}</p>
+                </article>
+              )
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+
+
       <div className="mega-menu-footer">
         <p>{menu.footer}</p>
         {menu.cta.external ? (
@@ -189,21 +226,26 @@ return (
                   onFocus={() => setOpenMega(menu.key)}
                 >
                   {menu.key === "doctoral" ? (
-                    <Link
-                      className={
-                        openMega === menu.key
-                          ? "mega-trigger active"
-                          : "mega-trigger"
-                      }
-                      to="/doctoral"
-                      navigate={navigate}
-                      aria-expanded={openMega === menu.key}
-                      aria-controls={`mega-${menu.key}`}
-                      onClick={closeMenus}
-                    >
-                      {menu.label}
-                      <ChevronDown size={15} aria-hidden="true" />
-                    </Link>
+                  
+<button
+  className={
+    openMega === menu.key
+      ? "mega-trigger active"
+      : "mega-trigger"
+  }
+  type="button"
+  aria-expanded={openMega === menu.key}
+  aria-controls={`mega-${menu.key}`}
+  onClick={() =>
+    setOpenMega(
+      openMega === menu.key ? null : menu.key
+    )
+  }
+>
+  {menu.label}
+  <ChevronDown size={14} aria-hidden="true" />
+</button>
+
                   ) : (
                     <button
                       className={
@@ -250,3 +292,5 @@ return (
 }
 
 export { BrandLogo };
+
+

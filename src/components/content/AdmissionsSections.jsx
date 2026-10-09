@@ -165,40 +165,181 @@ export function FaqSection() {
   );
 }
 
+
 export function ContactSection({ handleSubmit, formState, formStatus }) {
   return (
-    <section className="section section-white">
+    <section className="section section-white contact-section">
       <div className="container contact-layout">
+
+        {/* TOP LEFT: PROFESSIONAL IMAGE */}
+        <div className="contact-image contact-image-top reveal">
+          <img
+            src="assets/flyingcap.jpg"
+            alt="Professional advisor reviewing academic opportunities"
+          />
+        </div>
+
+        {/* TOP RIGHT: CONTACT FORM */}
+        <form
+          className="contact-form reveal"
+          onSubmit={handleSubmit}
+          aria-describedby="privacy-help form-status"
+        >
+          <div className="form-row">
+            <label htmlFor="name">
+              Full Name
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your full name"
+                autoComplete="name"
+                required
+              />
+            </label>
+
+            <label htmlFor="email">
+              Work Email
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@company.com"
+                autoComplete="email"
+                required
+              />
+            </label>
+          </div>
+
+          <div className="form-row">
+            <label htmlFor="phone">
+              Contact Number
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+44 / +1 / +61..."
+                autoComplete="tel"
+              />
+            </label>
+
+            <label htmlFor="type">
+              Primary Interest
+              <select
+                id="type"
+                name="type"
+                defaultValue="Request the DBA prospectus"
+                required
+              >
+                <option>Request the DBA prospectus</option>
+                <option>Arrange a profile review</option>
+                <option>Discuss certification support</option>
+                <option>Discuss placement support</option>
+                <option>Discuss technology services</option>
+                <option>Compare university pathways</option>
+              </select>
+            </label>
+          </div>
+
+          <label htmlFor="message" className="contact-message-label">
+            Research Area / Project Goals
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder="Briefly describe your executive career, target research areas, or custom software requirements."
+              required
+            />
+          </label>
+
+          <label className="consent-row" htmlFor="consent">
+            <input
+              id="consent"
+              name="consent"
+              type="checkbox"
+              required
+            />
+            <span>
+              I consent to admissions contact regarding my enquiry
+              and agree to the storage of my profile details.
+            </span>
+          </label>
+
+          <p id="privacy-help" className="form-help">
+            Your information will be handled in accordance with
+            applicable data protection requirements.
+          </p>
+
+          <button
+            className="btn btn-primary submit-button"
+            type="submit"
+            disabled={formState === "saving"}
+          >
+            {formState === "saving" ? "Submitting..." : "Submit Inquiry"}
+            <ArrowRight size={18} aria-hidden="true" />
+          </button>
+
+          <p
+            id="form-status"
+            className={`form-status ${formState}`}
+            role="status"
+          >
+            {formStatus}
+          </p>
+        </form>
+
+        {/* BOTTOM LEFT: CONTACT DETAILS */}
         <div className="contact-copy reveal">
           <Eyebrow icon={Mail}>Advisor Onboarding</Eyebrow>
+
           <h2>Schedule a confidential profiles discussion.</h2>
-          <p>Share your academic background, research interests, or corporate tech consulting requirements. An expert will guide you through credit reviews, university pathways, and deployment timelines.</p>
+
+          <p>
+            Share your academic background, research interests, or corporate
+            tech consulting requirements. Our team will guide you through
+            university pathways and next steps.
+          </p>
+
           <div className="contact-lines">
-            <a href="mailto:info@learnifyops.com"><Mail size={18} />info@learnifyops.com</a>
-            <a href="tel:+447447177848"><Phone size={18} />+44 7447 177848</a>
-            <span><MapPin size={18} />United Kingdom & India Admissions Support Office</span>
-            <span><Globe2 size={18} />Consultations scheduled across UK, USA, Australia, and Middle East time zones.</span>
+            <a href="mailto:info@learnifyops.com">
+              <Mail size={18} aria-hidden="true" />
+              <span>info@learnifyops.com</span>
+            </a>
+
+            <a href="tel:+447447177848">
+              <Phone size={18} aria-hidden="true" />
+              <span>+44 7447 177848</span>
+            </a>
+
+            <span>
+              <MapPin size={18} aria-hidden="true" />
+              <span>United Kingdom & India Admissions Support</span>
+            </span>
+
+            <span>
+              <Globe2 size={18} aria-hidden="true" />
+              <span>
+                Consultations across UK, USA, Australia, and Middle East
+                time zones.
+              </span>
+            </span>
           </div>
         </div>
-        <form className="contact-form reveal" onSubmit={handleSubmit} aria-describedby="privacy-help form-status">
-          <div className="form-row">
-            <label htmlFor="name">Full Name<input id="name" type="text" name="name" placeholder="Your full name" autoComplete="name" required /></label>
-            <label htmlFor="email">Work Email<input id="email" type="email" name="email" placeholder="you@company.com" autoComplete="email" required /></label>
-          </div>
-          <div className="form-row">
-            <label htmlFor="phone">Contact Number<input id="phone" type="tel" name="phone" placeholder="+44 / +1 / +61..." autoComplete="tel" /></label>
-            <label htmlFor="type">Primary Interest<select id="type" name="type" required><option>Request the DBA prospectus</option><option>Arrange a profile review</option><option>Discuss certification support</option><option>Discuss placement support</option><option>Discuss technology services</option><option>Compare university pathways</option></select></label>
-          </div>
-          <label htmlFor="message">Research Area / Project Goals<textarea id="message" name="message" placeholder="Briefly describe your executive career, target research areas, or custom software requirements." required /></label>
-          <label className="consent-row" htmlFor="consent"><input id="consent" name="consent" type="checkbox" required /><span>I consent to admissions contact regarding my DBA enquiry and agree to the storage of my profile details.</span></label>
-          <p id="privacy-help" className="form-help">Admissions records are processed in strict compliance with GDPR guidelines.</p>
-          <button className="btn btn-primary submit-button" type="submit" disabled={formState === "saving"}>{formState === "saving" ? "Submitting..." : "Submit Inquiry"}<ArrowRight size={18} /></button>
-          <p id="form-status" className={`form-status ${formState}`} role="status">{formStatus}</p>
-        </form>
+
+        {/* BOTTOM RIGHT: UNIVERSITY IMAGE */}
+        <div className="contact-image contact-image-bottom reveal">
+          <img
+            src="/assets/glob.png"
+            alt="Historic university buildings and campus"
+            loading="lazy"
+          />
+        </div>
+
       </div>
     </section>
   );
 }
+
 
 export function FinalCta({ navigate, tone = "doctoral", title = "Start Your DBA Journey", eyebrow = "Speak with a DBA admissions adviser.", text = "Discuss your professional background, career goals and research interests and explore DBA pathways available through the LearnifyOps partner network." }) {
   return (

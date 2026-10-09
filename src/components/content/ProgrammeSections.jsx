@@ -20,6 +20,7 @@ import {
 import Link from "../navigation/Link.jsx";
 import { Eyebrow, PrimaryButton, SectionIntro } from "../ui/Actions.jsx";
 
+
 export function ProgramFacts() {
   const facts = [
     ["Qualification", "Doctor of Business Administration (DBA)"],
@@ -39,40 +40,85 @@ export function ProgramFacts() {
 
 export function ProductEcosystemSection({ navigate }) {
   return (
-    <section className="section product-section">
-      <div className="container">
-        <SectionIntro
-          eyebrow="Proprietary Tech Suite"
-          icon={Lightbulb}
-          title="Custom AI application tools designed to elevate the student lifecycle."
-          text="Our custom-built SaaS products are integrated into our educational pathways to streamline career outreach, simplify module navigation, and track research metrics."
-        />
-        <div className="product-grid">
-          {productTools.map(([title, text]) => (
-            <Link
-              className="product-card reveal"
-              key={title}
-              to="/contact"
-              navigate={navigate}
-              aria-label={`Discuss ${title}`}
-            >
-              <span className="product-dot" aria-hidden="true" />
-              <h3>{title}</h3>
-              <p>{text}</p>
-              <span className="product-action">Explore integration <ArrowRight size={15} aria-hidden="true" /></span>
-            </Link>
-          ))}
-        </div>
-        <div className="brit-institute-note reveal">
-          <div>
-            <span>Brit Institute delivery branch</span>
-            <h3>Certification programs, LMS-enabled learning, mentoring, and placement support are delivered through Brit Institute under the LearnifyOps ecosystem.</h3>
-            <p>LearnifyOps builds the technology and automation ecosystem, while Brit Institute focuses on skill certifications, learner support, LMS access, interview preparation, career mentoring, and placement readiness.</p>
+   
+
+<section className="section product-section">
+  <div className="container">
+
+    <SectionIntro
+      eyebrow="Proprietary Tech Suite"
+      icon={Lightbulb}
+      title="Custom AI application tools designed to elevate the student lifecycle."
+      text="Our custom-built SaaS products are integrated into our educational pathways to streamline career outreach, simplify module navigation, and track research metrics."
+    />
+
+    {/* Product Cards */}
+    <div className="product-grid">
+      {productTools.map(([title, text], index) => (
+        <Link
+          className="product-card reveal"
+          key={title}
+          to="/contact"
+          navigate={navigate}
+          aria-label={`Discuss ${title}`}
+        >
+          <div className="product-card-top">
+            <span className="product-dot" aria-hidden="true" />
+            <span className="product-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
           </div>
-          <a className="btn btn-primary" href={britInstituteUrl} target="_blank" rel="noreferrer">Visit Brit Institute <ArrowRight size={18} aria-hidden="true" /></a>
-        </div>
+
+          <h3>{title}</h3>
+
+          <p>{text}</p>
+
+          <span className="product-action">
+            Explore integration
+            <span className="product-arrow">
+              <ArrowRight size={16} aria-hidden="true" />
+            </span>
+          </span>
+        </Link>
+      ))}
+    </div>
+
+    {/* Brit Institute Highlight */}
+    <div className="brit-institute-note reveal">
+      <div className="brit-note-content">
+        <span className="brit-note-eyebrow">
+          <span className="brit-note-status" />
+          BRIT INSTITUTE · DELIVERY PARTNER
+        </span>
+
+        <h3>
+          Turning technology into meaningful learning experiences.
+        </h3>
+
+        <p>
+          LearnifyOps builds the technology and automation ecosystem,
+          while Brit Institute delivers skill certifications, LMS-enabled
+          learning, expert mentoring, interview preparation, and
+          placement readiness.
+        </p>
       </div>
-    </section>
+
+      <a
+        className="btn btn-primary brit-note-button"
+        href={britInstituteUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Visit Brit Institute
+        <ArrowRight size={18} aria-hidden="true" />
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
   );
 }
 
@@ -120,25 +166,80 @@ export function ValueSection() {
   );
 }
 
-export function ResearchSection({ navigate, image = "/assets/dba-home-research-v2.jpg", variant = "home" }) {
+export function ResearchSection({ navigate, image = "/assets/degree-fly.jpeg", variant = "home" }) {
   return (
-    <section className={`section research-section research-${variant}`}>
-      <div className="container split-layout">
-        <div className="split-image reveal">
-          <img src={image} alt="Executive doctoral candidate reviewing applied research with an academic supervisor" />
-          <div className="image-badge"><BookOpen size={18} aria-hidden="true" />Applied Business Research</div>
-        </div>
-        <div className="split-copy reveal">
-          <Eyebrow icon={Lightbulb}>From Experience to Doctoral Research</Eyebrow>
-          <h2>Turn your professional expertise into structured business research.</h2>
-          <p>A DBA applies established research methodologies to important business and management problems. Your research area should reflect your experience, interests and the requirements of your selected institution.</p>
-          <div className="research-topic-grid" aria-label="Potential DBA research areas">
-            {researchTopics.map((topic) => <span key={topic}>{topic}</span>)}
-          </div>
-          <PrimaryButton to="/program" navigate={navigate}>Explore the DBA Programme</PrimaryButton>
-        </div>
+    
+<section className={`section research-section research-${variant}`}>
+  <div className="container split-layout">
+
+    {/* LEFT SIDE — LARGE IMAGE */}
+    <div className="split-image reveal">
+      <img
+        src={image}
+        alt="Executive doctoral candidate reviewing applied research with an academic supervisor"
+      />
+
+      <div className="image-badge">
+        <BookOpen size={19} aria-hidden="true" />
+        <span>Applied Business Research</span>
       </div>
-    </section>
+    </div>
+
+    {/* RIGHT SIDE — CONTENT */}
+    <div className="split-copy reveal">
+
+      <Eyebrow icon={Lightbulb}>
+        From Experience to Doctoral Research
+      </Eyebrow>
+
+      <h2>
+        Turn your professional expertise into
+        <span className="research-heading-highlight">
+          {" "}meaningful business research.
+        </span>
+      </h2>
+
+      <p className="research-description">
+        A Doctor of Business Administration helps you examine
+        real-world business challenges through structured research.
+        Connect your professional experience with strategic thinking,
+        evidence-based insights and practical business solutions.
+      </p>
+
+      <div className="research-topics-heading">
+        Explore potential research areas
+      </div>
+
+      <div
+        className="research-topic-grid"
+        aria-label="Potential DBA research areas"
+      >
+        {researchTopics.map((topic, index) => (
+          <span
+            className={`research-topic research-topic-${index % 5}`}
+            key={topic}
+          >
+            {topic}
+          </span>
+        ))}
+      </div>
+
+      <div className="research-bottom">
+        <PrimaryButton to="/program" navigate={navigate}>
+          Explore the DBA Programme
+          <ArrowRight size={17} aria-hidden="true" />
+        </PrimaryButton>
+
+        <span className="research-note">
+          Find a research direction that fits your experience.
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
   );
 }
 
