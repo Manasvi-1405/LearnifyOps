@@ -1,7 +1,7 @@
 import React from "react";
 import { Building2, Globe2, FileText, Users, ShieldCheck } from "lucide-react";
 
-import UniversitiesSection from "../components/content/UniversitySections.jsx";
+import {UniversitiesSection} from "../components/content/UniversitySections.jsx";
 import FinalCta from "../components/content/AdmissionsSections.jsx";
 import SectionIntro from "../components/ui/Actions.jsx";
 
