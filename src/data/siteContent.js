@@ -370,7 +370,7 @@ export const doctoralMenuTabs = [
     ]
   }
 ];
-
+//dba nav
 export const megaMenus = [
   {
     key: "dba",
@@ -382,7 +382,7 @@ export const megaMenus = [
       eyebrow: "DBA PATHWAY",
       title: "A research-led DBA for experienced professionals.",
       text: "Compare delivery formats, university options and admissions requirements before you apply.",
-      image: "/assets/dba-program-hero-v2.jpg",
+      // image: "/assets/",
       to: "/program"
     }
   },
@@ -398,7 +398,7 @@ export const megaMenus = [
       eyebrow: "INTERNATIONAL PATHWAYS",
       title: "Explore the institutions behind your next step.",
       text: "Review DBA pathway information, then start with a confidential profile discussion.",
-      image: "/assets/dba-universities-hero-v2.jpg",
+      // image: "/assets/dba-universities-hero-v2.jpg",
       to: "/partnership"
     }
   },
@@ -412,7 +412,7 @@ export const megaMenus = [
       eyebrow: "PROFESSIONAL LEARNING",
       title: "Build practical skills for the work ahead.",
       text: "Explore career-focused certifications, mentorship and placement support through Brit Institute.",
-      image: "/assets/youth-empowerment.png",
+      // image: "/assets/youth-empowerment.png",
       to: "/contact"
     }
   },
@@ -426,7 +426,7 @@ export const megaMenus = [
       eyebrow: "BUILD WITH LEARNIFYOPS",
       title: "Technology designed around real operating needs.",
       text: "From AI automation to custom software, build a clearer and more capable workflow.",
-      image: "/assets/global-ai-hero.png",
+      // image: "/assets/global-ai-hero.png",
       to: "/contact"
     }
   }

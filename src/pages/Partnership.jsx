@@ -16,7 +16,7 @@ function PartnershipHero() {
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <img
-            src="/assets/university.jpg"
+            // src="/assets/university.jpg"
             alt=""
             className="h-full w-full object-cover object-center"
           />
@@ -30,7 +30,7 @@ function PartnershipHero() {
           <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#f6f2ea] via-[#f6f2ea]/65 to-transparent" />
 
           <img
-            src="/assets/university.jpg"
+            // src="/assets/university.jpg"
             alt=""
             className="h-full w-full object-cover object-center opacity-80"
           />
@@ -90,7 +90,7 @@ function PartnershipHero() {
                 <div className="absolute -inset-4 border border-slate-900/10" />
 
                 {/* Main Image */}
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative  overflow-hidden">
                   <img
                     src="/assets/university.jpg"
                     alt="University campus"

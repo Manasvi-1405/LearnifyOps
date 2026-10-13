@@ -403,6 +403,7 @@ export function UniversitiesSection({ navigate, compact = false }) {
     </section>
   );
 }
+/////university page
 
 export function UniversityDetailPage({ navigate, university }) {
   return (
@@ -425,215 +426,204 @@ export function UniversityDetailPage({ navigate, university }) {
         title={university.programTitle}
         text={university.overview}
       ></HeroSection>
-      <section className="section section-sky">
-        <div className=" ">
-          <div
-            className="university-detail-panel px-18! border-none! university-detail-page-panel reveal visible overflow-hidden"
-            role="region"
-            aria-label={`${university.name} pathway details`}
-          >
-            {/* University heading */}
-            <div className="university-detail-heading flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
-              <div className="min-w-0 flex-1">
-                <span className="university-type inline-flex items-center gap-2">
-                  <GraduationCap size={17} aria-hidden="true" />
-                  Partner institution · {university.country}
-                </span>
+      
+<section className="section section-sky university-detail-section">
+  <div className="university-detail-panel university-detail-page-panel">
 
-                <h3 className="mb-3! wrap-break-word">
-                  {university.name}
-                </h3>
+    {/* University Header */}
+    <div className="university-detail-heading">
+      <div className="university-heading-content">
+        <span className="university-type">
+          <GraduationCap size={19} aria-hidden="true" />
+          Partner institution · {university.country}
+        </span>
 
-                <p className="mb-0! max-w-3xl leading-7">
-                  {university.focus}
-                </p>
-              </div>
+        <h3>{university.name}</h3>
 
-              <div className="shrink-0 md:pt-2">
-                <Link
-                  className="text-link btn btn-primary inline-flex items-center gap-2"
-                  to="/partnership"
-                  navigate={navigate}
-                >
-                  View all universities
-                  <ArrowRight size={17} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
+        <p>{university.focus || university.overview}</p>
+      </div>
 
-            {/* University facts */}
-            <div
-              className="university-program-stats grid grid-cols-1 sm:grid-cols-3"
-              aria-label={`${university.name} DBA facts`}
-            >
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <Clock3 size={16} aria-hidden="true" />
-                  Duration
-                </span>
-                <strong className="wrap-break-word">
-                  {university.duration}
-                </strong>
-              </article>
+      <Link
+        className="university-view-btn"
+        to="/partnership"
+        navigate={navigate}
+      >
+        View all universities
+        <ArrowRight size={17} aria-hidden="true" />
+      </Link>
+    </div>
 
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <Laptop size={16} aria-hidden="true" />
-                  Delivery
-                </span>
-                <strong className="wrap-break-word">
-                  {university.delivery}
-                </strong>
-              </article>
+    {/* University Information Strip */}
+    <div className="university-program-stats">
+      <article>
+        <span>
+          <Clock3 size={19} aria-hidden="true" />
+          Duration
+        </span>
+        <strong>{university.duration}</strong>
+      </article>
 
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <ShieldCheck size={16} aria-hidden="true" />
-                  Institutional information
-                </span>
-                <strong className="wrap-break-word">
-                  {university.accreditation}
-                </strong>
-              </article>
-            </div>
+      <article>
+        <span>
+          <Laptop size={19} aria-hidden="true" />
+          Delivery
+        </span>
+        <strong>{university.delivery}</strong>
+      </article>
 
-            {/* Eligibility and curriculum */}
-            <div className="university-detail-content grid grid-cols-1 gap-6 lg:grid-cols-2!">
-              <article className="min-w-0">
-                <div className="mb-5 flex items-center gap-3">
-                  
-                  <strong className="mb-0!">
-                    Eligibility discussed during profile review
-                  </strong>
-                </div>
+      <article>
+        <span>
+          <ShieldCheck size={19} aria-hidden="true" />
+          Institutional Information
+        </span>
+        <strong>{university.accreditation}</strong>
+      </article>
+    </div>
 
-                <ul className="space-y-3">
-                  {university.highlights.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 leading-6"
-                    >
-                      <CheckCircle2
-                        size={16}
-                        className="mt-1 shrink-0"
-                        aria-hidden="true"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+    {/* Main Three-Column Grid */}
+    <div className="university-main-grid">
 
-              <article className="min-w-0">
-                <div className="mb-5 flex items-center gap-3">
-                  
-                  <strong className="mb-0!">
-                    Course and research areas
-                  </strong>
-                </div>
-
-                <ul className="space-y-3">
-                  {university.curriculum.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 leading-6"
-                    >
-                      <BookOpen
-                        size={16}
-                        className="mt-1 shrink-0"
-                        aria-hidden="true"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </div>
-
-            {/* University offerings */}
-            <div className="university-offerings grid grid-cols-1 gap-5 lg:grid-cols-3">
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <GraduationCap size={16} aria-hidden="true" />
-                  Degrees offered
-                </span>
-
-                <div className="degree-badge-list flex flex-wrap items-center gap-2">
-                  {(university.degrees || ["DBA"]).map((degree) => (
-                    <strong key={degree}>{degree}</strong>
-                  ))}
-                </div>
-
-                <p className="mb-0! mt-4 leading-6">
-                  Programme structure, awarding arrangements and institutional
-                  information are confirmed before enrolment and should be
-                  independently reviewed.
-                </p>
-              </article>
-
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <BookOpen size={16} aria-hidden="true" />
-                  Course areas available
-                </span>
-
-                <div className="course-chip-list flex flex-wrap items-center gap-2">
-                  {university.curriculum.map((item) => (
-                    <em key={item}>{item}</em>
-                  ))}
-                </div>
-              </article>
-
-              <article className="min-w-0">
-                <span className="inline-flex items-center gap-2">
-                  <CalendarDays size={16} aria-hidden="true" />
-                  Study format
-                </span>
-
-                <div className="study-format-list flex flex-wrap items-center gap-2">
-                  <strong>{university.duration}</strong>
-                  <strong>{university.delivery}</strong>
-                </div>
-
-                <p className="mb-0! mt-4 leading-6">
-                  Designed for working professionals comparing flexible doctoral
-                  and executive research pathways.
-                </p>
-              </article>
-            </div>
-
-            {/* Actions */}
-            <div className="university-detail-actions flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-              <p className="mb-0! max-w-2xl leading-6">
-                Programme structure, fees, timeline, awarding arrangements and
-                institutional information are confirmed before enrolment.
-              </p>
-
-              <div className="university-detail-buttons flex flex-wrap items-center gap-3">
-                <DownloadButton
-                  file={dbaBrochureUrl}
-                  label={`${university.name} DBA Brochure`}
-                >
-                  <FileText size={16} aria-hidden="true" />
-                  Brochure
-                </DownloadButton>
-
-                <DownloadButton
-                  file={dbaCurriculumUrl}
-                  label={`${university.name} DBA Curriculum`}
-                >
-                  <BookOpen size={16} aria-hidden="true" />
-                  Curriculum
-                </DownloadButton>
-
-                <PrimaryButton to="/contact" navigate={navigate}>
-                  Request Profile Review
-                </PrimaryButton>
-              </div>
-            </div>
-          </div>
+      {/* Eligibility */}
+      <article className="university-info-card">
+        <div className="university-card-heading">
+          <ShieldCheck size={21} aria-hidden="true" />
+          <h4>Eligibility</h4>
         </div>
-      </section>
+
+        <ul>
+          {university.highlights?.map((item) => (
+            <li key={item}>
+              <CheckCircle2 size={15} aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      {/* Course and Research Areas */}
+      <article className="university-info-card">
+        <div className="university-card-heading">
+          <BookOpen size={21} aria-hidden="true" />
+          <h4>Course and Research Areas</h4>
+        </div>
+
+        <ul>
+          {university.curriculum?.map((item) => (
+            <li key={item}>
+              <CheckCircle2 size={15} aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      {/* University Image */}
+      <div className="university-campus-card">
+        <img
+          src={university.image || "/assets/KU.avif"}
+          alt={`${university.name} campus`}
+          loading="lazy"
+        />
+      </div>
+
+      {/* Degrees Offered */}
+      <article className="university-info-card university-offer-card">
+        <div className="university-card-heading">
+          <GraduationCap size={21} aria-hidden="true" />
+          <h4>Degrees Offered</h4>
+        </div>
+
+        <ul>
+          {(university.degrees?.length
+            ? university.degrees
+            : ["DBA"]
+          ).map((degree) => (
+            <li key={degree}>
+              <CheckCircle2 size={15} aria-hidden="true" />
+              <span>{degree}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      {/* Course Areas Available */}
+      <article className="university-info-card university-offer-card">
+        <div className="university-card-heading">
+          <BookOpen size={21} aria-hidden="true" />
+          <h4>Course Areas Available</h4>
+        </div>
+
+        <ul>
+          {university.curriculum?.map((item) => (
+            <li key={item}>
+              <CheckCircle2 size={15} aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      {/* Study Format */}
+      <article className="university-info-card university-offer-card">
+        <div className="university-card-heading">
+          <CalendarDays size={21} aria-hidden="true" />
+          <h4>Study Format</h4>
+        </div>
+
+        <ul>
+          {[university.duration, university.delivery]
+            .filter(Boolean)
+            .map((item) => (
+              <li key={item}>
+                <CheckCircle2 size={15} aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+
+          <li>
+            <CheckCircle2 size={15} aria-hidden="true" />
+            <span>
+              Designed for working professionals
+            </span>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    {/* Bottom Actions */}
+    <div className="university-detail-actions">
+      <p>
+        Programme structure, fees, timeline, awarding arrangements
+        and institutional information should be confirmed before
+        enrolment.
+      </p>
+
+      <div className="university-detail-buttons">
+        <DownloadButton
+          file={dbaBrochureUrl}
+          label={`${university.name} DBA Brochure`}
+        >
+          <FileText size={16} aria-hidden="true" />
+          Brochure
+        </DownloadButton>
+
+        <DownloadButton
+          file={dbaCurriculumUrl}
+          label={`${university.name} DBA Curriculum`}
+        >
+          <BookOpen size={16} aria-hidden="true" />
+          Curriculum
+        </DownloadButton>
+
+        <PrimaryButton to="/contact" navigate={navigate}>
+          Request Profile Review
+        </PrimaryButton>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     </>
   );

@@ -7506,3 +7506,415 @@ main {
   }
 }
 
+/* Main Section */
+.university-detail-section {
+  padding: 24px 20px;
+  background: #f7faf9;
+}
+
+.university-detail-panel {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px !important;
+  border: 0 !important;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(16, 47, 48, 0.04);
+}
+
+/* Header */
+.university-detail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.university-heading-content {
+  min-width: 0;
+}
+
+.university-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+  color: #276c70;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.university-detail-heading h3 {
+  margin: 0 0 8px;
+  color: #173c45;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.university-detail-heading p {
+  margin: 0;
+  color: #62777b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.university-view-btn {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 18px;
+  border-radius: 5px;
+  background: #08788a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.university-view-btn:hover {
+  background: #075c6a;
+}
+
+/* University Facts Strip */
+.university-program-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 14px 8px;
+  border: 1px solid #e0eeeb;
+  border-radius: 7px;
+  background: #f0f8f6;
+}
+
+.university-program-stats article {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0 8px;
+}
+
+.university-program-stats article > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #244c54;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.university-program-stats strong {
+  padding-left: 29px;
+  color: #687f82;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Three Columns: Eligibility, Research, Campus */
+.university-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.university-info-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d0e5df;
+  border-radius: 7px;
+  background: #f7fbf9;
+}
+
+.university-card-heading {
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #e8f5f0;
+  color: #229879;
+}
+
+.university-card-heading h4 {
+  margin: 0;
+  color: #17876d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.university-info-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 0;
+  padding: 14px 15px 17px;
+  list-style: none;
+}
+
+.university-info-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #425f65;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.university-info-card li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #54c3ae;
+}
+
+/* Campus Image */
+.university-campus-card {
+  position: relative;
+  min-width: 0;
+  min-height: 195px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #eaf3ef;
+}
+
+.university-campus-card img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.university-campus-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Bottom Row Cards */
+.university-offer-card {
+  min-height: 170px;
+}
+
+.university-offer-card .university-card-heading {
+  background: #f0f8f6;
+}
+
+/* Bottom Description and Buttons */
+.university-detail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 18px;
+  padding: 15px 10px 5px;
+  border-top: 1px solid #edf3f1;
+}
+
+.university-detail-actions > p {
+  max-width: 560px;
+  margin: 0;
+  color: #61777b;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.university-detail-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.university-detail-buttons > * {
+  flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .university-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .university-campus-card {
+    min-height: 260px;
+  }
+
+  .university-detail-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .university-detail-buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .university-detail-section {
+    padding: 16px 10px;
+  }
+
+  .university-detail-panel {
+    padding: 14px !important;
+  }
+
+  .university-detail-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .university-detail-heading h3 {
+    font-size: 20px;
+  }
+
+  .university-program-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 15px 10px;
+  }
+
+  .university-main-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .university-campus-card {
+    min-height: 230px;
+  }
+
+  .university-detail-actions {
+    padding: 16px 0 0;
+  }
+
+  .university-detail-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .university-detail-buttons > * {
+    width: 100%;
+  }
+
+  .university-view-btn {
+    width: 100%;
+  }
+}
+
+/* Make university page text bigger and clearer */
+
+/* University name */
+.university-detail-heading h3 {
+  font-size: 27px;
+  font-weight: 800;
+  color: #123b45;
+  line-height: 1.4;
+}
+
+/* Header subtitle */
+.university-detail-heading p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #405e64;
+  line-height: 1.8;
+}
+
+/* Partner institution label */
+.university-type {
+  font-size: 15px;
+  font-weight: 700;
+  color: #176b70;
+}
+
+/* Duration, delivery and information headings */
+.university-program-stats article > span {
+  font-size: 15px;
+  font-weight: 800;
+  color: #183f46;
+}
+
+/* Duration, delivery and information values */
+.university-program-stats strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #405c62;
+}
+
+/* Card heading background text */
+.university-card-heading h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #08785f;
+  line-height: 1.5;
+}
+
+/* Eligibility and course list text */
+.university-info-card li {
+  font-size: 14px;
+  font-weight: 600;
+  color: #304f56;
+  line-height: 1.8;
+}
+
+/* Bottom description */
+.university-detail-actions > p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #405c62;
+  line-height: 1.9;
+}
+
+/* Buttons */
+.university-view-btn,
+.university-detail-buttons button,
+.university-detail-buttons a {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Mobile readability */
+@media (max-width: 600px) {
+  .university-detail-heading h3 {
+    font-size: 23px;
+  }
+
+  .university-type {
+    font-size: 14px;
+  }
+
+  .university-program-stats article > span {
+    font-size: 14px;
+  }
+
+  .university-program-stats strong {
+    font-size: 14px;
+  }
+
+  .university-card-heading h4 {
+    font-size: 15px;
+  }
+
+  .university-info-card li {
+    font-size: 14px;
+  }
+
+  .university-detail-actions > p {
+    font-size: 13px;
+  }
+}

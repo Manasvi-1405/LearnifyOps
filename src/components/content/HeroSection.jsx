@@ -37,7 +37,7 @@ const HeroSection = ({
 
       {/* Stronger overlay for legibility */}
       <div className="absolute inset-0 -z-10 bg-[#041713]/40" />
-      <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#031410]/95 via-[#031410]/85 to-[#031410]/30" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-r " />
       <div className="absolute inset-0 -z-10 bg-linear-to-t from-[#031410]/90 via-transparent to-[#031410]/20" />
 
       {/* Hero content */}
