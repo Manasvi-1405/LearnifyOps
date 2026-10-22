@@ -85,7 +85,7 @@ export function UniversitiesSection({ navigate }) {
       name: "EMIT",
       type: "Partner Institution",
       location: "International",
-      image: "",
+      image: "/assets/EMIT.webp",
       description: "A technology-oriented DBA pathway for professionals interested in applied management research across digital transformation, enterprise systems, automation and organisational change.",
       focus: "Technology, AI & Enterprise Systems",
       duration: "24–48 Months",
@@ -463,7 +463,7 @@ const UNIVERSITY_IMAGES = {
   "florida coastal university": "/assets/FCU.jpg",
   "london school of business and science": "/assets/LSBS.jpeg",
   "dunster business school": "/assets/DBS.jpeg",
-  "emit": "",
+  "emit": "/assets/EMIT.webp",
 };
 
 export function UniversityDetailPage({

@@ -72,17 +72,10 @@ export function ProgramPage({ navigate }) {
         <div className="relative! z-10! mx-auto! flex! w-full! max-w-7xl! items-center! justify-start! px-6! py-20! sm:px-10! sm:py-24! lg:px-12!">
           <div className="w-full! max-w-2xl! text-left! text-white!">
             {/* Eyebrow */}
-            <div className="mb-6! inline-flex! items-center! gap-3! rounded-full! border! border-white/40! bg-black/40! px-5! py-2.5! backdrop-blur-md!">
-              <GraduationCap size={20} className="shrink-0! text-emerald-300!" />
-              <span className="text-xs! font-bold! uppercase! tracking-[0.2em]! text-white! sm:text-sm!">
-                DBA Programme
-              </span>
-            </div>
+            
 
             {/* Caption */}
-            <p className="mb-4! text-base! font-medium! italic! text-emerald-200/90! sm:text-lg!">
-              Applied business research doctorate
-            </p>
+           
 
             {/* Main Heading */}
             <h1 className="text-4xl! font-bold! leading-[1.14]! tracking-tight! text-white! sm:text-5xl! lg:text-6xl!">
@@ -167,7 +160,7 @@ export function CurriculumPage({ navigate }) {
       <section className="relative! flex min-h-[680px]! w-full! items-center! overflow-hidden! bg-[#102f30]!">
         {/* Full Background Image */}
         <img
-          src="/assets/Carriculam.jpg"
+          src="/assets/curriculam1.jpg"
           alt="DBA curriculum and academic research"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
@@ -179,13 +172,7 @@ export function CurriculumPage({ navigate }) {
         <div className="relative! z-10!  mx-auto! flex! w-full! max-w-7xl! justify-end! px-6! py-20! sm:px-10! lg:px-12!">
           <div className="w-full! text-left! text-white! sm:max-w-xl! lg:max-w-[560px]!">
             {/* Eyebrow */}
-            <div className="mb-6! inline-flex! items-center! gap-3! rounded-full! border! border-white/40! bg-black/30! px-5! py-3!">
-              <BookOpen size={20} className="shrink-0! text-white!" />
-
-              <span className="text-sm! font-bold! uppercase! tracking-[0.2em]! text-white!">
-                Curriculum Framework
-              </span>
-            </div>
+           
 
             {/* Caption */}
             <p className="mb-5!  text-base! font-medium! italic! text-white! sm:text-lg! text-white!">
@@ -269,7 +256,7 @@ export function ExperiencePage({ navigate }) {
 <section className="relative! flex min-h-[720px]! lg:min-h-[780px]! w-full! items-center! justify-center! overflow-hidden! bg-[#102f30]! py-16! px-6! sm:px-10!">
   {/* ---------------- BACKGROUND IMAGE (FULL & PROPERLY POSITIONED) ---------------- */}
   <img
-    src="/assets/experience-cohort.jpg"
+    src="/assets/curriculam.jpg"
     alt="Global DBA peer network"
     onError={(e) => {
       e.currentTarget.src =
@@ -279,8 +266,8 @@ export function ExperiencePage({ navigate }) {
   />
 
   {/* ---------------- SOFT BALANCED CONTRAST OVERLAYS ---------------- */}
-  {/* Light overall tint taaki background chalkboard & subject clearly dikhe */}
-  <div className="absolute! inset-0! bg-black/45!" />
+
+
 
   {/* Subtle gradient taaki center text pe perfect readability mile bina image hide kiye */}
   <div className="absolute! inset-0! bg-gradient-to-b! from-black/60! via-black/25! to-black/70!" />
@@ -298,12 +285,7 @@ export function ExperiencePage({ navigate }) {
   {/* ---------------- CENTERED FOREGROUND CONTENT ---------------- */}
   <div className="relative! z-10! max-w-4xl! mx-auto! flex! flex-col! items-center! text-center!">
     {/* 1. Eyebrow Tag */}
-    <div className="inline-flex! items-center! justify-center! gap-2! mb-5! px-4! py-1.5! rounded-full! border! border-white/30! bg-black/40! backdrop-blur-md! shadow-sm!">
-      <Network className="w-4! h-4! text-[#ffd089]! shrink-0!" />
-      <span className="text-xs! uppercase! tracking-[0.2em]! font-semibold! text-white!">
-        Executive Experience
-      </span>
-    </div>
+  
 
     {/* 2. Main Large Editorial Heading */}
     <h1 className="text-3xl! sm:text-5xl! lg:text-6xl! font-serif! font-normal! leading-[1.15]! tracking-tight! text-white! drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]! mb-4!">
@@ -346,15 +328,8 @@ export function ExperiencePage({ navigate }) {
     </div>
   </div>
 
-  {/* ---------------- FLOATING SUPPORT TRIGGER ---------------- */}
-  <div className="absolute! right-4! sm:right-6! top-1/2! -translate-y-1/2! z-20!">
-    <button
-      aria-label="Contact advisor"
-      className="w-11! h-11! rounded-lg! bg-[#ea9b3e]! text-slate-950! flex! items-center! justify-center! shadow-2xl! hover:bg-[#dc8d30]! transition-transform! hover:scale-105! cursor-pointer!"
-    >
-      <MessageSquare className="w-5! h-5! fill-current!" />
-    </button>
-  </div>
+
+
 </section>
 
       {/* ---------------- REMAINING SECTIONS ---------------- */}
@@ -374,91 +349,88 @@ export function ExperiencePage({ navigate }) {
 export function AdmissionsPage({ navigate }) {
   return (
     <>
-      {/* ---------------- ADMISSION HERO (NO GRADIENT, CRISP SANS FONT & LIGHT COLORS) ---------------- */}
-      <section className="relative! flex min-h-[700px]! lg:min-h-[760px]! w-full! items-center! justify-center! overflow-hidden! bg-[#0e1615]! py-16! px-6! sm:px-10!">
-        {/* Full Background Image */}
-        <img
-          src="/assets/dba-admissions-hero-v2.jpg"
-          alt="Admissions Profile and Screening"
-          onError={(e) => {
-            e.currentTarget.src =
-              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=80";
-          }}
-          className="absolute! inset-0! h-full! w-full! object-cover! object-[center_20%]! brightness-90!"
-        />
+      {/* ---------------- ADMISSION HERO (TEXT ON LEFT, IMAGE ON RIGHT) ---------------- */}
+      <section className="relative! flex min-h-[700px]! lg:min-h-[760px]! w-full! items-center! overflow-hidden! bg-gradient-to-br! from-[#071312]! via-[#0f2321]! to-[#091514]! py-16! px-6! sm:px-10! lg:px-16!">
+        
+        {/* Subtle Ambient Background Glow */}
+        <div className="absolute! top-1/4! left-[-10%]! h-[450px]! w-[450px]! rounded-full! bg-[#1b433e]/30! blur-[120px]! pointer-events-none!" />
+        <div className="absolute! bottom-[-10%]! right-10! h-[380px]! w-[380px]! rounded-full! bg-[#ea9b3e]/10! blur-[140px]! pointer-events-none!" />
 
-        {/* Flat clean solid overlay - Gradient bilkul remove kar diya hai */}
-        <div className="absolute! inset-0! bg-black/55!" />
+        {/* Main 2-Column Grid Layout */}
+        <div className="relative! z-10! mx-auto! grid! w-full! max-w-7xl! grid-cols-1! items-center! gap-12! lg:grid-cols-12!">
+          
+          {/* Left Column: Text & Content (lg:col-span-7) */}
+          <div className="flex! flex-col! items-start! text-left! font-sans! lg:col-span-7!">
+            
+            {/* Main Heading */}
+            <h1 className="text-3xl! sm:text-4xl! lg:text-[48px]! font-sans! font-extrabold! leading-[1.2]! tracking-normal! text-[#ffffff]! drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]! mb-4!">
+              Start with a profile review before selecting your DBA pathway.
+            </h1>
 
-        {/* Foreground Content */}
-        <div className="relative! z-10! max-w-4xl! mx-auto! flex! flex-col! items-center! text-center! font-sans!">
-          {/* Eyebrow Tag */}
-          <div className="inline-flex! items-center! justify-center! gap-2! mb-6! px-5! py-2! rounded-full! border! border-white/20! bg-black/40! backdrop-blur-md! shadow-sm!">
-            <ShieldCheck className="w-4! h-4! text-[#ea9b3e]! shrink-0!" />
-            <span className="text-xs! uppercase! tracking-[0.25em]! font-bold! text-[#f4ede4]!">
-              Admissions Profile
-            </span>
-          </div>
+            {/* Subheader */}
+            <p className="text-sm! sm:text-base! lg:text-lg! font-medium! text-[#ebd5b3]! tracking-wide! mb-5! drop-shadow-sm!">
+              Rigorous, personalized screening &middot; Document eligibility &middot; Partner university matching
+            </p>
 
-          {/* Main Heading - Clean Bold Sans Font */}
-          <h1 className="text-3xl! sm:text-5xl! lg:text-[56px]! font-sans! font-extrabold! leading-[1.18]! tracking-normal! text-[#ffffff]! drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]! mb-5!">
-            Start with a profile review before selecting your DBA pathway.
-          </h1>
+            {/* Description */}
+            <p className="text-sm! sm:text-base! leading-relaxed! text-[#e2e8f0]! font-normal! max-w-xl! mb-7! drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]!">
+              Share your academic background, leadership experience and research goals so an advisor can confirm fit, documentation requirements and partner-university options.
+            </p>
 
-          {/* Caption / Subheader */}
-          <p className="text-sm! sm:text-base! lg:text-lg! font-medium! text-[#ebd5b3]! tracking-wide! mb-6! drop-shadow-sm!">
-            Rigorous, personalized screening &middot; Document eligibility &middot; Partner university matching
-          </p>
-
-          {/* Descriptive Body Text */}
-          <p className="text-sm! sm:text-base! lg:text-lg! leading-relaxed! text-[#e2e8f0]! font-normal! max-w-2xl! mb-9! drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]!">
-            Share your academic background, leadership experience and research goals so an advisor can confirm fit, documentation requirements and partner-university options.
-          </p>
-
-          {/* Action CTA Button */}
-          <div className="mb-10!">
-            <button
-              type="button"
-              onClick={() => (navigate ? navigate("/contact") : null)}
-              className="inline-flex! items-center! justify-center! gap-2.5! px-8! py-3.5! text-xs! sm:text-sm! font-bold! text-[#1c1306]! bg-[#ea9b3e]! hover:bg-[#dc8d30]! active:bg-[#c97d22]! rounded-lg! shadow-xl! shadow-black/40! transition-all! duration-200! hover:scale-[1.02]! cursor-pointer!"
-            >
-              Submit Profile for Review
-              <ArrowRight size={16} />
-            </button>
-          </div>
-
-          {/* Information Trust Cards */}
-          <div className="grid! grid-cols-1! sm:grid-cols-2! gap-4! w-full! max-w-xl! text-left!">
-            <div className="rounded-xl! border! border-white/20! bg-black/60! p-5! backdrop-blur-md! shadow-lg!">
-              <div className="flex! items-center! gap-2! text-xs! font-bold! uppercase! tracking-wider! text-[#ea9b3e]!">
-                <CheckCircle2 size={16} className="text-[#4ade80]!" />
-                Eligibility Assessment
-              </div>
-              <p className="mt-2! text-xs! sm:text-sm! text-[#f1f5f9]! leading-snug! font-normal!">
-                Evaluate management track record, thesis focus, and prior degree equivalence.
-              </p>
+            {/* CTA Button */}
+            <div className="mb-8!">
+              <button
+                type="button"
+                onClick={() => (navigate ? navigate("/contact") : null)}
+                className="inline-flex! items-center! justify-center! gap-2.5! px-8! py-3.5! text-xs! sm:text-sm! font-bold! text-[#1c1306]! bg-[#ea9b3e]! hover:bg-[#dc8d30]! active:bg-[#c97d22]! rounded-lg! shadow-xl! shadow-black/40! transition-all! duration-200! hover:scale-[1.02]! cursor-pointer!"
+              >
+                Submit Profile for Review
+                <ArrowRight size={16} />
+              </button>
             </div>
 
-            <div className="rounded-xl! border! border-white/20! bg-black/60! p-5! backdrop-blur-md! shadow-lg!">
-              <div className="flex! items-center! gap-2! text-xs! font-bold! uppercase! tracking-wider! text-[#ea9b3e]!">
-                <FileText size={16} className="text-[#4ade80]!" />
-                Documentation Guidance
+            {/* Information Trust Cards */}
+            <div className="grid! grid-cols-1! sm:grid-cols-2! gap-4! w-full! text-left!">
+              <div className="rounded-xl! border! border-white/15! bg-black/45! p-4! sm:p-5! backdrop-blur-md! shadow-lg!">
+                <div className="flex! items-center! gap-2! text-xs! font-bold! uppercase! tracking-wider! text-[#ea9b3e]!">
+                  <CheckCircle2 size={16} className="text-[#4ade80]!" />
+                  Eligibility Assessment
+                </div>
+                <p className="mt-2! text-xs! sm:text-sm! text-[#f1f5f9]! leading-snug! font-normal!">
+                  Evaluate management track record, thesis focus, and prior degree equivalence.
+                </p>
               </div>
-              <p className="mt-2! text-xs! sm:text-sm! text-[#f1f5f9]! leading-snug! font-normal!">
-                Full checklist support for transcripts, CV review, and research intent statement.
-              </p>
+
+              <div className="rounded-xl! border! border-white/15! bg-black/45! p-4! sm:p-5! backdrop-blur-md! shadow-lg!">
+                <div className="flex! items-center! gap-2! text-xs! font-bold! uppercase! tracking-wider! text-[#ea9b3e]!">
+                  <FileText size={16} className="text-[#4ade80]!" />
+                  Documentation Guidance
+                </div>
+                <p className="mt-2! text-xs! sm:text-sm! text-[#f1f5f9]! leading-snug! font-normal!">
+                  Full checklist support for transcripts, CV review, and research intent statement.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Smaller Framed Image (lg:col-span-5) */}
+          <div className="relative! flex! w-full! items-center! justify-center! lg:justify-end! lg:col-span-5!">
+            <div className="relative! h-[380px]! sm:h-[460px]! lg:h-[500px]! w-full! max-w-[420px]! overflow-hidden! rounded-2xl! border! border-white/20! shadow-2xl! shadow-black/80!">
+              <img
+                src="/assets/admission-hero.jpeg"
+                alt="Admissions Profile and Screening"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=80";
+                }}
+                className="h-full! w-full! object-cover! object-top! brightness-95!"
+              />
+              {/* Subtle inner dark gradient at the bottom edge */}
+              <div className="absolute! inset-0! bg-gradient-to-t! from-black/60! via-transparent! to-transparent!" />
             </div>
           </div>
-        </div>
 
-        {/* Floating Support Trigger */}
-        <div className="absolute! right-4! sm:right-6! top-1/2! -translate-y-1/2! z-20!">
-          <button
-            aria-label="Direct message advisor"
-            className="w-11! h-11! rounded-lg! bg-[#ea9b3e]! text-slate-950! flex! items-center! justify-center! shadow-2xl! hover:bg-[#dc8d30]! transition-transform! hover:scale-105! cursor-pointer!"
-          >
-            <MessageSquare className="w-5! h-5! fill-current!" />
-          </button>
         </div>
       </section>
 
@@ -472,7 +444,6 @@ export function AdmissionsPage({ navigate }) {
     </>
   );
 }
-
 
 
 export function PartnershipPage({ navigate }) {

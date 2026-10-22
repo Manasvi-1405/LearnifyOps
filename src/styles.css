@@ -8709,3 +8709,243 @@ main {
     display: none;
   }
 }
+
+
+/* Header Base Container */
+.floating-scroll-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 36px;
+  box-sizing: border-box;
+  transition: transform 0.35s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Scroll down hone par upar slide hokar chup jayega */
+.floating-scroll-header.nav-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Scroll up hone par ya top par aane par turant show hoga */
+.floating-scroll-header.nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Agar page scroll ho chuka ho to halka sa backdrop de sakte hain (optional) */
+.floating-scroll-header.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 12px 36px;
+}
+
+/* Container */
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Brand Logo (Size badha kar clear kiya gaya hai) */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-mark img,
+.brand-logo {
+  height: 52px; /* Pehle se kafi bada aur clear */
+  max-height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Center Pill Navigation */
+.center-pill-nav {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  gap: 16px;
+}
+
+.pill-nav-btn {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: color 0.2s ease;
+}
+
+.pill-nav-btn:hover,
+.pill-nav-btn.active {
+  color: #000000;
+}
+
+.chevron-icon {
+  transition: transform 0.25s ease;
+}
+
+.pill-nav-btn.active .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.pill-nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: color 0.2s ease;
+}
+
+.pill-nav-link:hover,
+.pill-nav-link.active {
+  color: #000000;
+}
+
+/* Right Actions */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Circle Search Icon */
+.circle-search-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e1e;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.circle-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Enquire Now Orange Pill Button */
+.pill-enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f59e0b;
+  color: #1a1a1a;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.pill-enquire-btn:hover {
+  background-color: #e69106;
+  transform: translateY(-2px);
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 9px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive View */
+@media (max-width: 1024px) {
+  .floating-scroll-header {
+    padding: 12px 18px;
+  }
+
+  .brand-mark img,
+  .brand-logo {
+    height: 42px;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-pill-nav {
+    display: none;
+  }
+
+  .center-pill-nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    width: 100%;
+    padding: 24px 20px;
+    align-items: flex-start;
+  }
+}
+
+/* 1. Image container ko fix rakhein */
+.journey-card-bg-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 2. Base image styles: object-fit cover aur rendering sharpness */
+.journey-card-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  /* Pixel sharpness maintain karne ke liye */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* Hardware acceleration se blur prevent karta hai */
+}
+
+/* 3. Agar hover ya active par zoom/scale laga hai, usko DISABLE karein */
+.journey-accordion-card:hover .journey-card-bg-img,
+.journey-accordion-card.active .journey-card-bg-img {
+  transform: none !important; /* Zoom-in bilkul band */
+  filter: none !important;    /* Agar koi blur filter laga ho to remove */
+}

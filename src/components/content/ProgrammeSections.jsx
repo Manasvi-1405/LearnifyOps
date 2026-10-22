@@ -58,7 +58,7 @@ export function ProgramFacts() {
       id: "04",
       label: "Admissions Pipeline",
       value: "Transparent university matchmaking",
-      image: "/assets/admission.jpg",
+      image: "/assets/admission1.jpg",
       imageAlt: "University campus and academic buildings",
       accent: "bg-amber-600",
       badge: "bg-amber-50 text-amber-800",
@@ -101,7 +101,7 @@ export function ProgramFacts() {
         textAlign: "center",
       }}
     >
-      <span className="mb-5 inline-flex items-center justify-center rounded-full border border-teal-200 bg-teal-50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">
+      <span className="mb-5! mt-5! inline-flex! items-center! justify-center! rounded-full! border! border-teal-200! bg-teal-50! px-5! py-2! text-xs! font-semibold! uppercase! tracking-[0.18em!] text-teal-800!">
         Your doctoral journey
       </span>
 
@@ -120,9 +120,7 @@ export function ProgramFacts() {
           hyphens: "none",
         }}
       >
-        A clear pathway to
-        <br />
-        your next chapter.
+        A clear pathway to your next chapter
       </h2>
 
       <div
@@ -394,7 +392,7 @@ export function ValueSection() {
 
         {/* Animated Cards */}
   
-<div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+<div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
   {valuePillars.map(({ title, text }, index) => (
     <article
       key={title}
@@ -462,39 +460,20 @@ export function ValueSection() {
         className="
           absolute inset-x-0 bottom-0 z-10
           flex flex-col items-center
-          px-6 pb-12 text-center text-white
-          transition-transform duration-500 ease-out
-          group-hover:-translate-y-2
+          px-6! pb-12! text-center! text-white!
+          transition-transform! duration-500! ease-out!
+          group-hover:-translate-y-2!
         "
       >
-        {/* Accent Line */}
-        <div
-          className="
-            mb-5 h-1 w-11 rounded-full
-            bg-[#91c7ed]
-            transition-all duration-500
-            group-hover:w-20
-            group-hover:bg-[#f5c451]
-          "
-        />
+   
 
         {/* Category */}
-        <span
-          className="
-            mb-4 block text-sm font-bold uppercase
-            tracking-[0.2em] text-white/90
-            transition-colors duration-300
-            group-hover:text-[#f5c451]
-            sm:text-base
-          "
-        >
-          Professional Development
-        </span>
+        
 
         {/* Heading */}
         <h3
           className="
-            mb-4 mt-0 text-center text-2xl
+          mb-4 mt-2 text-center text-xl
             font-semibold leading-tight text-white
             transition-colors duration-300
             group-hover:text-[#f5c451]
@@ -507,16 +486,27 @@ export function ValueSection() {
         {/* Description */}
         <p
           className="
-            m-0 max-w-sm text-center text-sm
-            leading-7 text-white/90
-            transition-colors duration-300
-            group-hover:text-white
-            sm:text-base
+            m-0! max-w-sm! text-center! text-sm!
+            leading-7! text-white/90!
+            transition-colors! duration-300!
+            group-hover:text-white!
+            sm:text-base!
           "
         >
           {text}
         </p>
+               {/* Accent Line */}
+        <div
+          className="
+            mt-5! h-1! w-11! rounded-full!
+            bg-[#91c7ed]!
+            transition-all! duration-500!
+            group-hover:w-20!
+            group-hover:bg-[#f5c451]!
+          "
+        />
       </div>
+    
     </article>
   ))}
 </div>

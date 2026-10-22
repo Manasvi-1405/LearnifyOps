@@ -1891,16 +1891,87 @@ function AdmissionsSection({ navigate }) {
 
 function FaqSection() {
   return (
-    <section className="section section-sky">
-      <div className="container">
-        <SectionIntro eyebrow="Support & Advice" icon={FileText} title="Clear guidance for your doctoral journey." />
-        <div className="faq-grid">
-          {faq.map(([question, answer]) => <article className="faq-card reveal" key={question}><h3>{question}</h3><p>{answer}</p></article>)}
+    <section className="section! section-sky! relative! overflow-hidden!">
+      {/* Background decoration */}
+      <div className="pointer-events-none! absolute! -left-24! top-20! h-72! w-72! rounded-full! bg-sky-200/30! blur-3xl!" />
+      <div className="pointer-events-none! absolute! -right-24! bottom-10! h-72! w-72! rounded-full! bg-cyan-200/30 blur-3xl!" />
+
+      <div className="container! relative! z-10!">
+        <SectionIntro
+          eyebrow="Support & Advice"
+          icon={FileText}
+          title="Clear guidance for your doctoral journey."
+        />
+
+        <div className="mt-12! grid! grid-cols-1! gap-6! md:grid-cols-2!">
+          {faq.map(([question, answer], idx) => (
+            <article
+              key={question}
+              style={{ animationDelay: `${idx * 100}ms` }}
+              className="group relative! h-full! animate-[faqEnter_0.65s_ease-out_both]!"
+            >
+              {/* Animated gradient border */}
+              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-sky-300 via-cyan-200 to-teal-300 opacity-0 blur-[2px] transition-all duration-500 group-hover:opacity-100" />
+
+              <div className="relative flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] backdrop-blur-sm transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:border-transparent group-hover:shadow-[0_22px_50px_rgba(15,23,42,0.12)] sm:p-8">
+                {/* Question heading */}
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-700 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-[#102f30] group-hover:text-white">
+                    <span className="text-xl font-bold">?</span>
+                  </div>
+
+                  <div className="flex-1 pt-1">
+                    <h3 className="text-lg font-bold leading-snug text-slate-900 transition-colors duration-300 group-hover:text-[#176b70] sm:text-xl">
+                      {question}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Animated divider */}
+                <div className="mb-4 h-px w-12 bg-sky-300 transition-all duration-500 group-hover:w-full group-hover:bg-teal-500" />
+
+                {/* Answer */}
+                <p className="text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-slate-700 sm:text-base">
+                  {answer}
+                </p>
+
+                {/* Bottom accent */}
+                <div className="mt-auto flex justify-end pt-5">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all duration-300 group-hover:border-[#102f30] group-hover:bg-[#102f30] group-hover:text-white">
+                    <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                      ↗
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes faqEnter {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .section article {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
+
 
 function ContactSection({ handleSubmit, formState, formStatus }) {
   return (
