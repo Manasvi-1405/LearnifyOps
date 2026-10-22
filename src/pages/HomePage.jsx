@@ -215,26 +215,39 @@ function HomePage({ navigate }) {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 flex min-h-screen items-center">
-          <div className="editorial-world-copy container reveal visible">
-            <span className="editorial-hero-eyebrow text-white">
-              GLOBAL EXECUTIVE EDUCATION
-            </span>
+      <div className="relative z-20 flex min-h-screen items-center px-5 py-20 sm:px-8 lg:px-12">
+  <div className="editorial-world-copy container reveal visible mx-auto w-full">
+    <span className="editorial-hero-eyebrow mb-5 block text-xs font-semibold tracking-[0.2em] text-white sm:text-sm">
+      GLOBAL EXECUTIVE EDUCATION
+    </span>
 
-            <h1 className="max-w-4xl text-white">
-              Learn, research and lead on a global stage.
-            </h1>
+    <h1
+      className="mb-6 text-white"
+      style={{
+        maxWidth: "64rem",
+        fontSize: "clamp(2rem, 4.5vw, 4.5rem)",
+        lineHeight: 1.15,
+        letterSpacing: "-0.025em",
+        wordBreak: "normal",
+        overflowWrap: "normal",
+        hyphens: "none",
+      }}
+    >
+      <span className="whitespace-nowrap">Learn, research</span>
+      <br />
+      and lead on a global stage.
+    </h1>
 
-            <p className="max-w-2xl text-white/90">
-              LearnifyOps helps experienced professionals compare doctoral
-              pathways and translate ambition into applied business research.
-            </p>
+    <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
+      LearnifyOps helps experienced professionals compare doctoral
+      pathways and translate ambition into applied business research.
+    </p>
 
-            <PrimaryButton to="/contact" navigate={navigate}>
-              Speak to an adviser
-            </PrimaryButton>
-          </div>
-        </div>
+    <PrimaryButton to="/contact" navigate={navigate}>
+      Speak to an adviser
+    </PrimaryButton>
+  </div>
+</div>
 
         {/* Bottom Hero Note */}
         <div className="editorial-world-note relative z-20 text-white">

@@ -30,6 +30,7 @@ export function DownloadButton({ file, label, className = "", children }) {
 export function SectionIntro({ eyebrow, icon, title, text, align = "center" }) {
   return (
     <div className={`section-intro ${align === "left" ? "left" : ""} reveal`}>
+      
       <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
       <h2>{title}</h2>
       {text && <p>{text}</p>}

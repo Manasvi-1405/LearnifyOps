@@ -23,11 +23,13 @@ import {
   Sparkles,
   Target,
   Users,
+  Search,
   X
 } from "lucide-react";
 import Footer from "./components/Footer.jsx";
 import FloatingContact from "./components/FloatingContact.jsx";
 import "./styles.css";
+import SearchPage from "./pages/SearchPage";
 
 const logo = "/assets/learnifyops-logo-transparent.png";
 const siteUrl = "https://learnifyops.com";
@@ -49,8 +51,10 @@ const navItems = [
   ["Experience", "/experience"],
   ["Admissions", "/admissions"],
   ["Universities", "/partnership"],
-  ["Contact", "/contact"]
+  ["Contact", "/contact"],
+  ["Search", "/search"],
 ];
+
 
 const partnerUniversities = [
   {
@@ -918,19 +922,48 @@ function Header({ path, navigate }) {
             </React.Fragment>
           ))}
         </div>
-        <Link className="header-cta" to="/contact" navigate={navigate} onMouseEnter={() => setOpenMega(null)}>
-          Request Prospectus <ArrowRight size={16} aria-hidden="true" />
-        </Link>
-        <button
-          className="nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          aria-controls="primary-navigation"
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-        </button>
+<Link
+  className="header-cta"
+  to="/contact"
+  navigate={navigate}
+  onMouseEnter={() => setOpenMega(null)}
+>
+  Request Prospectus
+  <ArrowRight size={16} aria-hidden="true" />
+</Link>
+
+ 
+{/* <Link
+  className="header-search"
+  to="/search"
+  navigate={navigate}
+  onMouseEnter={() => setOpenMega(null)}
+  aria-label="Search LearnifyOps"
+>
+  <Search size={24} aria-hidden="true" />
+</Link> */}
+
+<button
+  className="header-search"
+  type="button"
+  onClick={() => navigate("/search")}
+  onMouseEnter={() => setOpenMega(null)}
+  aria-label="Search LearnifyOps"
+>
+  <Search size={24} aria-hidden="true" />
+</button>
+
+  <button
+  className="nav-toggle"
+  type="button"
+  aria-label="Toggle navigation"
+  aria-controls="primary-navigation"
+  aria-expanded={open}
+  onClick={() => setOpen(!open)}
+>
+  {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+</button>
+
       </nav>
     </header>
   );
@@ -1769,7 +1802,7 @@ function CurriculumSection() {
           title="Modular, research-focused curriculum tailored for management professionals."
           text="While exact modules depend on your selected university, this framework communicates the vital knowledge domains necessary for a defense-ready doctoral thesis."
         />
-        <div className="curriculum-grid">
+        <div className="curriculum-grid ">
           {curriculum.map(({ number, title, text }) => (
             <article className="curriculum-card reveal" key={number}>
               <span>{number}</span><h3>{title}</h3><p>{text}</p>
@@ -2036,7 +2069,18 @@ function ProgramPage({ navigate }) {
 }
 
 function CurriculumPage({ navigate }) {
-  return <><PageHero eyebrow="Curriculum Framework" icon={BookOpen} tone="editorial" image="/assets/dba-curriculum-hero-v2.jpg" caption="Empirical study, strategic value" title="Modular coursework leading to a defense-ready dissertation." text="Review the DBA structure, research milestones, dissertation preparation and academic support available through the partner pathway selected during admissions." /><CurriculumSection /><JourneySection /><FinalCta navigate={navigate} tone="curriculum" title="Review the DBA curriculum before choosing your pathway." /></>;
+  return <>
+  <PageHero eyebrow="Curriculum Framework" 
+  icon={BookOpen} tone="editorial" 
+  image="/assets/dba-curriculum-hero-v2.jpg" 
+  caption="Empirical study, strategic value" 
+  title="Modular coursework leading to a defense-ready dissertation." 
+  text="Review the DBA structure, research milestones, dissertation preparation and academic support available through the partner pathway selected during admissions." />
+  <CurriculumSection /> 
+   <JourneySection />
+  <FinalCta navigate={navigate} 
+  tone="curriculum" 
+  title="Review the DBA curriculum before choosing your pathway." /></>;
 }
 
 function PageHeroImmersive({ eyebrow, icon, title, text, image, caption = "Global DBA pathway" }) {
@@ -2191,7 +2235,9 @@ function App() {
     "/experience": <ExperiencePage navigate={navigate} />,
     "/admissions": <AdmissionsPage navigate={navigate} />,
     "/partnership": <PartnershipPage navigate={navigate} />,
-    "/contact": <ContactPage navigate={navigate} contactProps={contactProps} />
+    "/contact": <ContactPage navigate={navigate} contactProps={contactProps} />,
+     "/search": <SearchPage navigate={navigate} Link={Link} />
+
   };
 
   return (

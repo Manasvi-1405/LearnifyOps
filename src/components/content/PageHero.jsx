@@ -1,22 +1,3 @@
-// import { Eyebrow } from "../ui/Actions.jsx";
-
-// export default function PageHero({ eyebrow, icon, title, text, image, tone = "midnight", caption = "Global DBA pathway" }) {
-//   return (
-//     <section className={`page-hero page-hero-${tone}`}>
-//       <div className="page-hero-image">
-//         <img src={image} alt="" />
-//       </div>
-//       <div className="container page-hero-grid">
-//         <div className="page-hero-copy reveal visible">
-//           <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
-//           <h1>{title}</h1>
-//           <p>{text}</p>
-//           <span className="page-caption">{caption}</span>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 import { Eyebrow } from "../ui/Actions.jsx";
 
@@ -31,7 +12,7 @@ export default function PageHero({
 }) {
   return (
     <section
-      className={`relative min-h-screen w-full overflow-hidden page-hero-${tone}`}
+      className={`relative min-h-[580px] lg:min-h-[calc(100vh-80px)] w-full overflow-hidden page-hero-${tone}`}
     >
       {/* Full Background Image */}
       <div className="absolute inset-0 h-full w-full">
@@ -42,11 +23,11 @@ export default function PageHero({
         />
 
         {/* Only image overlay - NO text background */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/35" />
       </div>
 
       {/* Right Side Content */}
-      <div className="container relative z-10 mx-auto flex min-h-screen items-center justify-end px-6 py-24 md:px-10 lg:px-16">
+      <div className="container relative z-10 mx-auto flex min-h-[580px] lg:min-h-[calc(100vh-80px)] items-center justify-end px-6 py-20 md:px-10 lg:px-16">
         <div className="w-auto max-w-xl lg:mr-8 xl:mr-16">
           
           <Eyebrow icon={icon}>{eyebrow}</Eyebrow>

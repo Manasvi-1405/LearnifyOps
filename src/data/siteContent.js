@@ -16,12 +16,12 @@ export const navItems = [
   ["Home", "/"],
   ["DBA Programme", "/program"],
   ["Curriculum", "/curriculum"],
-  ["Curriculum", "/curriculum"],
   ["Experience", "/experience"],
   ["Admissions", "/admissions"],
   ["Universities", "/partnership"],
   ["Contact", "/contact"],
-  ["Doctoral", "/doctoral"]
+  ["Doctoral", "/doctoral"],
+  ["Search", "/search"]
 ];
 
 export const partnerUniversities = [
@@ -382,7 +382,7 @@ export const megaMenus = [
       eyebrow: "DBA PATHWAY",
       title: "A research-led DBA for experienced professionals.",
       text: "Compare delivery formats, university options and admissions requirements before you apply.",
-      // image: "/assets/",
+   
       to: "/program"
     }
   },
@@ -398,7 +398,6 @@ export const megaMenus = [
       eyebrow: "INTERNATIONAL PATHWAYS",
       title: "Explore the institutions behind your next step.",
       text: "Review DBA pathway information, then start with a confidential profile discussion.",
-      // image: "/assets/dba-universities-hero-v2.jpg",
       to: "/partnership"
     }
   },
@@ -434,6 +433,7 @@ export const megaMenus = [
 
 export const valuePillars = [
   {
+    image:"",
     icon: FileSearch,
     title: "Advanced Research Skills",
     text: "Evaluate evidence, conduct structured research and develop defensible conclusions for complex business and management questions."

@@ -49,7 +49,7 @@ const Doctoral = ({ navigate }) => {
       <section className="relative min-h-[560px] overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/glob.png"
+            // src="/assets/glob.png"
             alt=""
             className="h-full w-full object-cover opacity-50"
           />

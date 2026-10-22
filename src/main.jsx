@@ -24,6 +24,7 @@ import {
   navItems
 } from "./data/siteContent.js";
 import Doctoral from "./pages/Doctoral.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 const useRoute = createRouteHelpers({ navItems, getUniversityByPath });
 
@@ -102,7 +103,8 @@ function App() {
     "/admissions": <AdmissionsPage navigate={navigate} />,
     "/partnership": <PartnershipPage navigate={navigate} />,
     "/contact": <ContactPage navigate={navigate} contactProps={contactProps} />,
-    "/doctoral": <Doctoral navigate={navigate}  />,
+    "/doctoral": <Doctoral navigate={navigate} />,
+    "/search": <SearchPage navigate={navigate} />
   };
 
   return (
