@@ -8949,3 +8949,181 @@ main {
   transform: none !important; /* Zoom-in bilkul band */
   filter: none !important;    /* Agar koi blur filter laga ho to remove */
 }
+
+/* =====================================================================
+   1. UP TO 1084px (1020px se 1084px tak strictly mobile toggle button):
+   Desktop Pill Nav HIDE & Mobile Hamburger SHOW
+   ===================================================================== */
+@media screen and (max-width: 1084px) {
+  header.floating-scroll-header .header-container nav.center-pill-nav:not(.mobile-open),
+  .floating-scroll-header nav.center-pill-nav:not(.mobile-open),
+  nav.center-pill-nav:not(.mobile-open) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  header.floating-scroll-header .header-container .header-right-actions button.mobile-nav-toggle,
+  .floating-scroll-header .mobile-nav-toggle,
+  button.mobile-nav-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Hamburger click karne par mobile menu */
+  header.floating-scroll-header nav.center-pill-nav.mobile-open,
+  nav.center-pill-nav.mobile-open {
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: rgba(14, 22, 21, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 1.5rem !important;
+    gap: 0.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+/* =====================================================================
+   2. ABOVE 1084px (1085px aur usse badi screen par):
+   Desktop Pill Nav SHOW & Mobile Hamburger HIDE
+   ===================================================================== */
+@media screen and (min-width: 1085px) {
+  header.floating-scroll-header .header-container nav.center-pill-nav,
+  .floating-scroll-header nav.center-pill-nav,
+  nav.center-pill-nav {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+  }
+
+  header.floating-scroll-header .header-container .header-right-actions button.mobile-nav-toggle,
+  .floating-scroll-header .mobile-nav-toggle,
+  button.mobile-nav-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* =====================================================================
+   3. 1085px SE 1366px TAK:
+   1392px screen jaisa proportionate scaling aur spacing strictly apply
+   ===================================================================== */
+@media screen and (min-width: 1085px) and (max-width: 1366px) {
+  header.floating-scroll-header .header-container,
+  .header-container {
+    max-width: 1392px !important;
+    width: 100% !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    gap: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  header.floating-scroll-header nav.center-pill-nav,
+  nav.center-pill-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    padding: 0.35rem 0.6rem !important;
+  }
+
+  header.floating-scroll-header .pill-nav-btn,
+  header.floating-scroll-header .pill-nav-link,
+  .pill-nav-btn,
+  .pill-nav-link {
+    font-size: 0.8125rem !important;
+    padding: 0.45rem 0.65rem !important;
+    white-space: nowrap !important;
+    letter-spacing: normal !important;
+  }
+
+  header.floating-scroll-header .pill-enquire-btn,
+  .pill-enquire-btn {
+    padding: 0.45rem 0.9rem !important;
+    font-size: 0.8125rem !important;
+    white-space: nowrap !important;
+  }
+
+  header.floating-scroll-header .circle-search-btn,
+  .circle-search-btn {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    min-width: 2.25rem !important;
+  }
+
+  header.floating-scroll-header .brand img,
+  .brand-logo,
+  .brand-mark img {
+    height: 2.25rem !important;
+    width: auto !important;
+  }
+}
+
+/* =====================================================================
+   4. 1367px SE BADI SCREENS:
+   Full width standard desktop spacing
+   ===================================================================== */
+@media screen and (min-width: 1367px) {
+  header.floating-scroll-header .header-container,
+  .header-container {
+    max-width: 1440px !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  header.floating-scroll-header .pill-nav-btn,
+  header.floating-scroll-header .pill-nav-link,
+  .pill-nav-btn,
+  .pill-nav-link {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.875rem !important;
+  }
+}
+
+/* =========================================================
+   MOBILE MENU DRAWER: LIGHT BACKGROUND & CLEAR TEXT
+   ========================================================= */
+header.floating-scroll-header nav.center-pill-nav.mobile-open,
+nav.center-pill-nav.mobile-open {
+  background: #ffffff !important;                      /* Pure white/light background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Menu Text links ko Dark aur visible banana */
+header.floating-scroll-header nav.center-pill-nav.mobile-open .pill-nav-btn,
+header.floating-scroll-header nav.center-pill-nav.mobile-open .pill-nav-link,
+nav.center-pill-nav.mobile-open .pill-nav-btn,
+nav.center-pill-nav.mobile-open .pill-nav-link {
+  color: #0f172a !important;                           /* Dark slate text */
+  font-weight: 600 !important;
+}
+
+/* Arrow / Chevron icons ko dark banana */
+header.floating-scroll-header nav.center-pill-nav.mobile-open .chevron-icon,
+nav.center-pill-nav.mobile-open .chevron-icon {
+  color: #334155 !important;
+}
+
+/* Hover effect */
+header.floating-scroll-header nav.center-pill-nav.mobile-open .pill-nav-btn:hover,
+header.floating-scroll-header nav.center-pill-nav.mobile-open .pill-nav-link:hover,
+nav.center-pill-nav.mobile-open .pill-nav-btn:hover,
+nav.center-pill-nav.mobile-open .pill-nav-link:hover {
+  color: #ea9b3e !important;                           /* Brand gold/orange hover */
+}

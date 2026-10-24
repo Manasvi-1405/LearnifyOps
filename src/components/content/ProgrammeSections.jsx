@@ -561,19 +561,19 @@ export function ResearchSection({ navigate, image = "/assets/degree-fly.jpeg", v
         Explore potential research areas
       </div>
 
-      <div
-        className="research-topic-grid"
-        aria-label="Potential DBA research areas"
-      >
-        {researchTopics.map((topic, index) => (
-          <span
-            className={`research-topic research-topic-${index % 5}`}
-            key={topic}
-          >
-            {topic}
-          </span>
-        ))}
-      </div>
+   <div
+  className="research-topic-grid flex! flex-wrap! gap-2.5! sm:gap-3!"
+  aria-label="Potential DBA research areas"
+>
+  {researchTopics.map((topic) => (
+    <span
+      key={topic}
+      className="research-topic inline-flex! items-center! px-3.5! py-1.5! sm:px-4! sm:py-2! rounded-full! bg-[#eef7f4]! text-[#135d50]! border! border-[#c2e5dc]! text-xs! sm:text-sm! font-medium! tracking-wide! shadow-2xs! transition-all! duration-200! hover:bg-[#dff0eb]! hover:border-[#9ed6c7]! hover:text-[#0b4239]! cursor-default!"
+    >
+      {topic}
+    </span>
+  ))}
+</div>
 
       <div className="research-bottom">
         <PrimaryButton to="/program" navigate={navigate}>

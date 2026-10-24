@@ -7,6 +7,9 @@ import {
   Target
 } from "lucide-react";
 
+
+
+
 export const logo = "/assets/learnify-logo.jpg";
 export const britInstituteUrl = "https://britinstitute.uk/";
 export const dbaBrochureUrl = "/assets/learnifyops-dba-brochure.pdf";
@@ -678,5 +681,105 @@ export function getUniversityByPath(pathname) {
   const slug = pathname.replace(/\/$/, "").split("/universities/")[1];
   return partnerUniversities.find((university) => university.slug === slug);
 }
+
+/////
+// servicesData.js
+export const servicesData = [
+  // --- CERTIFICATION PROGRAMS ---
+  {
+    slug: "advanced-skill-certifications",
+    category: "CERTIFICATION PROGRAMS",
+    title: "Advanced Skill Certifications",
+    shortDesc: "Industry-ready skills for modern careers.",
+    heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&auto=format&fit=crop&q=80",
+    badge: "Accredited Program",
+    overview: "Equip yourself with high-demand practical competencies through project-driven industry certifications designed with modern market standards.",
+    features: [
+      "Industry-recognized certificates",
+      "Hands-on capstone projects",
+      "Curriculum curated by tech leaders",
+      "Self-paced learning with live masterclasses"
+    ]
+  },
+  {
+    slug: "dedicated-placement-assistance",
+    category: "CERTIFICATION PROGRAMS",
+    title: "Dedicated Placement Assistance",
+    shortDesc: "Mock interviews, guidance and role matching.",
+    heroImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=80",
+    badge: "Placement Support",
+    overview: "Get direct interview opportunities with hiring partners, personalized salary negotiation strategies, and dedicated guidance till you land your offer.",
+    features: [
+      "Exclusive partner hiring drives",
+      "1-on-1 technical and HR mock interviews",
+      "Direct referrals to tier-1 companies",
+      "Offer letter evaluation and negotiation tips"
+    ]
+  },
+  {
+    slug: "1-on-1-executive-mentorship",
+    category: "CERTIFICATION PROGRAMS",
+    title: "1-on-1 Executive Mentorship",
+    shortDesc: "Personal guidance from experienced mentors.",
+    heroImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&auto=format&fit=crop&q=80",
+    badge: "Personalized Coaching",
+    overview: "Connect directly with directors, engineering leaders, and industry veterans who will guide your professional trajectory step by step.",
+    features: [
+      "Bi-weekly private video calls",
+      "Customized roadmap tailored to your experience",
+      "Real-world case study discussions",
+      "Continuous asynchronous messaging support"
+    ]
+  },
+
+  // --- CAREER ARCHITECTURE ---
+  {
+    slug: "executive-cv-linkedin-optimization",
+    category: "CAREER ARCHITECTURE",
+    title: "Executive CV & LinkedIn Optimization",
+    shortDesc: "Strengthen your executive CV and LinkedIn profile.",
+    heroImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto=format&fit=crop&q=80",
+    badge: "Profile Branding",
+    overview: "Transform your resume and LinkedIn into powerful recruitment magnets built for Applicant Tracking Systems (ATS) and executive search recruiters.",
+    features: [
+      "ATS keyword integration & score audit",
+      "Compelling summary and impact-focused bullet points",
+      "LinkedIn algorithm optimization",
+      "Customizable cover letter templates"
+    ]
+  },
+  {
+    slug: "career-automation-suite",
+    category: "CAREER ARCHITECTURE",
+    title: "Free Access to Career Automation Suite",
+    shortDesc: "Career tools for applications and outreach.",
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+    badge: "Exclusive Software",
+    overview: "Accelerate your outreach with automated application tracking, smart recruiter follow-ups, and AI-assisted cover letter generators.",
+    features: [
+      "Automated job tracker dashboard",
+      "Recruiter email discovery & template tools",
+      "AI resume tailoring engine",
+      "Analytics on response rates and applications"
+    ]
+  },
+  {
+    slug: "end-to-end-career-acceleration",
+    category: "CAREER ARCHITECTURE",
+    title: "End-to-End Career Acceleration",
+    shortDesc: "Support from enrolment through placement.",
+    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80",
+    badge: "Full Program",
+    overview: "An all-inclusive program covering upskilling, portfolio architecture, network access, and continuous career coaching to achieve rapid promotions.",
+    features: [
+      "Complete curriculum access across all domains",
+      "Dedicated career architect assigned to you",
+      "Guaranteed interview pipeline access",
+      "Post-joining transition support for 90 days"
+    ]
+  }
+];
+
+// ServiceDetail.jsx
 
 

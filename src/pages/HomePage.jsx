@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 function PurposeMedallion({ type }) {
   const icons = {
     learning: (
-      <svg viewBox="0 0 112 112" aria-hidden="true">
+      <svg viewBox="0 0 112 112" aria-hidden="true" className="w-full! h-full!">
         <circle cx="56" cy="56" r="52" fill="#b6e5c4" />
         <path
           d="M40 28c-13 6-19 20-15 34 3 10 10 16 18 19v14h32V76c7-7 10-17 8-27-3-15-15-25-29-25-5 0-9 1-14 4Z"
@@ -56,7 +56,7 @@ function PurposeMedallion({ type }) {
       </svg>
     ),
     research: (
-      <svg viewBox="0 0 112 112" aria-hidden="true">
+      <svg viewBox="0 0 112 112" aria-hidden="true" className="w-full! h-full!">
         <circle cx="56" cy="56" r="52" fill="#00564f" />
         <path d="M56 4a52 52 0 0 1 0 104Z" fill="#009d78" />
         <path
@@ -89,7 +89,7 @@ function PurposeMedallion({ type }) {
       </svg>
     ),
     leadership: (
-      <svg viewBox="0 0 112 112" aria-hidden="true">
+      <svg viewBox="0 0 112 112" aria-hidden="true" className="w-full! h-full!">
         <circle cx="56" cy="56" r="52" fill="#00564f" />
         <path d="M56 4a52 52 0 0 1 0 104Z" fill="#004a45" />
         <path d="M57 18v76" stroke="#a4e6b6" strokeWidth="3" />
@@ -112,7 +112,7 @@ function PurposeMedallion({ type }) {
       </svg>
     ),
     global: (
-      <svg viewBox="0 0 112 112" aria-hidden="true">
+      <svg viewBox="0 0 112 112" aria-hidden="true" className="w-full! h-full!">
         <circle cx="56" cy="56" r="52" fill="#00a67d" />
         <circle
           cx="56"
@@ -142,7 +142,7 @@ function PurposeMedallion({ type }) {
   };
 
   return (
-    <span className={`editorial-purpose-icon editorial-purpose-icon-${type}`}>
+    <span className={`editorial-purpose-icon editorial-purpose-icon-${type} inline-flex! items-center! justify-center! w-14! h-14! sm:w-16! sm:h-16! mb-4!`}>
       {icons[type]}
     </span>
   );
@@ -175,8 +175,6 @@ function HomePage({ navigate }) {
   const [activeStory, setActiveStory] = useState(0);
   const [hoveredStory, setHoveredStory] = useState(null);
 
-  const carouselRef = useRef(null);
-
   const currentStory = hoveredStory !== null ? hoveredStory : activeStory;
 
   const goNext = () => {
@@ -186,11 +184,12 @@ function HomePage({ navigate }) {
   const goPrevious = () => {
     setActiveStory((prev) => (prev - 1 + stories.length) % stories.length);
   };
+
   return (
-    <div className="editorial-home">
-      {/* ================= HERO ================= */}
+    <div className="editorial-home w-full! overflow-x-hidden!">
+      {/* ================= 1. HERO ================= */}
       <section
-        className="editorial-world-hero relative mt-0 min-h-screen overflow-hidden bg-black pt-0"
+        className="editorial-world-hero relative! mt-0! min-h-[580px]! sm:min-h-[640px]! md:min-h-[720px]! lg:min-h-screen! w-full! overflow-hidden! bg-black! flex! flex-col! justify-between!"
         style={{
           backgroundImage: "url('/assets/hero-dashboard.jpg')",
           backgroundSize: "cover",
@@ -198,114 +197,108 @@ function HomePage({ navigate }) {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Image overlay — keeps all text visible */}
-        <div className="absolute inset-0 z-0 bg-black/40" />
+        {/* Contrast Overlays */}
+        <div className="absolute! inset-0! z-0! bg-black/45!" />
+        <div className="absolute! inset-0! z-0! bg-gradient-to-r! from-black/85! via-black/50! to-black/20!" />
+        <div className="absolute! inset-0! z-0! bg-gradient-to-t! from-black/80! via-transparent! to-black/30!" />
 
-        {/* Additional gradient for text readability */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/70 via-black/35 to-black/10" />
-
-        {/* Sparkles */}
-        <div
-          className="editorial-hero-sparkles relative z-10"
-          aria-hidden="true"
-        >
-          {Array.from({ length: 18 }, (_, index) => (
+        {/* Hero Sparkles */}
+        <div className="editorial-hero-sparkles relative! z-10! pointer-events-none!" aria-hidden="true">
+          {Array.from({ length: 14 }, (_, index) => (
             <span key={index} />
           ))}
         </div>
 
         {/* Hero Content */}
-      <div className="relative z-20 flex min-h-screen items-center px-5 py-20 sm:px-8 lg:px-12">
-  <div className="editorial-world-copy container reveal visible mx-auto w-full">
-    <span className="editorial-hero-eyebrow mb-5 block text-xs font-semibold tracking-[0.2em] text-white sm:text-sm">
-      GLOBAL EXECUTIVE EDUCATION
-    </span>
+        <div className="relative! z-20! flex! flex-1! items-center! px-4! sm:px-8! md:px-12! lg:px-16! py-16! sm:py-20! lg:py-24!">
+          <div className="w-full! px-4! py-6! sm:px-6! sm:py-8! lg:px-10! lg:py-12!">
+            <p className="mb-3! text-xs! font-semibold! uppercase! tracking-[0.2em]! text-[#c7b68c]! sm:text-sm!">
+              Your Next Chapter
+            </p>
 
-    <h1
-      className="mb-6 text-white"
-      style={{
-        maxWidth: "64rem",
-        fontSize: "clamp(2rem, 4.5vw, 4.5rem)",
-        lineHeight: 1.15,
-        letterSpacing: "-0.025em",
-        wordBreak: "normal",
-        overflowWrap: "normal",
-        hyphens: "none",
-      }}
-    >
-      <span className="whitespace-nowrap">Learn, research</span>
-      <br />
-      and lead on a global stage.
-    </h1>
+            <h1 className="max-w-3xl! text-2xl! font-semibold! leading-tight! tracking-tight! text-white! sm:text-3xl! md:text-4xl! lg:text-5xl!">
+              Lead with Knowledge.
+              <span className="block! text-[#c7b68c]!">
+                Grow with Purpose.
+              </span>
+            </h1>
+       <h3 className="font-serif! text-lg! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.25]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl!">
+  Online certifications, AI training, and career support. Learn, qualify, get hired
+</h3>
 
-    <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
-      LearnifyOps helps experienced professionals compare doctoral
-      pathways and translate ambition into applied business research.
-    </p>
+            <p className="mt-4! max-w-2xl! text-sm! leading-6! text-gray-300! sm:text-base! sm:leading-7!">
+              Your journey towards leadership, innovation, and academic excellence starts here.
+            </p>
 
-    <PrimaryButton to="/contact" navigate={navigate}>
-      Speak to an adviser
-    </PrimaryButton>
-  </div>
-</div>
-
-        {/* Bottom Hero Note */}
-        <div className="editorial-world-note relative z-20 text-white">
-          International DBA pathways · flexible executive study
-        </div>
-      </section>
-
-      {/* ================= FEATURED PATHWAY ================= */}
-      <section className="editorial-spotlight section ">
-        <div className="container ">
-          <div className="editorial-label ">FEATURED PATHWAY</div>
-
-          <div className="editorial-spotlight-card reveal">
-            <div className="editorial-spotlight-copy">
-              <span>DOCTOR OF BUSINESS ADMINISTRATION</span>
-
-              <h2>Build research that changes how business moves.</h2>
-
-              <p>
-                Explore flexible DBA pathways designed around leadership
-                experience, meaningful business questions and a world of
-                professional perspectives.
-              </p>
-
-              <Link
-                className="editorial-text-link"
-                to="/program"
-                navigate={navigate}
-              >
-                Discover the DBA programme
-                <ArrowRight size={17} />
-              </Link>
-            </div>
-            <div className="editorial-spotlight-image">
-              <img
-                src="/assets/featuredPath.jpeg"
-                alt="Executive professionals in a strategic business discussion"
-              />
-            </div>
+            <div className="mt-8! sm:mt-10!">
+        <Link
+          to="/contact"
+          navigate={navigate}
+          className="inline-flex! items-center! justify-center! px-8! sm:px-10! py-4! sm:py-4.5! rounded-xl! bg-[#f0a041]! hover:bg-[#e29332]! active:bg-[#cf8324]! text-[#1f242e]! font-sans! font-bold! text-base! sm:text-lg! shadow-[0_10px_25px_-5px_rgba(240,160,65,0.4)]! hover:shadow-[0_15px_30px_-5px_rgba(240,160,65,0.55)]! transition-all! duration-300! hover:scale-[1.02]! cursor-pointer!"
+        >
+          Start your career journey
+        </Link>
+      </div>
           </div>
         </div>
       </section>
 
-      {/* ================= PURPOSE ================= */}
-      <section className="editorial-purpose section">
-        <div className="container   ">
-          <div className="editorial-statement reveal">
-            <p>
+      {/* ================= 2. FEATURED PATHWAY ================= */}
+    <section className="editorial-spotlight section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! w-full! bg-white">
+  <div className="container mx-auto! max-w-7xl! w-full!">
+    <div className="editorial-label text-xs font-bold uppercase tracking-[0.2em] text-[#008c75] mb-4">
+      FEATURED PATHWAY
+    </div>
+
+    <div className="editorial-spotlight-card rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-[#faf8f5] overflow-hidden flex! flex-col! lg:flex-row! items-stretch! w-full! shadow-xs hover:shadow-md transition-shadow">
+      <div className="editorial-spotlight-copy flex-1! p-6! sm:p-10! lg:p-14! flex! flex-col! justify-center! text-left!">
+        <span className="text-xs font-bold tracking-widest text-slate-500 uppercase mb-2">
+          Doctor of Business Administration
+        </span>
+
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+          Build research that changes how business moves.
+        </h2>
+
+        <p className="text-sm sm:text-base leading-relaxed text-slate-600 mb-6 sm:mb-8">
+          Explore flexible DBA pathways designed around leadership experience, meaningful business questions and a world of professional perspectives.
+        </p>
+
+        <Link
+          className="editorial-text-link inline-flex! items-center! gap-2! text-sm sm:text-base font-bold text-[#173f43] hover:text-[#c79500] transition-colors"
+          to="/program"
+          navigate={navigate}
+        >
+          <span>Discover the DBA programme</span>
+          <ArrowRight size={17} />
+        </Link>
+      </div>
+
+      <div className="editorial-spotlight-image w-full! lg:w-[48%]! relative! min-h-[260px]! sm:min-h-[340px]! lg:min-h-auto!">
+        <img
+          src="/assets/featuredPath.jpeg"
+          alt="Executive professionals in a strategic business discussion"
+          className="h-full! w-full! object-cover! object-center!"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* ================= 3. PURPOSE ================= */}
+      <section className="editorial-purpose section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-slate-50!">
+        <div className="container mx-auto! max-w-7xl!">
+          <div className="editorial-statement mb-12! sm:mb-16! text-center! max-w-4xl! mx-auto!">
+            <p className="text-lg! sm:text-2xl! md:text-3xl! leading-relaxed! text-slate-800! font-serif!">
               LearnifyOps connects experienced professionals with the{" "}
-              <strong>
+              <strong className="text-slate-950! font-semibold!">
                 research tools, university pathways and admissions guidance
               </strong>{" "}
-              to examine challenges that matter — and make a considered
-              contribution to the future of business.
+              to examine challenges that matter — and make a considered contribution to the future of business.
             </p>
           </div>
 
-          <div className="editorial-principles">
+          <div className="editorial-principles grid! grid-cols-1! sm:grid-cols-2! lg:grid-cols-4! gap-6! sm:gap-8!">
             {[
               [
                 "learning",
@@ -329,76 +322,57 @@ function HomePage({ navigate }) {
               ],
             ].map(([type, title, text]) => (
               <article
-                className="editorial-principle purpose-medallion reveal"
+                className="editorial-principle purpose-medallion rounded-2xl! bg-white! p-6! sm:p-7! border! border-slate-200/80! shadow-xs! hover:shadow-md! transition-all! text-center! flex! flex-col! items-center!"
                 key={title}
               >
                 <PurposeMedallion type={type} />
-
-                <h3>{title}</h3>
-
-                <p>{text}</p>
+                <h3 className="text-base! sm:text-lg! font-bold! text-slate-900! mb-2!">{title}</h3>
+                <p className="text-xs! sm:text-sm! text-slate-600! leading-relaxed!">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ================= STORIES ================= */}
-      <section className="editorial-stories section">
-        <div className="container">
-          {/* HEADER */}
-          <div className="editorial-section-head reveal ">
+      {/* ================= 4. STORIES & CAROUSEL ================= */}
+      <section className="editorial-stories section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-white!">
+        <div className="container mx-auto! max-w-7xl!">
+          {/* Header */}
+          <div className="editorial-section-head flex! flex-col! sm:flex-row! sm:items-end! justify-between! gap-4! mb-8!">
             <div>
-              <div className="editorial-label ">WHAT'S NEW</div>
-
-              <h2>Ideas, guidance and useful next steps.</h2>
+              <div className="editorial-label text-xs! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
+                WHAT'S NEW
+              </div>
+              <h2 className="text-2xl! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight!">
+                Ideas, guidance and useful next steps.
+              </h2>
             </div>
 
             <Link
-              className="editorial-text-link"
+              className="editorial-text-link inline-flex! items-center! gap-2! text-xs! sm:text-sm! font-bold! text-[#173f43]! hover:text-[#c79500]! transition-colors!"
               to="/program"
               navigate={navigate}
             >
-              View DBA overview
-              <ArrowRight size={17} />
+              <span>View DBA overview</span>
+              <ArrowRight size={16} />
             </Link>
           </div>
 
-          {/* CAROUSEL */}
-          <div className="relative mt-8">
-            {/* TRACK */}
+          {/* Interactive Carousel */}
+          <div className="relative! mt-6! sm:mt-8!">
             <div
-              className="
-          flex
-          h-[420px]
-          w-full
-          gap-3
-          overflow-hidden
-          rounded-3xl
-
-          /* MOBILE SLIDE */
-          [--slide:0]
-        "
-              style={{
-                "--slide": activeStory,
-              }}
+              className="flex! h-[380px]! sm:h-[420px]! md:h-[450px]! w-full! gap-3! overflow-hidden! rounded-2xl! sm:rounded-3xl!"
+              style={{ "--slide": activeStory }}
               onMouseLeave={() => setHoveredStory(null)}
             >
               <div
-                className="
-            flex
-            h-full
-            w-full
-            gap-3
-
-            transition-transform
-            duration-700
-            ease-[cubic-bezier(.22,1,.36,1)]
-
-            [transform:translateX(calc(var(--slide)*-100%))]
-
-            md:transform-none
-          "
+                className="flex! h-full! w-full! gap-3! transition-transform! duration-700! ease-[cubic-bezier(.22,1,.36,1)]! md:transform-none!"
+                style={{
+                  transform:
+                    typeof window !== "undefined" && window.innerWidth < 768
+                      ? `translateX(calc(${activeStory} * -100% - ${activeStory * 12}px))`
+                      : "none",
+                }}
               >
                 {stories.map((story, index) => {
                   const isOpen = currentStory === index;
@@ -407,211 +381,69 @@ function HomePage({ navigate }) {
                     <article
                       key={`${story.title}-${index}`}
                       onMouseEnter={() => {
-                        // Hover only matters on desktop
-                        if (window.innerWidth >= 768) {
+                        if (typeof window !== "undefined" && window.innerWidth >= 768) {
                           setHoveredStory(index);
                         }
                       }}
                       onClick={() => setActiveStory(index)}
                       className={`
-                  group
-                  relative
-                  min-w-full
-                  flex-none
-                  cursor-pointer
-                  overflow-hidden
-                  rounded-2xl
-
-                  transition-all
-                  duration-700
-                  ease-[cubic-bezier(.22,1,.36,1)]
-
-                  md:min-w-0
-                  md:basis-0
-                  ${isOpen ? "md:flex-[5]" : "md:flex-1"}
-                `}
+                        group relative! min-w-full! flex-none! cursor-pointer! overflow-hidden! rounded-2xl! sm:rounded-3xl!
+                        transition-all! duration-700! ease-[cubic-bezier(.22,1,.36,1)]!
+                        md:min-w-0! md:basis-0!
+                        ${isOpen ? "md:flex-[4.5]!" : "md:flex-1!"}
+                      `}
                     >
-                      {/* IMAGE */}
                       <img
                         src={`/assets/${story.image}`}
                         alt={story.title}
-                        className="
-                    absolute
-                    inset-0
-                    block
-                    h-full
-                    w-full
-                    object-cover
-
-                    transition-transform
-                    duration-700
-                    ease-[cubic-bezier(.22,1,.36,1)]
-
-                    md:group-hover:scale-105
-                  "
+                        className="absolute! inset-0! block! h-full! w-full! object-cover! transition-transform! duration-700! group-hover:scale-105!"
                       />
 
-                      {/* OVERLAY */}
                       <div
-                        className={`
-                    absolute
-                    inset-0
-                    transition-all
-                    duration-700
-
-                    ${
-                      isOpen
-                        ? "bg-gradient-to-t from-black/90 via-black/35 to-transparent"
-                        : "bg-black/35 md:group-hover:bg-black/45"
-                    }
-                  `}
+                        className={`absolute! inset-0! transition-all! duration-700! ${
+                          isOpen
+                            ? "bg-gradient-to-t! from-black/95! via-black/40! to-black/20!"
+                            : "bg-black/50! md:group-hover:bg-black/60!"
+                        }`}
                       />
 
-                      {/* NUMBER */}
-                      <span
-                        className="
-                    absolute
-                    right-5
-                    top-5
-                    z-10
-                    text-xs
-                    font-semibold
-                    text-white/90
-                  "
-                      >
+                      <span className="absolute! right-4! top-4! z-10! text-xs! font-bold! text-white/90! bg-black/40! px-2.5! py-1! rounded-full! backdrop-blur-md!">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      {/* CLOSED CARD TITLE — DESKTOP ONLY */}
                       {!isOpen && (
-                        <div
-                          className="
-                      absolute
-                      inset-0
-                      z-10
-
-                      hidden
-                      items-end
-                      justify-center
-                      p-4
-
-                      md:flex
-                    "
-                        >
-                          <h3
-                            className="
-                        whitespace-nowrap
-                        text-base
-                        font-semibold
-                        text-white
-
-                        [writing-mode:vertical-rl]
-                        rotate-180
-
-                        transition-transform
-                        duration-500
-
-                        group-hover:-translate-y-2
-                      "
-                          >
+                        <div className="absolute! inset-0! z-10! hidden! items-end! justify-center! p-4! md:flex!">
+                          <h3 className="whitespace-nowrap! text-sm! lg:text-base! font-semibold! text-white! [writing-mode:vertical-rl]! rotate-180! transition-transform! duration-500! group-hover:-translate-y-2!">
                             {story.title}
                           </h3>
                         </div>
                       )}
 
-                      {/* OPEN CARD CONTENT */}
                       <div
-                        className={`
-                    absolute
-                    inset-x-0
-                    bottom-0
-                    z-10
-
-                    !p-8
-                    md:!p-10
-
-                    transition-all
-                    duration-500
-
-                    ${
-                      isOpen
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-6 opacity-0"
-                    }
-                  `}
+                        className={`absolute! inset-x-0! bottom-0! z-10! p-6! sm:p-8! md:p-10! transition-all! duration-500! ${
+                          isOpen ? "translate-y-0! opacity-100!" : "translate-y-6! opacity-0!"
+                        }`}
                       >
-                        {/* LABEL */}
-                        <span
-                          className="
-                      mb-4
-                      inline-flex
-                      rounded-full
-                      border
-                      border-white/20
-                      bg-white/10
-                      px-3
-                      py-1
-
-                      text-[10px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.18em]
-                      text-white
-
-                      backdrop-blur-md
-                    "
-                        >
+                        <span className="mb-3! inline-flex! rounded-full! border! border-white/20! bg-white/10! px-3! py-1! text-[10px]! font-bold! uppercase! tracking-[0.18em]! text-white! backdrop-blur-md!">
                           GUIDE
                         </span>
 
-                        {/* TITLE */}
-                        <h3
-                          className="
-    !text-white
-    max-w-2xl
-    text-2xl
-    font-semibold
-    leading-tight
-    md:text-4xl
-  "
-                        >
+                        <h3 className="max-w-2xl! text-xl! sm:text-2xl! md:text-3xl! font-bold! leading-snug! text-white!">
                           {story.title}
                         </h3>
 
-                        {/* DESCRIPTION */}
-                        <p
-                          className="
-    !text-white/80
-    mt-3
-    max-w-xl
-    text-sm
-    leading-6
-    md:text-base
-  "
-                        >
+                        <p className="mt-2.5! max-w-xl! text-xs! sm:text-sm! md:text-base! leading-relaxed! text-slate-200!">
                           {story.text}
                         </p>
 
-                        {/* LINK */}
                         <Link
                           to="/contact"
                           navigate={navigate}
                           aria-label={`Read more about ${story.title}`}
-                          className="
-  !text-white
-  mt-5
-  inline-flex
-  items-center
-  gap-2
-  text-sm
-  font-semibold
-  transition-all
-  duration-300
-  hover:gap-3
-"
+                          className="mt-4! inline-flex! items-center! gap-2! text-xs! sm:text-sm! font-bold! text-[#e2b675]! hover:text-white! transition-colors!"
                         >
-                          Read the guide
-                          <ArrowRight size={17} />
+                          <span>Read the guide</span>
+                          <ArrowRight size={15} />
                         </Link>
                       </div>
                     </article>
@@ -620,579 +452,317 @@ function HomePage({ navigate }) {
               </div>
             </div>
 
-            {/* LEFT ARROW */}
+            {/* Navigation Arrows */}
             <button
               type="button"
               onClick={goPrevious}
               aria-label="Previous story"
-              className="
-          absolute
-          left-3
-          top-1/2
-          z-30
-
-          flex
-          h-11
-          w-11
-          -translate-y-1/2
-          items-center
-          justify-center
-
-          rounded-full
-          border
-          border-white/30
-          bg-white/90
-
-          text-slate-800
-          shadow-lg
-          backdrop-blur-sm
-
-          transition-all
-          duration-300
-
-          hover:scale-105
-          hover:bg-white
-
-          md:left-4
-        "
+              className="absolute! left-2! sm:left-4! top-1/2! z-30! flex! h-9! w-9! sm:h-11! sm:w-11! -translate-y-1/2! items-center! justify-center! rounded-full! border! border-white/30! bg-white/90! text-slate-800! shadow-md! backdrop-blur-sm! transition-all! hover:scale-105! hover:bg-white!"
             >
-              <ChevronLeft size={21} />
+              <ChevronLeft size={20} />
             </button>
 
-            {/* RIGHT ARROW */}
             <button
               type="button"
               onClick={goNext}
               aria-label="Next story"
-              className="
-          absolute
-          right-3
-          top-1/2
-          z-30
-
-          flex
-          h-11
-          w-11
-          -translate-y-1/2
-          items-center
-          justify-center
-
-          rounded-full
-          border
-          border-white/30
-          bg-white/90
-
-          text-slate-800
-          shadow-lg
-          backdrop-blur-sm
-
-          transition-all
-          duration-300
-
-          hover:scale-105
-          hover:bg-white
-
-          md:right-4
-        "
+              className="absolute! right-2! sm:right-4! top-1/2! z-30! flex! h-9! w-9! sm:h-11! sm:w-11! -translate-y-1/2! items-center! justify-center! rounded-full! border! border-white/30! bg-white/90! text-slate-800! shadow-md! backdrop-blur-sm! transition-all! hover:scale-105! hover:bg-white!"
             >
-              <ChevronRight size={21} />
+              <ChevronRight size={20} />
             </button>
           </div>
 
-          {/* DOTS + COUNTER */}
-          <div className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          {/* Dots Indicator */}
+          <div className="mt-5! sm:mt-6! flex! items-center! justify-between!">
+            <div className="flex! items-center! gap-2!">
               {stories.map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => setActiveStory(index)}
                   aria-label={`Go to story ${index + 1}`}
-                  className={`
-              h-2
-              rounded-full
-              transition-all
-              duration-500
-
-              ${
-                activeStory === index
-                  ? "w-8 bg-slate-900"
-                  : "w-2 bg-slate-300 hover:bg-slate-400"
-              }
-            `}
+                  className={`h-2! rounded-full! transition-all! duration-300! ${
+                    activeStory === index ? "w-7! sm:w-8! bg-slate-900!" : "w-2! bg-slate-300! hover:bg-slate-400!"
+                  }`}
                 />
               ))}
             </div>
 
-            <span className="text-xs font-medium text-slate-400">
-              {String(activeStory + 1).padStart(2, "0")} /{" "}
-              {String(stories.length).padStart(2, "0")}
+            <span className="text-xs! font-semibold! text-slate-400!">
+              {String(activeStory + 1).padStart(2, "0")} / {String(stories.length).padStart(2, "0")}
             </span>
           </div>
         </div>
       </section>
 
-      {/* ================= PROGRAMME ================= */}
-      <section className="editorial-programme section">
-        <div className="container editorial-programme-grid">
-          <div className="editorial-programme-poster reveal">
-            <img
-              src="/assets/Globally-Recognised-Degree.jpg.jpeg"
-              alt="Professional reviewing an applied business research project"
-            />
-
-            <div>
-              <span>RESEARCH-LED</span>
-              <strong>Designed for ambitious professionals.</strong>
+      {/* ================= 5. PROGRAMME SECTION ================= */}
+      <section className="editorial-programme section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-slate-50!">
+        <div className="container mx-auto! max-w-7xl!">
+          <div className="grid! grid-cols-1! lg:grid-cols-12! gap-8! lg:gap-12! items-center!">
+            
+            {/* Left Poster */}
+            <div className="lg:col-span-5! relative! overflow-hidden! rounded-2xl! sm:rounded-3xl! shadow-lg! border! border-slate-200!">
+              <img
+                src="/assets/Globally-Recognised-Degree.jpg.jpeg"
+                alt="Professional reviewing an applied business research project"
+                className="w-full! h-[320px]! sm:h-[400px]! lg:h-[480px]! object-cover!"
+              />
+              <div className="absolute! inset-0! bg-gradient-to-t! from-black/85! via-black/30! to-transparent! flex! flex-col! justify-end! p-6! text-white! text-left!">
+                <span className="text-[10px]! font-bold! uppercase! tracking-widest! text-[#e2b675]! mb-1!">
+                  RESEARCH-LED
+                </span>
+                <strong className="text-lg! sm:text-xl! font-bold!">
+                  Designed for ambitious professionals.
+                </strong>
+              </div>
             </div>
-          </div>
 
-          <div className="editorial-programme-copy reveal">
-            <div className="editorial-label">DISCOVER LEARNIFYOPS</div>
+            {/* Right Copy */}
+            <div className="lg:col-span-7! text-left!">
+              <div className="editorial-label text-xs! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
+                DISCOVER LEARNIFYOPS
+              </div>
 
-            <h2>
-              Find a pathway that respects where you've already been — and where
-              you're headed.
-            </h2>
+              <h2 className="text-2xl! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight! mb-4!">
+                Find a pathway that respects where you've already been — and where you're headed.
+              </h2>
 
-            <p>
-              We support the early work of comparing delivery formats, entry
-              criteria, research expectations and institution information before
-              you decide to apply.
-            </p>
+              <p className="text-sm! sm:text-base! leading-relaxed! text-slate-600! mb-6! sm:mb-8!">
+                We support the early work of comparing delivery formats, entry criteria, research expectations and institution information before you decide to apply.
+              </p>
 
-            <div className="editorial-programme-links">
-              <Link to="/program" navigate={navigate}>
-                DBA programme
-                <ArrowRight size={16} />
-              </Link>
-
-              <Link to="/partnership" navigate={navigate}>
-                Partner universities
-                <ArrowRight size={16} />
-              </Link>
-
-              <Link to="/admissions" navigate={navigate}>
-                Admissions review
-                <ArrowRight size={16} />
-              </Link>
-
-              <Link to="/curriculum" navigate={navigate}>
-                Curriculum framework
-                <ArrowRight size={16} />
-              </Link>
+              <div className="grid! grid-cols-1! sm:grid-cols-2! gap-3! sm:gap-4!">
+                {[
+                  { label: "DBA programme", path: "/program" },
+                  { label: "Partner universities", path: "/partnership" },
+                  { label: "Admissions review", path: "/admissions" },
+                  { label: "Curriculum framework", path: "/curriculum" },
+                ].map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    navigate={navigate}
+                    className="flex! items-center! justify-between! p-4! rounded-xl! bg-white! border! border-slate-200/80! text-sm! font-semibold! text-slate-800! hover:border-[#ea9b3e]! hover:text-[#ea9b3e]! transition-colors! shadow-xs!"
+                  >
+                    <span>{item.label}</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                ))}
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ================= IMPACT ================= */}
-      {/* <section className="editorial-impact">
-        <div className="container">
-          <span>WHY LEARNIFYOPS</span>
-
-          <h2>Clarity for a defining professional decision.</h2>
-
-          <p>
-            From shortlisting institutions through to understanding the academic
-            journey ahead, each conversation is built around your experience and
-            goals.
-          </p>
-
-          <div className="editorial-metrics">
-            <div>
-              <strong>1:1</strong>
-              <small>admissions profile review</small>
-            </div>
-
-            <div>
-              <strong>6</strong>
-              <small>partner institution pathways</small>
-            </div>
-
-            <div>
-              <strong>24–48</strong>
-              <small>months of flexible study options</small>
-            </div>
-
-            <div>
-              <strong>Global</strong>
-              <small>executive and research perspective</small>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      <section className="editorial-impact bg-[#f3f1eb] px-6 py-16 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl text-center space-y-8 ">
-          {/* Heading */}
-          <span
-            className=" flex justify-center text-sm font-semibold uppercase tracking-[0.2em] text-[beige
-          ]"
-          >
+      {/* ================= 6. IMPACT & METRICS ================= */}
+      <section className="editorial-impact bg-[#f3f1eb]! px-4! sm:px-8! md:px-12! py-14! sm:py-20! lg:py-24!">
+        <div className="mx-auto! max-w-7xl! text-center!">
+          <span className="inline-block! text-xs! font-bold! uppercase! tracking-[0.25em]! text-[#173f43]! mb-3!">
             WHY LEARNIFYOPS
           </span>
-        </div>
-        <div className="flex justify-center">
-          <h2 className="mt-4 font-bold italic text-black md:text-5xl lg:text-6xl">
+
+          <h2 className="text-2xl! sm:text-4xl! md:text-5xl! lg:text-6xl! font-bold! font-serif! italic! text-slate-950! max-w-4xl! mx-auto! leading-tight! mb-12! sm:mb-16!">
             Clarity for a defining professional decision.
           </h2>
-        </div>
 
-        <div className="flex justify-evenly">
-          {/* Metrics */}
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
-            {/* Metric 1 */}
-            <div className="px-6 py-6  border-r border-gray-900">
-              <strong className="block text-5xl font-bold italic text-[white] md:text-6xl ">
-                1:1
-              </strong>
-
-              <small className="mx-auto mt-4 block max-w-[220px] text-base leading-7 text-[white] md:text-lg">
-                admissions profile review
-              </small>
-            </div>
-
-            {/* Metric 2 */}
-            <div className=" px-6 py-6 border-r border-gray-900">
-              <strong className="block text-5xl font-bold italic text-[white] md:text-6xl">
-                6
-              </strong>
-
-              <small className="mx-auto mt-4 block max-w-[220px] text-base leading-7 text-[white] md:text-lg">
-                partner institution pathways
-              </small>
-            </div>
-
-            {/* Metric 3 */}
-            <div className=" px-6 py-6 border-r border-gray-900">
-              <strong className="block text-5xl font-bold italic text-[white] md:text-6xl">
-                24–48
-              </strong>
-
-              <small className="mx-auto mt-4 block max-w-[220px] text-base leading-7 text-[white] md:text-lg">
-                months of flexible study options
-              </small>
-            </div>
-
-            {/* Metric 4 */}
-            <div className=" px-6 py-6  border-r border-gray-900">
-              <strong className="block text-5xl font-bold italic text-[white] md:text-6xl">
-                Global
-              </strong>
-
-              <small className="mx-auto mt-4 block max-w-[220px] text-base leading-7 text-[white] md:text-lg">
-                executive and research perspective
-              </small>
-            </div>
+          <div className="grid! grid-cols-2! lg:grid-cols-4! gap-4! sm:gap-6! lg:gap-8!">
+            {[
+              { stat: "1:1", label: "admissions profile review" },
+              { stat: "6", label: "partner institution pathways" },
+              { stat: "24–48", label: "months of flexible study options" },
+              { stat: "Global", label: "executive and research perspective" },
+            ].map((metric, idx) => (
+              <div
+                key={idx}
+                className="p-5! sm:p-7! rounded-2xl! bg-[#0c1a17]! text-white! flex! flex-col! justify-center! items-center! shadow-md! border! border-white/10!"
+              >
+                <strong className="block! text-3xl! sm:text-4xl! md:text-5xl! font-bold! italic! text-[#e2b675]! mb-2!">
+                  {metric.stat}
+                </strong>
+                <small className="block! text-xs! sm:text-sm! leading-snug! text-slate-200! max-w-[180px]!">
+                  {metric.label}
+                </small>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ================= LOCATIONS ================= */}
-    <section className="editorial-locations section">
-  <div className="container">
-    <div className="editorial-label text-center">
-      OUR GLOBAL OUTLOOK
-    </div>
-
-    <h2 className="editorial-location-title reveal text-center">
-      A learning network built across borders.
-    </h2>
-
-    <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-      {/* Card 01 */}
-      <article className="group overflow-hidden rounded-[24px] bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:bg-[#fffaf0] hover:shadow-xl">
-        <img
-          src="/assets/cc1.jpg"
-          alt="Partner university network"
-          className="h-[300px] w-full object-cover"
-        />
-
-        <div className="flex flex-col items-center px-5 pb-7 pt-6 text-center">
-          <div className="mb-4 h-[3px] w-10 bg-[#a9bfe5] transition-colors duration-300 group-hover:bg-[#c79500]" />
-
-          <h3 className="text-xl font-semibold leading-snug text-[#173f43] transition-colors duration-300 group-hover:text-[#c79500]">
-            Partner university network
-          </h3>
-
-          <p className="mt-4 text-base leading-7 text-gray-600 transition-colors duration-300 group-hover:text-[#9a7100]">
-            Compare international institutions and their DBA delivery routes.
-          </p>
-
-          <Link
-            to="/contact"
-            navigate={navigate}
-            className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#173f43] text-[#173f43] transition-all duration-300 group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
-          >
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </article>
-
-      {/* Card 02 */}
-      <article className="group overflow-hidden rounded-[24px] bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:bg-[#fffaf0] hover:shadow-xl">
-        <img
-          src="/assets/partnerUniver.jpeg"
-          alt="Executive cohorts"
-          className="h-[395px] w-full object-cover"
-        />
-
-        <div className="flex flex-col items-center px-5 pb-7 pt-6 text-center">
-          <div className="mb-4 h-[3px] w-10 bg-[#a9bfe5] transition-colors duration-300 group-hover:bg-[#c79500]" />
-
-          <h3 className="text-xl font-semibold leading-snug text-[#173f43] transition-colors duration-300 group-hover:text-[#c79500]">
-            Executive cohorts
-          </h3>
-
-          <p className="mt-4 text-base leading-7 text-gray-600 transition-colors duration-300 group-hover:text-[#9a7100]">
-            Exchange perspectives with experienced peers working across industries.
-          </p>
-
-          <Link
-            to="/contact"
-            navigate={navigate}
-            className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#173f43] text-[#173f43] transition-all duration-300 group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
-          >
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </article>
-
-      {/* Card 03 */}
-      <article className="group overflow-hidden rounded-[24px] bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:bg-[#fffaf0] hover:shadow-xl">
-        <img
-          src="/assets/hold degree.jpeg"
-          alt="Admissions support"
-          className="h-[395px] w-full object-cover"
-        />
-
-        <div className="flex flex-col items-center px-5 pb-7 pt-6 text-center">
-          <div className="mb-4 h-[3px] w-10 bg-[#a9bfe5] transition-colors duration-300 group-hover:bg-[#c79500]" />
-
-          <h3 className="text-xl font-semibold leading-snug text-[#173f43] transition-colors duration-300 group-hover:text-[#c79500]">
-            Admissions support
-          </h3>
-
-          <p className="mt-4 text-base leading-7 text-gray-600 transition-colors duration-300 group-hover:text-[#9a7100]">
-            Start with a structured, confidential conversation about your fit.
-          </p>
-
-          <Link
-            to="/contact"
-            navigate={navigate}
-            className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#173f43] text-[#173f43] transition-all duration-300 group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
-          >
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </article>
-
-      {/* Card 04 */}
-      <article className="group overflow-hidden rounded-[24px] bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:bg-[#fffaf0] hover:shadow-xl">
-        <img
-          src="/assets/research.jpeg"
-          alt="Research relevance"
-          className="h-[395px] w-full object-cover"
-        />
-
-        <div className="flex flex-col items-center px-5 pb-7 pt-6 text-center">
-          <div className="mb-4 h-[3px] w-10 bg-[#a9bfe5] transition-colors duration-300 group-hover:bg-[#c79500]" />
-
-          <h3 className="text-xl font-semibold leading-snug text-[#173f43] transition-colors duration-300 group-hover:text-[#c79500]">
-            Research relevance
-          </h3>
-
-          <p className="mt-4 text-base leading-7 text-gray-600 transition-colors duration-300 group-hover:text-[#9a7100]">
-            Ground each research decision in the problem you want to solve.
-          </p>
-
-          <Link
-            to="/contact"
-            navigate={navigate}
-            className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#173f43] text-[#173f43] transition-all duration-300 group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
-          >
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-      {/* ================= EVENTS ================= */}
-  
-
-<section className="editorial-events section">
-  <div className="container">
-    <div className="editorial-section-head reveal">
-      <div>
-        <div className="editorial-label">START HERE</div>
-        <h2>Plan your next conversation.</h2>
+      {/* ================= 7. GLOBAL OUTLOOK / LOCATIONS ================= */}
+<section className="editorial-locations py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! w-full! overflow-hidden! bg-white">
+  <div className="container mx-auto! max-w-7xl! w-full!">
+    <div className="text-center! mb-10! sm:mb-12!">
+      <div className="editorial-label text-xs font-bold uppercase tracking-[0.2em] text-[#008c75] mb-2">
+        OUR GLOBAL OUTLOOK
       </div>
-
-      <Link
-        className="editorial-text-link"
-        to="/contact"
-        navigate={navigate}
-      >
-        Request a prospectus
-        <ArrowRight size={17} />
-      </Link>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+        A learning network built across borders.
+      </h2>
     </div>
 
-    {/* Cards */}
-    <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid! grid-cols-1! sm:grid-cols-2! lg:grid-cols-4! gap-6! w-full!">
+      {[
+        {
+          img: "/assets/cc1.jpg",
+          title: "Partner university network",
+          desc: "Compare international institutions and their DBA delivery routes.",
+        },
+        {
+          img: "/assets/partnerUniver.jpeg",
+          title: "Executive cohorts",
+          desc: "Exchange perspectives with experienced peers working across industries.",
+        },
+        {
+          img: "/assets/Dba.jpg",
+          title: "Admissions support",
+          desc: "Start with a structured, confidential conversation about your fit.",
+        },
+        {
+          img: "/assets/research.jpeg",
+          title: "Research relevance",
+          desc: "Ground each research decision in the problem you want to solve.",
+        },
+      ].map((card, i) => (
+        <article
+          key={i}
+          className="group flex! flex-col! justify-between! w-full! overflow-hidden! rounded-2xl bg-white border border-slate-200 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
+        >
+          <div className="h-48! xs:h-52! sm:h-56! md:h-60! w-full! overflow-hidden! bg-slate-900">
+            <img
+              src={card.img}
+              alt={card.title}
+              className="h-full! w-full! object-cover! transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
 
-      {/* Card 01 */}
-      <Link
-        className="group relative block h-[520px] overflow-hidden rounded-xl reveal"
-        to="/contact"
-        navigate={navigate}
-      >
-        <img
-          src="/assets/consult1.jpg"
-          alt="Book a DBA consultation"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+          <div className="flex! flex-col! items-center! p-5! sm:p-6! text-center! flex-1! justify-between! w-full!">
+            <div className="w-full!">
+              <div className="mx-auto! mb-3! h-[3px]! w-8! bg-[#008c75] transition-colors group-hover:bg-[#c79500]" />
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#c79500] transition-colors leading-snug">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
+                {card.desc}
+              </p>
+            </div>
 
-        {/* Dark gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001b2b]/95 via-[#001b2b]/25 to-transparent" />
-
-        {/* Number */}
-        <span className="absolute left-6 top-6 z-10 text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#f5c451]">
-          01
-        </span>
-
-        {/* Centered text */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center px-6 pb-10 text-center text-white">
-
-          <div className="mb-5 h-[4px] w-11 rounded-full bg-[#91c7ed] transition-colors duration-300 group-hover:bg-[#f5c451]" />
-
-          <small className="mb-8 block text-m font-bold tracking-[0.2em] text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            CONSULTATION
-          </small>
-
-          <h3 className="mb-4 text-3xl font-semibold leading-tight  text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            Book a DBA
-            <br />
-            consultation
-          </h3>
-
-          <p className="max-w-sm text-base leading-7 text-white transition-colors duration-300 group-hover:text-[#f5c451]">
-            Discuss your profile, interests and potential next steps.
-          </p>
-        </div>
-      </Link>
-
-      {/* Card 02 */}
-      <Link
-        className="group relative block h-[520px] overflow-hidden rounded-xl reveal"
-        to="/partnership"
-        navigate={navigate}
-      >
-        <img
-          src="/assets/universitry-option.jpg"
-          alt="Compare partner pathways"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-
-        {/* Dark gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001b2b]/95 via-[#001b2b]/25 to-transparent" />
-
-        {/* Number */}
-        <span className="absolute left-6 top-6 z-10 text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#f5c451]">
-          02
-        </span>
-
-        {/* Centered text */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center px-6 pb-10 text-center text-white">
-
-          <div className="mb-5 h-[4px] w-11 rounded-full bg-[#91c7ed] transition-colors duration-300 group-hover:bg-[#f5c451]" />
-
-          <small className="mb-4 block text-m font-bold tracking-[0.2em] text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            UNIVERSITY OPTIONS
-          </small>
-
-          <h3 className="mb-4 text-3xl font-semibold leading-tight transition-colors duration-300 group-hover:text-[#f5c451]">
-            Compare partner
-            <br />
-            pathways
-          </h3>
-
-          <p className="max-w-sm text-base leading-7 text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            Review structure, study formats and institutional information.
-          </p>
-        </div>
-      </Link>
-
-      {/* Card 03 */}
-      <Link
-        className="group relative block h-[520px] overflow-hidden rounded-xl reveal"
-        to="/curriculum"
-        navigate={navigate}
-      >
-        <img
-          src="/assets/consult.jpg"
-          alt="Explore the framework"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-
-        {/* Dark gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001b2b]/95 via-[#001b2b]/25 to-transparent" />
-
-        {/* Number */}
-        <span className="absolute left-6 top-6 z-10 text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#f5c451]">
-          03
-        </span>
-
-        {/* Centered text */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center px-6 pb-10 text-center text-white">
-
-          <div className="mb-5 h-[4px] w-11 rounded-full bg-[#91c7ed] transition-colors duration-300 group-hover:bg-[#f5c451]" />
-
-          <small className="mb-4 block text-m font-bold tracking-[0.2em] text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            CURRICULUM
-          </small>
-
-          <h3 className="mb-4 text-3xl font-semibold leading-tight transition-colors duration-300 group-hover:text-[#f5c451]">
-            Explore the
-            <br />
-            framework
-          </h3>
-
-          <p className="max-w-sm text-base leading-7 text-white/90 transition-colors duration-300 group-hover:text-[#f5c451]">
-            See the learning and research phases involved in a DBA.
-          </p>
-        </div>
-      </Link>
-
+            <Link
+              to="/contact"
+              navigate={navigate}
+              className="mt-5! inline-flex! h-9! w-9! shrink-0! items-center!  justify-center! rounded-full border border-slate-300 text-slate-800 transition-all group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
+            >
+              <ArrowRight size={15} />
+            </Link>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
+      {/* ================= 8. START HERE / EVENTS ================= */}
+      <section className="editorial-events py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-slate-50!">
+        <div className="container mx-auto! max-w-7xl!">
+          <div className="flex! flex-col! sm:flex-row! sm:items-end! justify-between! gap-4! mb-8! sm:mb-10!">
+            <div>
+              <div className="editorial-label text-xs! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
+                START HERE
+              </div>
+              <h2 className="text-2xl! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight!">
+                Plan your next conversation.
+              </h2>
+            </div>
 
+            <Link
+              className="editorial-text-link inline-flex! items-center! gap-2! text-xs! sm:text-sm! font-bold! text-[#173f43]! hover:text-[#c79500]! transition-colors!"
+              to="/contact"
+              navigate={navigate}
+            >
+              <span>Request a prospectus</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
 
+          <div className="grid! grid-cols-1! md:grid-cols-2! lg:grid-cols-3! gap-6!">
+            {[
+              {
+                num: "01",
+                tag: "CONSULTATION",
+                title: "Book a DBA consultation",
+                desc: "Discuss your profile, interests and potential next steps.",
+                img: "/assets/consult1.jpg",
+                link: "/contact",
+              },
+              {
+                num: "02",
+                tag: "UNIVERSITY OPTIONS",
+                title: "Compare partner pathways",
+                desc: "Review structure, study formats and institutional information.",
+                img: "/assets/universitry-option.jpg",
+                link: "/partnership",
+              },
+              {
+                num: "03",
+                tag: "CURRICULUM",
+                title: "Explore the framework",
+                desc: "See the learning and research phases involved in a DBA.",
+                img: "/assets/consult.jpg",
+                link: "/curriculum",
+              },
+            ].map((event, i) => (
+              <Link
+                key={i}
+                to={event.link}
+                navigate={navigate}
+                className="group relative! block! h-[380px]! sm:h-[440px]! md:h-[480px]! overflow-hidden! rounded-2xl! shadow-sm! hover:shadow-xl! transition-all! duration-300!"
+              >
+                <img
+                  src={event.img}
+                  alt={event.title}
+                  className="absolute! inset-0! h-full! w-full! object-cover! transition-transform! duration-700! group-hover:scale-105!"
+                />
 
+                <div className="absolute! inset-0! bg-gradient-to-t! from-[#001b2b]/95! via-[#001b2b]/35! to-transparent!" />
 
-      {/* ================= CLOSING ================= */}
-      <section className="editorial-closing">
-        <div className="container editorial-closing-inner reveal">
-          <div className="">
-            <span>READY WHEN YOU ARE</span>
+                <span className="absolute! left-5! top-5! z-10! text-xl! font-bold! text-white! transition-colors! group-hover:text-[#f5c451]!">
+                  {event.num}
+                </span>
 
-            <h2>
+                <div className="absolute! inset-x-0! bottom-0! z-10! flex! flex-col! items-center! px-6! pb-8! text-center! text-white!">
+                  <div className="mb-3! h-[3px]! w-9! rounded-full! bg-[#91c7ed]! transition-colors! group-hover:bg-[#f5c451]!" />
+                  <small className="mb-2! block! text-[11px]! font-bold! tracking-[0.2em]! text-white/90! uppercase! group-hover:text-[#f5c451]!">
+                    {event.tag}
+                  </small>
+                  <h3 className="mb-2! text-xl! sm:text-2xl! font-bold! leading-tight! group-hover:text-[#f5c451]! transition-colors!">
+                    {event.title}
+                  </h3>
+                  <p className="max-w-xs! text-xs! sm:text-sm! text-slate-200! group-hover:text-white! transition-colors!">
+                    {event.desc}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 9. CLOSING ================= */}
+      <section className="editorial-closing py-16! sm:py-20! lg:py-24! px-4! sm:px-8! md:px-12! bg-[#061714]! text-white!">
+        <div className="container mx-auto! max-w-6xl! flex! flex-col! md:flex-row! items-center! justify-between! gap-8! text-center! md:text-left!">
+          <div className="max-w-2xl!">
+            <span className="block! text-xs! font-bold! uppercase! tracking-[0.22em]! text-[#e2b675]! mb-2!">
+              READY WHEN YOU ARE
+            </span>
+            <h2 className="text-2xl! sm:text-3xl! md:text-4xl! lg:text-5xl! font-bold! leading-tight!">
               Make your experience the starting point for original research.
             </h2>
           </div>
 
-          <div>
+          <div className="flex! flex-col! sm:flex-row! items-stretch! sm:items-center! gap-3.5! w-full! md:w-auto!">
             <PrimaryButton to="/contact" navigate={navigate}>
               Book a consultation
             </PrimaryButton>
-
             <SecondaryButton to="/program" navigate={navigate}>
               About the programme
             </SecondaryButton>
