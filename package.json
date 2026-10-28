@@ -9,6 +9,7 @@
     "dev:full": "concurrently \"npm run api\" \"npm run dev\"",
     "build": "next build --webpack",
     "verify:migration": "node scripts/verify-migration.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs",
     "start": "next start --port 5174",
     "preview": "next start --port 5174"
   },
