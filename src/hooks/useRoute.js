@@ -47,11 +47,14 @@ export function createRouteHelpers({ navItems, getUniversityByPath, getCertifica
     return navItems.some(([, path]) => path === clean) ? clean : "/";
   };
 
-  return function useRoute() {
-    const [path, setPath] = useState(() => normalisePath(window.location.pathname));
+  return function useRoute(initialPath = "/") {
+    // The initial path comes from the Next.js route so server rendering and
+    // the first browser render produce exactly the same page content.
+    const [path, setPath] = useState(() => normalisePath(initialPath));
 
     useEffect(() => {
       const syncRoute = () => setPath(normalisePath(window.location.pathname));
+      syncRoute();
       window.addEventListener("popstate", syncRoute);
       return () => window.removeEventListener("popstate", syncRoute);
     }, []);
