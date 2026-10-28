@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import SiteApp from "../../src/main.jsx";
 import { getUniversityByPath, navItems, partnerUniversities, universityPath } from "../../src/data/siteContent.js";
+import { pageDescriptions } from "../../src/data/seoMetadata.js";
 
 const pagePaths = [
   ...navItems.map(([, path]) => path).filter((path) => path !== "/"),
@@ -16,11 +17,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const path = `/${slug.join("/")}`;
+  if (!pagePaths.includes(path)) notFound();
   const label = getUniversityByPath(path)?.name || navItems.find(([, route]) => route === path)?.[0];
 
-  if (!label) return {};
   // Matches the existing document.title logic rather than changing page copy.
-  return { title: `${label} | LearnifyOps` };
+  return {
+    title: `${label} | LearnifyOps`,
+    description: pageDescriptions[path],
+    alternates: { canonical: path }
+  };
 }
 
 export default async function SitePage({ params }) {
