@@ -9127,3 +9127,136 @@ nav.center-pill-nav.mobile-open .pill-nav-btn:hover,
 nav.center-pill-nav.mobile-open .pill-nav-link:hover {
   color: #ea9b3e !important;                           /* Brand gold/orange hover */
 }
+
+/* 1. Navbar ka White Background aur borders completely hatana */
+.floating-scroll-header,
+.floating-scroll-header.at-top,
+.floating-scroll-header.scrolled,
+.floating-scroll-header .header-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 2. 336px se 1024px tak content aur navbar ke beech proper clean gap */
+@media screen and (min-width: 336px) and (max-width: 1024px) {
+  /* Inner pages ke hero container me upar se room create karein */
+  .page-hero-warm,
+  .partnership-hero-section,
+  .business-hero-section {
+    padding-top: 85px !important;
+  }
+
+  /* Agar main tag se gap control ho raha ho */
+  main.page-hero {
+    padding-top: 85px !important;
+  }
+}
+
+/* 1. Navbar ka background completely transparent karne ke liye */
+.floating-scroll-header,
+.floating-scroll-header.at-top,
+.floating-scroll-header.scrolled {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 2. Screen size 336px se 1024px tak proper gap ensure karna */
+@media screen and (min-width: 336px) and (max-width: 1024px) {
+  /* Har page ke main aur hero container ke top par gap */
+  main,
+  .page-hero,
+  main.page-hero {
+    padding-top: 84px !important; /* Navbar ke neeche clean gap */
+  }
+
+  /* Hero ke pehle container ki top padding bhi adjust karein */
+  .page-hero .container:first-of-type,
+  .page-hero > section > .container:first-of-type {
+    padding-top: 1.5rem !important;
+  }
+}
+
+/* Chhote screens (336px se neeche) ke liye fallback */
+@media screen and (max-width: 335px) {
+  main,
+  .page-hero {
+    padding-top: 76px !important;
+  }
+}
+/* 352px se kam screen size ke liye navbar fitting */
+@media screen and (max-width: 352px) {
+  /* Header ki overall padding kam karein */
+  .floating-scroll-header {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .header-container {
+    width: 100% !important;
+    gap: 4px !important;
+  }
+
+  /* Right actions ka gap bilkul minimum karein */
+  .header-right-actions {
+    gap: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Logo ko thoda compact karein taaki jagah bache */
+  .brand-mark img,
+  .brand-logo {
+    max-height: 28px !important;
+    width: auto !important;
+  }
+
+  /* Search button ko thoda chota karein */
+  .circle-search-btn {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+  }
+
+  .circle-search-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Enquire button ka text chota karein ya sirf 'Enquire' rakhein */
+  .pill-enquire-btn {
+    padding: 4px 8px !important;
+    height: 32px !important;
+    font-size: 0.72rem !important;
+    gap: 4px !important;
+  }
+
+  .pill-enquire-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Hamburger toggle button screen ke andar poora fit aayega */
+  .mobile-nav-toggle {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    padding: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-nav-toggle svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}

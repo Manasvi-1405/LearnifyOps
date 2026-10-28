@@ -4,7 +4,11 @@ import Link from "../navigation/Link.jsx";
 
 function BrandLogo({ logo, variant = "full" }) {
   if (variant === "navigation") {
-    return <span className="brand-mark"><img src={logo} alt="LearnifyOps" /></span>;
+    return (
+      <span className="brand-mark">
+        <img src={logo} alt="LearnifyOps" />
+      </span>
+    );
   }
   return <img className="brand-logo" src={logo} alt="LearnifyOps" />;
 }
@@ -27,10 +31,12 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
     <div className={menuClassName} id={id} role="region" aria-label={`${menu.label} menu`}>
       <div className="mega-menu-main">
         <div className="mega-menu-content">
+          {/* Doctoral Program Format */}
           {menu.type === "doctoral" ? (
             <div className="doctoral-mega-layout">
-              <div className="doctoral-mega-tabs" role="tablist" aria-label="Doctoral route categories">
-                {menu.tabs.map((tab) => (
+              {/* Desktop / Tablet Tabs */}
+              <div className="doctoral-mega-tabs" role="tablist" aria-label="Doctoral categories">
+                {menu.tabs?.map((tab) => (
                   <button
                     key={tab.label}
                     type="button"
@@ -51,8 +57,9 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
                 ))}
               </div>
 
+              {/* Desktop / Tablet Panel */}
               <div className="doctoral-mega-panel" role="tabpanel">
-                {activeDoctoralTab?.items.map((item) =>
+                {activeDoctoralTab?.items?.map((item) =>
                   item.to ? (
                     <Link
                       key={item.title}
@@ -63,7 +70,7 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
                     >
                       <div>
                         <strong>{item.title}</strong>
-                        <p>{item.text}</p>
+                        <p className="item-desc">{item.text}</p>
                       </div>
                       <ArrowRight size={16} aria-hidden="true" />
                     </Link>
@@ -71,14 +78,37 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
                     <article className="doctoral-mega-item" key={item.title}>
                       <div>
                         <strong>{item.title}</strong>
-                        <p>{item.text}</p>
+                        <p className="item-desc">{item.text}</p>
                       </div>
                     </article>
                   )
                 )}
               </div>
+
+              {/* Extra Small Screen (<442px) Accordion List view without horizontal scroll */}
+              <div className="xs-compact-list-view">
+                {menu.tabs?.map((tab) => (
+                  <div key={tab.label} className="xs-category-group">
+                    <span className="xs-category-heading">{tab.label}</span>
+                    <ul className="xs-bullet-list">
+                      {tab.items?.map((item) => (
+                        <li key={item.title} className="xs-bullet-item">
+                          {item.to ? (
+                            <Link to={item.to} navigate={navigate} onNavigate={onNavigate}>
+                              {item.title}
+                            </Link>
+                          ) : (
+                            <span>{item.title}</span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
+            /* DBA, Certification & Tools and Services */
             <div
               className={
                 menu.key === "tools-services"
@@ -86,29 +116,48 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
                   : "mega-menu-grid"
               }
             >
-              {menu.columns.map((column) => (
+              {menu.columns?.map((column) => (
                 <div className="mega-menu-column" key={column.title}>
-                  <strong>{column.title}</strong>
+                  <strong className="column-title">{column.title}</strong>
                   {column.intro && <p className="mega-menu-column-intro">{column.intro}</p>}
-                  {column.items.map((item) =>
-                    item.to ? (
-                      <Link
-                        key={item.title}
-                        to={item.to}
-                        navigate={navigate}
-                        className="mega-menu-card"
-                        onNavigate={onNavigate}
-                      >
-                        <span>{item.title}</span>
-                        <p>{item.text}</p>
-                      </Link>
-                    ) : (
-                      <article className="mega-menu-card" key={item.title}>
-                        <span>{item.title}</span>
-                        <p>{item.text}</p>
-                      </article>
-                    )
-                  )}
+                  
+                  {/* Standard Card List */}
+                  <div className="column-standard-cards">
+                    {column.items?.map((item) =>
+                      item.to ? (
+                        <Link
+                          key={item.title}
+                          to={item.to}
+                          navigate={navigate}
+                          className="mega-menu-card"
+                          onNavigate={onNavigate}
+                        >
+                          <span>{item.title}</span>
+                          <p className="item-desc">{item.text}</p>
+                        </Link>
+                      ) : (
+                        <article className="mega-menu-card" key={item.title}>
+                          <span>{item.title}</span>
+                          <p className="item-desc">{item.text}</p>
+                        </article>
+                      )
+                    )}
+                  </div>
+
+                  {/* Clean Bullet View for <442px screens */}
+                  <ul className="xs-bullet-list">
+                    {column.items?.map((item) => (
+                      <li key={item.title} className="xs-bullet-item">
+                        {item.to ? (
+                          <Link to={item.to} navigate={navigate} onNavigate={onNavigate}>
+                            {item.title}
+                          </Link>
+                        ) : (
+                          <span>{item.title}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -116,25 +165,29 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
         </div>
       </div>
 
-      <div className="mega-menu-footer">
-        <p>{menu.footer}</p>
-        {menu.cta.external ? (
-          <a className="mega-menu-cta" href={menu.cta.href} target="_blank" rel="noreferrer">
-            {menu.cta.label}
-            <ArrowRight size={15} aria-hidden="true" />
-          </a>
-        ) : (
-          <Link className="mega-menu-cta" to={menu.cta.to} navigate={navigate} onNavigate={onNavigate}>
-            {menu.cta.label}
-            <ArrowRight size={15} aria-hidden="true" />
-          </Link>
-        )}
-      </div>
+      {menu.footer && (
+        <div className="mega-menu-footer">
+          <p>{menu.footer}</p>
+          {menu.cta?.external ? (
+            <a className="mega-menu-cta" href={menu.cta.href} target="_blank" rel="noreferrer">
+              {menu.cta.label}
+              <ArrowRight size={15} aria-hidden="true" />
+            </a>
+          ) : (
+            menu.cta && (
+              <Link className="mega-menu-cta" to={menu.cta.to} navigate={navigate} onNavigate={onNavigate}>
+                {menu.cta.label}
+                <ArrowRight size={15} aria-hidden="true" />
+              </Link>
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
-export default function Header({ path, navigate, megaMenus, logo }) {
+export default function Header({ path, navigate, megaMenus = [], logo }) {
   const [open, setOpen] = useState(false);
   const [openMega, setOpenMega] = useState(null);
   const [mobileMenuTop, setMobileMenuTop] = useState(null);
@@ -148,27 +201,22 @@ export default function Header({ path, navigate, megaMenus, logo }) {
     setOpenMega(null);
   }, [path]);
 
-  // Scroll Down -> Hide | Scroll Up & Hero/Top -> Show
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Agar top par hai (Hero section me)
       if (currentScrollY <= 80) {
         setIsAtTop(true);
         setIsVisible(true);
       } else {
         setIsAtTop(false);
-        // Scroll down ho raha hai to navbar hide karo
         if (currentScrollY > lastScrollY.current && currentScrollY > 120) {
           setIsVisible(false);
           setOpenMega(null);
         } else if (currentScrollY < lastScrollY.current) {
-          // Scroll up ho raha hai to navbar show karo
           setIsVisible(true);
         }
       }
-
       lastScrollY.current = currentScrollY;
     };
 
@@ -222,14 +270,98 @@ export default function Header({ path, navigate, megaMenus, logo }) {
           right: 0,
           bottom: 0,
           left: 0,
-          height: "fit-content",
-          maxHeight: "none",
+          height: "calc(100vh - " + mobileMenuTop + "px)",
           overflowY: "auto"
         }
       : undefined;
 
   return (
-    <>
+    <Fragment>
+      <style>{`
+        /* Default mobile view: hide extra small bullet list */
+        .xs-compact-list-view,
+        .xs-bullet-list {
+          display: none;
+        }
+
+        /* Ekdum choti screen (<= 442px) ke liye styles */
+        @media screen and (max-width: 442px) {
+          /* Dropdown container ko full width aur zero horizontal overflow set karna */
+          .mega-menu {
+            max-height: none !important;
+            overflow: visible !important;
+            width: 100% !important;
+            box-shadow: none !important;
+            border: none !important;
+            padding: 8px 0 !important;
+            background: transparent !important;
+          }
+
+          .mega-menu-main,
+          .mega-menu-content {
+            overflow: visible !important;
+            max-height: none !important;
+            padding: 0 !important;
+          }
+
+          /* Hide bulk cards and heavy descriptions */
+          .column-standard-cards,
+          .doctoral-mega-tabs,
+          .doctoral-mega-panel,
+          .mega-menu-column-intro,
+          .item-desc {
+            display: none !important;
+          }
+
+          /* Show clean bullet point links */
+          .xs-compact-list-view,
+          .xs-bullet-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 6px !important;
+            list-style: disc !important;
+            padding-left: 20px !important;
+            margin: 6px 0 12px 0 !important;
+          }
+
+          .xs-bullet-item {
+            display: list-item !important;
+            color: #d97706; /* Bullet marker color */
+            font-size: 0.88rem;
+          }
+
+          .xs-bullet-item a,
+          .xs-bullet-item span {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            line-height: 1.4;
+          }
+
+          .xs-bullet-item a:hover {
+            color: #d97706;
+          }
+
+          .xs-category-heading,
+          .column-title {
+            font-size: 0.82rem !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 700;
+            display: block;
+            margin-top: 8px;
+          }
+
+          .mega-menu-footer {
+            padding: 8px 4px !important;
+            font-size: 0.82rem;
+            border-top: 1px dashed #e2e8f0;
+          }
+        }
+      `}</style>
+
       <header
         ref={headerRef}
         className={`floating-scroll-header ${isVisible ? "nav-visible" : "nav-hidden"} ${
@@ -238,12 +370,10 @@ export default function Header({ path, navigate, megaMenus, logo }) {
         onMouseLeave={() => setOpenMega(null)}
       >
         <div className="header-container">
-          {/* Logo on Left - Bada size */}
           <Link className="brand" to="/" navigate={navigate} aria-label="Home">
             <BrandLogo logo={logo} variant="navigation" />
           </Link>
 
-          {/* Center Pill Navigation */}
           <nav
             className={`center-pill-nav ${open ? "mobile-open" : ""}`}
             style={mobileMenuStyle}
@@ -267,13 +397,15 @@ export default function Header({ path, navigate, megaMenus, logo }) {
                   <ChevronDown size={14} className="chevron-icon" aria-hidden="true" />
                 </button>
 
-                <MegaMenu
-                  id={`mega-${menu.key}`}
-                  menu={menu}
-                  navigate={navigate}
-                  open={openMega === menu.key}
-                  onNavigate={closeMenus}
-                />
+                {openMega === menu.key && (
+                  <MegaMenu
+                    id={`mega-${menu.key}`}
+                    menu={menu}
+                    navigate={navigate}
+                    open={openMega === menu.key}
+                    onNavigate={closeMenus}
+                  />
+                )}
               </div>
             ))}
 
@@ -298,7 +430,6 @@ export default function Header({ path, navigate, megaMenus, logo }) {
             </Link>
           </nav>
 
-          {/* Right Action Icons */}
           <div className="header-right-actions">
             <button
               className="circle-search-btn"
@@ -340,7 +471,7 @@ export default function Header({ path, navigate, megaMenus, logo }) {
         className={openMega ? "mega-page-overlay open" : "mega-page-overlay"}
         aria-hidden="true"
       />
-    </>
+    </Fragment>
   );
 }
 
