@@ -101,7 +101,7 @@ export function ProgramFacts() {
         textAlign: "center",
       }}
     >
-      <span className="mb-5! mt-5! inline-flex! items-center! justify-center! rounded-full! border! border-teal-200! bg-teal-50! px-5! py-2! text-xs! font-semibold! uppercase! tracking-[0.18em!] text-teal-800!">
+      <span className="mb-5! mt-5! inline-flex! items-center! justify-center! rounded-full! border! border-teal-200! bg-teal-50! px-5! py-2! text-xs! font-semibold! uppercase! text-teal-800!">
         Your doctoral journey
       </span>
 
