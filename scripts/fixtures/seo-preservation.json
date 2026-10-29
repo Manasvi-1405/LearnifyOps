@@ -1,0 +1,489 @@
+{
+  "sourceHashes": {
+    "app/[...slug]/page.jsx": "f8361cdd84f2cd726c2c03d6edb68d32f1054a36c46be49f271ad767ee3c1eba",
+    "app/layout.jsx": "0fa3ebc06b9c36ae5c9215e2e08f095ac4f08d1e2e1984d75d595e7f44de7366",
+    "app/page.jsx": "789db5e0f5f9064ba6ad5a4d56c319b3192416d16e57c195dd21a5544282a471",
+    "next.config.mjs": "0addc45df672ed9e99341b69a34e3c230b43b3e93db3f803ce1352baaa266502",
+    "package-lock.json": "0b28d2e04f26108e5c78d20867d67acd921f508c0b5bc641b365781d6381b242",
+    "public/apple-touch-icon.png": "ec97150794db13085ca2cb52e9e3f80c53a3483f6c20b7416d55abc68cafc88d",
+    "public/assets/01.jpg": "d903791a4f08b9e090b72765041b24920707f8e86de65917f71c8a22fcc1d703",
+    "public/assets/02.jpg": "0ee80351d8bc6183343c0f215b919c018449b25062d53098bb2e23f8cec0e101",
+    "public/assets/03.jpg": "05fbbed89872170785491fbf25b013cc5a842a873e61dd7d317993f870f68152",
+    "public/assets/04.jpg": "101688b5eaabf151ee4b2d514762f4872d3595e4b68a629dfb976b7c198ab00b",
+    "public/assets/05.jpg": "fd3794dcd725cfca12b4180f438c69d8f8d5c8016d1f14a03d447003e6d070bc",
+    "public/assets/06.jpg": "49efa97be8106b56fd015f1e1b3e1edc93acd9e89b7052e56d7f15dfee585ea2",
+    "public/assets/AAPC.png": "e2e6e0f9b2a558c5fb1bc0f04fdf2206eaab00d21cb42981feb726f97387647f",
+    "public/assets/AROQA.png": "c4c96e36f65028ad0ad126d5ae8ca05c4bd32a34ac025aa36655936b2b6b6bc0",
+    "public/assets/AUEP.webp": "9176d68924115ca5292e1161add683f6954884684eaeb98b8714ff23e6deb217",
+    "public/assets/AWS.png": "9d2ed1eb06bfe86ef1b44d95bc87f4d8ae559bab5ab7564a191991deba711b05",
+    "public/assets/Aacsb.png": "da010c01871229957c3a51a40f1e5c3847e5d46e4ec8ffed9d5d7991a5e4a209",
+    "public/assets/BU.jpg": "f43d74985ed17f5f93b1c1c959c0c271b37999f47b6f215d380025c79c7b2247",
+    "public/assets/COMPTIA.png": "9a093a0ad84598dc068542de7da5fd45895cf89332730e7e69a9b01b9b2d3e1b",
+    "public/assets/CSSC-Logo-Small.jpg": "9ca67e89355b8ee528af7240001f8a675546a95164132739fb3839c4d292ac48",
+    "public/assets/Carriculam.jpg": "df7d174c66fc920ab2c11dc733bf53c03cdf2a7cc294c4a2bf6fb227c177e476",
+    "public/assets/DBS.jpeg": "2203d806f0bc726a4da166746836c7cb870a4317d80a39f9f053ecb59fe25a96",
+    "public/assets/DLS-ACBPS.webp": "4ed6164eaf59c44fb40bd6e2f5d81092611e0d2781f7cafa5cbd624421fa7c66",
+    "public/assets/DUN.png": "87d5303c3f94a66ab9ad1891842f959522329093218c2df0228d3c8e3e83e7a6",
+    "public/assets/Dba.jpg": "b8a9dbf36d76a6a958ed22081a6ac77d48dc4c8228528b8c26756a962bc3ad65",
+    "public/assets/ECI.webp": "4dafafcfa06c66c917c30b0777894a105ac1a2ee1bff05b743c5fe003db21e49",
+    "public/assets/ECLBS.webp": "3187cfd348c0ff9abc4bb400125436110f85bc828f1e77ac9be9be32e67291b8",
+    "public/assets/EIMS.webp": "77d241db3e43a155a124a2a8810a50cd778de7ea93dda6020206fa3feb6476cd",
+    "public/assets/EMIT.webp": "aab7de73b8862a7e0dde11d7ee31e0ed0b80f66783bfe076cff23b5b175aa7ca",
+    "public/assets/FCU.jpg": "3fc64a07a714f73df38053e4e5d52b963f2c75550e0796f8dc448273dda51006",
+    "public/assets/FDE.webp": "dca623ac9a719c61ae9dfd982c3ec6e64555c4ca00b205ffb5d0b0f592a3174f",
+    "public/assets/Globally-Recognised-Degree.jpg.jpeg": "1f67cc68a5ad593551c259190ae0ac1a832f0dec17a06029b13349cb6a6b308a",
+    "public/assets/HRCI.png": "bf1198cf131404c4c22a06dcffc150e5b9baf4a7332d98f0009758725c251a88",
+    "public/assets/IAQAHE.webp": "00ed653114d843e5e8c31594614f775deeac34c71cd847b6ae0eb4ab25f2ede5",
+    "public/assets/IKCA.webp": "cc34e83f55835560e4a653b22ef2a080182e01af442df32b420f6c3445996848",
+    "public/assets/ISD.webp": "bcb51b7b1ff1dc58d85f233e223888e7eaef167a22e521cbd14e2c3d91c412cc",
+    "public/assets/KU.avif": "35cd55be1573eb770cbb533ea2fe2aa9b0b8c17a8d2618f29754ef87c3606076",
+    "public/assets/LSBS.jpeg": "b5229af40cda74d5138d01c035b2c5bdba66ce7104b2504e051e27c8cf44b2f1",
+    "public/assets/MECHE.jpeg": "2730f2f37396c692a1d624512934361aa617fd44bdc18d17c0c039db4c5f9fa5",
+    "public/assets/MGEI.webp": "14802a24a18f71935dba62982096ba159c9768bf46a0ba6cb3e8bee4e9920883",
+    "public/assets/OME.webp": "4b0dac3d2a02e87438082220de87b4ab1f6bc40d93181719523ee7628daa18e9",
+    "public/assets/PMI.png": "e609027236601b87d815328f7895603b6da324c163c76fa168cc2f44daa90540",
+    "public/assets/PSU.webp": "e6704740ce4d729068d46a673fa37ede4e139fa79a216997ad5112d82052528b",
+    "public/assets/QEAA.webp": "abc4fb7e154858d25550d36b0afd15ba287e3be417507e059dd2d75b8e0df8e0",
+    "public/assets/RCAD.webp": "bf8e2a6191eb2220e07b95fdd0d55be4fa254f57979506ecf1300f5e59d775a1",
+    "public/assets/RGSL.webp": "0299cfaa132495ffbdb10d5fc2a1dfc55db127ca8f476a4d52cca85e360458cd",
+    "public/assets/UKcert.webp": "b11bd8d1da2a43b2fdf0fec38137a8f0f6d59c7141d7e6b4c8571eb3c7d11138",
+    "public/assets/UNDESA.webp": "a2443c5133f6905c9bbbec65ac27553392fb5f370cc0ef9587e587d7d4f92a7a",
+    "public/assets/UNP.webp": "27ca82ffcdc40c48312998343ddbc5fbce3700eb9d4e54acf5498d0e14df9b31",
+    "public/assets/Ukaf.webp": "59842f0a67a8170e6b611267bb6aec8e3c37811b68cc8643b9fc3abccb9f7ab5",
+    "public/assets/aaefl.png": "f27db16c704eacec5bb63e4ff26255e4d832d7148348763529bae6659096fa8a",
+    "public/assets/acadmic-parti.jpg": "61817abe9cd919b600f764f55e73f74c84b725ff6d747afa93cda510bc6b8754",
+    "public/assets/admission-hero.jpeg": "cfc4a9116450a37317ad33683ece8f2e4079836473d492c75f67884900b0dcee",
+    "public/assets/admission1.jpg": "b62cc94151bcf3091f11ebc8828607d2e835e6e3235c5bf23b52c1550282c830",
+    "public/assets/amazon.png": "4dcc976b7559c7d19c652ee7c76e7811c4f7c8aa869c7d338ef8bbf1902fea82",
+    "public/assets/buildProfile.jpeg": "d4318e36b5ce6b82a1ddea9a21b8a68b732cb197dbb748398f53eb4aa2d0343c",
+    "public/assets/candidate profile.jpg": "d8fe1a7b8ec541dd5347fabd14373bc01cb56e6c06962229fbb4abb4c2f094d6",
+    "public/assets/careerpath.jpg": "c73f8ae9a066e4e9f3278a325169d3feed60bd972ab7b95e02d361bffabc82a0",
+    "public/assets/carriculam.png": "92ca4f5395217c51e55e047f5ba0f738234a27077aac2b5701ee694b9e62aece",
+    "public/assets/cc1.jpg": "4f9583a17c6a5a942a62c96c5364cf701e96e2a2fc0520d302ea03274cd9d26d",
+    "public/assets/collagegirl.jpg": "d8b5a84c7bef951f887b7ea5885de8d4a7637d6eae03af8f7039c7e5b1b2438f",
+    "public/assets/cons.jpg": "a1a50f429441bb61724c50612b71c8938a4a0e23c46fb13c1891784f584a6393",
+    "public/assets/consult.jpg": "67ac3e7e9d1a43d78e02d668026d4585e3752cc78edcafecfe8ba4415bd9431a",
+    "public/assets/consult1.jpg": "6bc9e136c300ed4b3bf9c2ef29b556174226652f33f41b176d5a237f524fbbc9",
+    "public/assets/consultant.jpg": "16147029329f25b89b80027a599713d4f50be58e1bdeba1fadfe21a527b29066",
+    "public/assets/consultation.jpeg": "6299caa673d2aa8848f052b17283a9eb358a3bed875db42cdcbd61563b1cdafe",
+    "public/assets/contact.jpg": "135d1f156a263cd4239e4d534a45079607b6a100dc912f24ed1b93d6fc56c999",
+    "public/assets/corporate-director.jpg": "46cd1388273d544c0c02528c2cd8d18e5b8b0301e562a53555bc2956da5d5c53",
+    "public/assets/cources.jpg": "d04a9c8d415a47146b1d3d11ce5236e8418d06de975c611edb65c3a5e81ebd2b",
+    "public/assets/curriculam.jpg": "ed1fe8858e7580f65be7d2c80de10f6aae801a1bf67899bd4a444ad9dc18939c",
+    "public/assets/curriculam1.jpg": "9ab2409fc5cbef0f13faa751effb78bf851d75f851fc31b25925c4b793dec5a4",
+    "public/assets/dba-admissions-hero-v2.jpg": "95695dee46fd57a4f507dc3a68deb2634ef1c390d8ef0a8373713554ba4a7ae3",
+    "public/assets/dba-applied-research.png": "d1e3419aeb495fa65cb1ade475668fa42685b55b3a30fbc717dab821795b1733",
+    "public/assets/dba-contact-hero-v2.jpg": "289241174d037637ab40a4d6f314d81f1ca2ee49c0e78836c9a5223154fb9d91",
+    "public/assets/dba-curriculum-hero-v2.jpg": "b9ec19868a44b4783e763f8f11f3aa920181fbd01be6db74fec3d985954be3ae",
+    "public/assets/dba-executive-hero.png": "f1d1617a76def2e3a06cdbfc6bfe4864764f3a0b0da45d7544cdb97f5a074338",
+    "public/assets/dba-experience-hero-v2.jpg": "d17a9bd593fd01efa61eb24746649d1f2fcf638540c4d43e223e8a580c28dfab",
+    "public/assets/dba-home-hero-v2.jpg": "cb8387058e484739a2be1b481b7e0fe010606f935c59d1d8e3ff11901a98348e",
+    "public/assets/dba-home-research-v2.jpg": "3c28f4da2452a5077f709c8b040e87583c46707919bca1e60eda12475eff5abf",
+    "public/assets/dba-program-hero-v2.jpg": "d67a048e94f6fd63543a183479765ed5782ba9e6f35d3143bcd2815644179966",
+    "public/assets/dba-program-research-v2.jpg": "27e227b05e91c35d84815c786599e3f1abe16f76648bdef60a5aa881846ec29d",
+    "public/assets/dba-universities-hero-v2.jpg": "2ead5921a04a059134ac22931749e27bc8f178d3ef942d9eaa1c2a8c5dcd5ff1",
+    "public/assets/dba1.jpg": "8ae0e5035dc1d4cde2401fd7e4197b8357b2478b0cf5bdde3d8c30f4cca24a59",
+    "public/assets/degree-fly.jpeg": "f7db6aadd241757543ebec2a40a0ea504aa62e7a12cbca65a556f5c1959728df",
+    "public/assets/eahea.webp": "df98bc3f5f56f5e3eaf4859811423801d98150fbfad52a092155bc4909523787",
+    "public/assets/earth-realistic-map-corrected.svg": "ec01264f109437137f855ca6c0f890351ee43ab59bd050e61ff8355eae131c58",
+    "public/assets/earth-realistic-map.svg": "4b7c7c779d3e67ee2e58b58f38f01eed83622984bc4838cce3a4aec998ba5080",
+    "public/assets/editorial-wireframe-globe.svg": "15fc8d910c5bc9ab201cd6f1085395ed6cf7ffe0343cf3bf739a31be2bf82ef8",
+    "public/assets/eligibility.jpg": "2e12f070df21e897b8d092fbc8b4e9387a87974238d666352ac954ab9a6d2239",
+    "public/assets/experience-cohort.jpg": "a88116b471f5db724f8141bc6c6a74cb4e3f50c9176fe23b0af09e7908914f75",
+    "public/assets/experience-hero.jpg": "3442292ef7c0073fe70351d3386a209857ec6eb900564bc687962161b61c8215",
+    "public/assets/featuredPath.jpeg": "793a2a3b9001dc0101bf46b0ce9e29e7e6a26e6bd88dc00d1f240bd436087451",
+    "public/assets/flags.jpg (1).jpeg": "8d12f6ca85bdc98703dc0c30677ea523368e91d05f949875b407311a4d8a79b9",
+    "public/assets/flyingcap.jpg": "8778a9646a8d5f82a85baf4900010ab05156ff3d592c327380be80b11aa245ad",
+    "public/assets/founder.jpg": "e8cda70fb3f6fb283521b439b0b5226202d096202d199e83a563ca051123be98",
+    "public/assets/glob.png": "4fbe6f32f356492a29aae28798719f0a47dd87f894724ed1ac4b3ab74307a0f8",
+    "public/assets/handshake.jpg": "e44510db48353484eb83eabfd7947f7c828c5f84305ba8b49141cce73ba7e082",
+    "public/assets/handshake2.jpg": "57b58b04c0301b25d35035f635154bd0c8110efae050e63d9cd2ffdcbd84424e",
+    "public/assets/hero-dashboard.jpg": "637a5450ffe41f1968c9f695d23de570853ce2161a06639954f371da4dabc073",
+    "public/assets/hold degree.jpeg": "97ce3462bd2b42eeceded46395fa396255948e3a51ba22ceb220f0138c88b6c9",
+    "public/assets/leader.jpg": "2ad93e9ddf2fdcf531871b206b456eb2f0bd5928401a716076b82033e933c5dd",
+    "public/assets/learnify-logo.jpg": "22e33b5e4f62f3740617cc16ae79a3b08dad8a10fad022c9f856729d2578e8b4",
+    "public/assets/learnifyops-ai-hero.png": "584a5a88fe5983591b5ce4d649df740f6c684bec609ca4c4b8a412867751775a",
+    "public/assets/learnifyops-dba-brochure.pdf": "e906645c7b6a9d46e7a3b1a0d70db6c57bbab353be1a75308205b855225a2800",
+    "public/assets/learnifyops-dba-curriculum-overview.pdf": "a8a4d2ca6b543d342a510ea296954d8c03fbfea3a89130438819783ec30f264c",
+    "public/assets/learnifyops-logo-transparent.png": "44403fd4b2940220b7c3b284ee84d3f696e4d7f572020157cb0ee99f2fbcc453",
+    "public/assets/learnifyops-logo.png": "b088b987a73b19fac662d28888ff5ebcf1583b66e660951aa7f1c1b8efa1e1ec",
+    "public/assets/learnifyops-logo.svg": "09d74e2d748ac46596500824b1fc025409c2b0e846325f66a186ee251c6c491b",
+    "public/assets/learnifyops-mark.svg": "728139d5cca4012ac1019ac75f49d1f265b474218a3dcfae12061c219dff4f6f",
+    "public/assets/partnerUniver.jpeg": "33a5a36e3286a95f3cf1d5f9ea4d9888b270dcba6cec7d7204e7442083ea8c62",
+    "public/assets/photo-1541339907198-e08756dedf3f.avif": "877c75161c48f8e55f7b2b11e485b3b9885eabb4b915511332680868a7cb23bb",
+    "public/assets/program-bg.jpg": "e66c479a594d7d351c21113a1d8ae18923b4b2b4493280d46afe00c0808ff984",
+    "public/assets/program-over.jpg": "814d60b2dc2e8b15cc1f04ab0735a0cbd0424eede3ccf62980b70575c0646418",
+    "public/assets/qahe.png": "2ca2c01927a35a33355e2bf3be9a2b4170355d50372cd28c8e89d7d6277021b0",
+    "public/assets/reading.jpg": "a0ee16563819cc8c7f284732732e49b642cc2f1fc76e167f47c846e8d8c7250b",
+    "public/assets/research.jpeg": "345b98723420d197ea340a5fd4e501d96cd64c7c64045ba1c769f6f108e1346c",
+    "public/assets/scholorship.jpg": "8c7ea73cf003fb6ed0871303218dcb07b4d0b5963fec95047032d5cd87f8cdc5",
+    "public/assets/senior-director.jpg": "f3093c2edcd208523d854b6ff19477011c73cf6f30d30754e10168f9c30a36b0",
+    "public/assets/studentsupport.jpg": "653ed9a88831bd2c30dd59da7870c60af18f188fa01520057c84d9d8868a4ba4",
+    "public/assets/tefl-1.png": "131255e8758c0701845291123116c3d01c113494ba8c671d38980b91dad258c7",
+    "public/assets/uni1.jpg": "6a731eb3fb9a42b362c322644ecb08fa539d79f8d3434648ca824f7edd58f88b",
+    "public/assets/uni2.jpg": "e57003ba68b799ab4bd2de9c7a9958230f22bc40271ebd1f2f3df73488ca7ef2",
+    "public/assets/uni3.jpg": "304b4c57a469c8eafe89001340979262cb3b19bcced7bebd67be667a60883da4",
+    "public/assets/uni4.jpg": "c77787aa13527147a401021d214c77b0d1afdeabcf6813722d74f18cf408dcb9",
+    "public/assets/uni5.jpg": "0c8a6a2fcb4a3c99087e766e33dd1b86bbaa79fe856f71561659cd9b70fc70b1",
+    "public/assets/universitry-option.jpg": "698ecdcb3027ec2801daf243a4ab88291aafdfc7019c11e9628109e071d64751",
+    "public/assets/university.jpg": "d607cf41d5b658308826e1426f69e3681b633407375d6cbd9a71f409e5d2f268",
+    "public/assets/world_map_highlighted_europe_india_usa.svg": "781319e4446fa17b928fb79692ae93aa788f9ef091dd4fbcfd763d0cbd475b2e",
+    "public/favicon-16x16.png": "37506e9e963a4169b2303d4e1e0036708d09234e44af9658bb35e18d78da3d3f",
+    "public/favicon-32x32.png": "1cbec5b63a6bdf6903549de82f24a2a2c8a5b6610df26715404d01f9d68f7b28",
+    "public/favicon-96x96.png": "9627c9d175dbad3bfac9ad44ffa8252d62669e81ce41d183052fa55ff38e38e0",
+    "public/favicon.ico": "266793e24d282540cbd45a657531b52f74c2ffdfbcbd68fa80dacd93447d1462",
+    "public/leader.jpg": "2ad93e9ddf2fdcf531871b206b456eb2f0bd5928401a716076b82033e933c5dd",
+    "public/robots.txt": "8f8d769be385b2581bdb3a0eead2e3fa974edc9f8e6923dbed75f7bb804a24e5",
+    "public/site.webmanifest": "b494b56501a6d2f4ef49f10445520d0d4d9b4da1e24f31c89b29058c1c4776be",
+    "public/sitemap.xml": "297104a21c656a92b39c48458fc1ceea0be1a436922a19012358097901df6098",
+    "public/web-app-manifest-192x192.png": "9a056b328c9933a9027ffaaec77b9425a36fc1884ba5d98d45f245be1c6966b9",
+    "public/web-app-manifest-512x512.png": "98da4f93dca3def0ea79cdbe0b46ce57097ce897be8278c11aab4965ecb8dcad",
+    "server/index.js": "0a462c239b1473133db688229110e4d8c42d7b71e4fa6a0e10a530bb47de07a9",
+    "src/App.jsx": "47f33006a082b4e015a0b3672703a579350195a4e2ce902191e81b5ba4c4683e",
+    "src/components/FloatingContact.css": "0c513715e896a55ebf8eae377bc7bb7972e7a18cf68a898b944f802e29f85073",
+    "src/components/FloatingContact.jsx": "5bcfe64e5adc8da7f1176f2644282bcfb52f79db848d961c2e6d70837402ed46",
+    "src/components/Footer.jsx": "f376c173b802a8a05c3a046363e4f08b0e5b50463fb0e189fbd8033b0128f8e3",
+    "src/components/content/AdmissionsSections.jsx": "c0fc2bd1d20e0c6693979b49eccd7f68fe8693c6eedc757577d2ec5922da2906",
+    "src/components/content/HeroSection.jsx": "9cacd91ff2784658f0cc38504050aae5bb0e423a196829ce5f1b1c61e678caa1",
+    "src/components/content/LandingSections.jsx": "45c342adab43c39504fc35a37f432d93a901df55f0d485f76b2fb6b05c00e6cb",
+    "src/components/content/PageHero.jsx": "fbe23b6e6a0632f5fe91df1ec32370c164f3fc9d51cd715fb0e4e048ad902229",
+    "src/components/content/ProgrammeSections.jsx": "bd1d34d0a66a599927a041086bd6679d3dea274442fd10918ad274c9190eb4de",
+    "src/components/content/UniversitySections.jsx": "9e7d59ccac4bcfca7d9c5085587645049ddc0c73cdc6455e8cba9b1ffba0cbcd",
+    "src/components/layout/Footer.jsx": "a8f5abdd3880f39ef2faa3377394c8ff37489962dcb9bfefaa922b7a5964fedb",
+    "src/components/layout/Header.jsx": "f325e1493f656e1d5a6170068562628c264dc4033afd4e17cfd65a562625b0c8",
+    "src/components/navigation/Link.jsx": "0589b9f15eadfcc6f9feb43a87c1e55a4bb2412fc15de5afa3e7784a494a263d",
+    "src/components/ui/Actions.jsx": "0ca87d034dda69984c4a1cd6fdafef365e9826879a4bc939d1810581e4cb9e80",
+    "src/data/accreditationData.js": "61296590e7580803126df7e7bc5e4d3fa14ccf6a83f63f4578961f6f36137dc5",
+    "src/data/contactOptions.js": "2b82d90f220cd8f16276a6ff3e532255cb339452c9353216406b3c3c230124fd",
+    "src/data/seoMetadata.js": "8c53040e97c8f36740d4befa26a1ee05e691b189d25f86d3ee70458ce80ff22a",
+    "src/data/siteContent.js": "fcbe53e3e7c2b7c686fc22e688509231865137608a35277bd602b215ec2aefb9",
+    "src/hooks/useRoute.js": "606dc2cdc061a8931c6dd86a1aecbb8ba1e88e67896c0f6ea044adfd3c3bd7fe",
+    "src/main.jsx": "a105224737f5a4b3fb5d939e6db23a0f010674ece235fbd0858b58a5ea2a8605",
+    "src/styles.css": "65fc7e21f32c3ee82fbb1f7f9bf15c6b980dd217bf12e9b6634a493f991f4275",
+    "src/views/AccreditationPage.jsx": "d7f293d7e30314e8c2e62a8e78eb87b6807dc3dc6e1dfba350a193b9c6fa7209",
+    "src/views/Admission.jsx": "6739cea312be7e1ba2f308195cfd8d4a7468d19a505b319428bcd734839d5343",
+    "src/views/Doctoral.jsx": "e6bacf3aa71b00fbe240a7b142a9a9326348697d84ba5df974f532cdb251a7d6",
+    "src/views/HomePage.jsx": "3f6886bc249e5c828cf0271c892b64c6d577a9900178bd3f5a31bd3a1c975562",
+    "src/views/Partnership.jsx": "637cd6a52e4ac5947c07fda34cf9db028e764be5742f014af84385cf1e646b1c",
+    "src/views/ProgramPages.jsx": "b7770bb81533e001ddde9e0191f4209400c54885a0bf2209434c392697754b3d",
+    "src/views/SearchPage.jsx": "eaaa0a16d9024d3a4f675fe717b650ea36ca1f0cfd2b5d8a16e1e2bb00f6aa9d"
+  },
+  "shared": {
+    "preservedMetadata": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "keywords",
+        "content": "Doctor of Business Administration, DBA UK, DBA programme, DBA eligibility, international DBA, online DBA, DBA universities, applied business research doctorate"
+      },
+      {
+        "name": "robots",
+        "content": "index, follow"
+      },
+      {
+        "property": "og:title",
+        "content": "Doctor of Business Administration (DBA) | LearnifyOps"
+      },
+      {
+        "property": "og:description",
+        "content": "Compare international DBA pathways, review your eligibility and receive personalised admissions guidance from application through enrolment."
+      },
+      {
+        "property": "og:image",
+        "content": "https://learnifyops.com/assets/dba-executive-hero.png"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Doctor of Business Administration (DBA) | LearnifyOps"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Compare international DBA pathways, review your eligibility and receive personalised admissions guidance from application through enrolment."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://learnifyops.com/assets/dba-executive-hero.png"
+      }
+    ],
+    "preservedLinks": [
+      {
+        "rel": "manifest",
+        "href": "/site.webmanifest"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "sizes": "16x16 32x32 48x48",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": "anonymous"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LearnifyOps",
+        "description": "DBA programme comparison, admissions guidance and onboarding support for experienced professionals considering international doctoral pathways.",
+        "email": "info@learnifyops.com",
+        "telephone": "+447447177848",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 7084, 58 Peregrine Road, Hainault",
+          "addressLocality": "Ilford",
+          "addressRegion": "Essex",
+          "postalCode": "IG6 3SZ",
+          "addressCountry": "GB"
+        },
+        "areaServed": [
+          "United Kingdom",
+          "Europe",
+          "Middle East",
+          "Asia",
+          "International"
+        ],
+        "sameAs": []
+      }
+    ]
+  },
+  "pages": {
+    "/": {
+      "title": "Doctor of Business Administration (DBA) | LearnifyOps",
+      "h1s": [
+        "Lead with Knowledge.<span class=\"block! text-[#c7b68c]!\">Grow with Purpose.</span>"
+      ],
+      "bodySha256": "6988d35b50152fa9ed0f9dae151ce8080996d272dfed0b9836c1489d0ab42f2d",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore international Doctor of Business Administration pathways with LearnifyOps. Compare DBA programmes, review eligibility and receive personalised admissions guidance."
+        }
+      ]
+    },
+    "/program": {
+      "title": "DBA Programme | LearnifyOps",
+      "h1s": [
+        "A research-led DBA for experienced professionals."
+      ],
+      "bodySha256": "d79dd9d2f43c28bc28f4705e828329e738af0781417c6b21628a7faaf6d9def5",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore the DBA programme for experienced professionals, with flexible study, applied business research, strategic decision-making and research outcomes."
+        }
+      ]
+    },
+    "/curriculum": {
+      "title": "Curriculum | LearnifyOps",
+      "h1s": [
+        "Modular coursework leading to a defence-ready dissertation."
+      ],
+      "bodySha256": "41192b6a2ab03d5429e258aca5e506fd4fbb3dc6e80e86ea377e945d9c15cb75",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Review the DBA curriculum, from research methods and strategic business study to research milestones, dissertation preparation and the learning journey."
+        }
+      ]
+    },
+    "/experience": {
+      "title": "Experience | LearnifyOps",
+      "h1s": [
+        "Learn within a globally connected executive cohort."
+      ],
+      "bodySha256": "87b270dc017b209f77bfc71f17cea2f6e7570283a0d8436dec260a5b38f5043b",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore the DBA experience: an international executive cohort, peer critique, flexible research milestones and conversations grounded in executive practice."
+        }
+      ]
+    },
+    "/admissions": {
+      "title": "Admissions | LearnifyOps",
+      "h1s": [
+        "Start with a profile review before selecting your DBA pathway."
+      ],
+      "bodySha256": "16a00349a7185f67dcced30f510967f6fb91f0b0ba6767da287e00e5c1f6200a",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Review DBA admissions guidance, including academic eligibility, professional experience, CVs, transcripts and research interests, before choosing your pathway."
+        }
+      ]
+    },
+    "/partnership": {
+      "title": "Universities | LearnifyOps",
+      "h1s": [
+        "Compare DBA pathways before you apply."
+      ],
+      "bodySha256": "9f224ed4f808104649f86c2cfd62008f31edcd7ee3c8b594370528b087505cf3",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Compare DBA partner institutions, programme structures, entry requirements and study formats, with guidance on fees, documents and the application process."
+        }
+      ]
+    },
+    "/contact": {
+      "title": "Contact | LearnifyOps",
+      "h1s": [
+        "Explore DBA admissions pathways with an academic advisor."
+      ],
+      "bodySha256": "a81e2d8f542dfbe42af735776ee7a6b5bd92c25785b2169e15e16284cd6b9214",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Contact LearnifyOps to arrange a confidential profile review, request DBA prospectus documents and discuss university pathways with an academic adviser."
+        }
+      ]
+    },
+    "/doctoral": {
+      "title": "Doctoral | LearnifyOps",
+      "h1s": [
+        "Choose your doctoral pathway"
+      ],
+      "bodySha256": "63246970381494b7ab2b2616dab8ba1f7baaebcce873aa402617bbc0a802ef01",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore DBA, professional and executive doctoral pathways for experienced professionals, with flexible routes aligned with your research and professional goals."
+        }
+      ]
+    },
+    "/search": {
+      "title": "Search | LearnifyOps",
+      "h1s": [
+        "What are you looking for?"
+      ],
+      "bodySha256": "96bc61ae95bb3a459d51a5ffe07c483897afdf65c24a25b097d965016b0f8c95",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Search LearnifyOps for DBA programmes, partner universities, admissions guidance and curriculum information. Find a pathway or explore a specific institution."
+        }
+      ]
+    },
+    "/universities/kennedy-university": {
+      "title": "Kennedy University | LearnifyOps",
+      "h1s": [
+        "Kennedy University DBA"
+      ],
+      "bodySha256": "73c190ba152ba55972e16315023cd080748b56af24ce30a04877ca97bb9b6799",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore the Kennedy University DBA pathway, focused on executive strategy, governance and applied management research. Review eligibility and curriculum."
+        }
+      ]
+    },
+    "/universities/birchwood-university": {
+      "title": "Birchwood University | LearnifyOps",
+      "h1s": [
+        "Birchwood University DBA"
+      ],
+      "bodySha256": "f4db5954205b1ac287b05ea30d3593bd142a6b286b4a5f689beffa50b3560a38",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Review the Birchwood University DBA pathway in innovation, entrepreneurship and organisational transformation, including entry guidance and research topics."
+        }
+      ]
+    },
+    "/universities/florida-coastal-university": {
+      "title": "Florida Coastal University | LearnifyOps",
+      "h1s": [
+        "Florida Coastal University DBA"
+      ],
+      "bodySha256": "dea9824eaac436fbf1d7a10b3acf4089f66d8e2c8b511877134e17b19065ff85",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore the Florida Coastal University DBA pathway in global business, operational performance and leadership practice, with curriculum and entry information."
+        }
+      ]
+    },
+    "/universities/london-school-of-business-and-science": {
+      "title": "London School of Business and Science | LearnifyOps",
+      "h1s": [
+        "London School of Business and Science DBA Pathway"
+      ],
+      "bodySha256": "188b63ceafa23005e89bc979e33a47798edc8bcf7e4a4b50851bc26b8e02957c",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Review the London School of Business and Science DBA pathway in applied leadership, consulting and strategy, with entry guidance and research project details."
+        }
+      ]
+    },
+    "/universities/dunster-business-school": {
+      "title": "Dunster Business School | LearnifyOps",
+      "h1s": [
+        "Dunster Business School DBA"
+      ],
+      "bodySha256": "ee6050f6c8ee3be778c7bf59f01fb3020a72a7a708625bf051dcb3a5673bc0bd",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Explore the Dunster Business School DBA pathway in international business and executive leadership, with management research, entry and study format details."
+        }
+      ]
+    },
+    "/universities/emit": {
+      "title": "EMIT | LearnifyOps",
+      "h1s": [
+        "EMIT DBA Pathway"
+      ],
+      "bodySha256": "9a62c2984e16868c50bab34c612a7e452125bac1f9752b486b0c077df64c816f",
+      "descriptions": [
+        {
+          "name": "description",
+          "content": "Review the EMIT DBA pathway in technology management, digital transformation, AI automation and enterprise systems, including curriculum and entry guidance."
+        }
+      ]
+    }
+  }
+}

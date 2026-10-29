@@ -222,9 +222,9 @@ function HomePage({ navigate }) {
                 Grow with Purpose.
               </span>
             </h1>
-       <h3 className="font-serif! text-lg! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.25]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl!">
+       <p className="font-serif! text-lg! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.25]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl! mb-3!">
   Online certifications, AI training, and career support. Learn, qualify, get hired
-</h3>
+</p>
 
             <p className="mt-4! max-w-2xl! text-sm! leading-6! text-gray-300! sm:text-base! sm:leading-7!">
               Your journey towards leadership, innovation, and academic excellence starts here.
@@ -413,9 +413,9 @@ function HomePage({ navigate }) {
 
                       {!isOpen && (
                         <div className="absolute! inset-0! z-10! hidden! items-end! justify-center! p-4! md:flex!">
-                          <h3 className="whitespace-nowrap! text-sm! lg:text-base! font-semibold! text-white! [writing-mode:vertical-rl]! rotate-180! transition-transform! duration-500! group-hover:-translate-y-2!">
+                          <span aria-hidden="true" className="editorial-story-label whitespace-nowrap! text-sm! lg:text-base! font-semibold! text-white! [writing-mode:vertical-rl]! rotate-180! transition-transform! duration-500! group-hover:-translate-y-2!">
                             {story.title}
-                          </h3>
+                          </span>
                         </div>
                       )}
 

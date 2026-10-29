@@ -10,6 +10,7 @@
     "build": "next build --webpack",
     "verify:migration": "node scripts/verify-migration.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
+    "verify:seobility": "node scripts/verify-seobility.mjs",
     "start": "next start --port 5174",
     "preview": "next start --port 5174"
   },

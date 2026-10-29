@@ -4,3 +4,5 @@ dist
 out
 .env
 .DS_Store
+.audit-cache/
+reports/seo-review/

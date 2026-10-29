@@ -1,7 +1,7 @@
 // Invisible, route-specific search metadata based on the existing page content.
 // Keep this map separate from siteContent.js and the client-rendered UI.
 export const pageDescriptions = {
-  "/": "Explore international Doctor of Business Administration pathways with LearnifyOps. Compare DBA programmes, review eligibility and receive personalised admissions guidance.",
+  "/": "Compare international DBA programmes, eligibility and university pathways with LearnifyOps. Get personalised admissions guidance for your next step.",
   "/program": "Explore the DBA programme for experienced professionals, with flexible study, applied business research, strategic decision-making and research outcomes.",
   "/curriculum": "Review the DBA curriculum, from research methods and strategic business study to research milestones, dissertation preparation and the learning journey.",
   "/experience": "Explore the DBA experience: an international executive cohort, peer critique, flexible research milestones and conversations grounded in executive practice.",
