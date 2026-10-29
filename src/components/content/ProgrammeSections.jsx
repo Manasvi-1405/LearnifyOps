@@ -101,7 +101,7 @@ export function ProgramFacts() {
         textAlign: "center",
       }}
     >
-      <span className="mb-5! mt-5! inline-flex! items-center! justify-center! rounded-full! border! border-teal-200! bg-teal-50! px-5! py-2! text-xs! font-semibold! uppercase! tracking-[0.18em!] text-teal-800!">
+      <span className="mb-5! mt-5! inline-flex! items-center! justify-center! rounded-full! border! border-teal-200! bg-teal-50! px-5! py-2! text-xs! font-semibold! uppercase! text-teal-800!">
         Your doctoral journey
       </span>
 
@@ -355,32 +355,19 @@ export function ValueSection() {
         
 <div className="mx-auto w-full text-center">
   <div
-    className="
-      editorial-label mb-4
-      text-sm font-bold uppercase
-      tracking-[0.3em] text-[#b08d35]
-      sm:text-base md:text-lg
-    "
+    className="editorial-label mb-4 text-sm font-bold uppercase tracking-[0.3em] text-[#b08d35] sm:text-base md:text-lg"
   >
     PROFESSIONAL DEVELOPMENT
   </div>
 
   <h2
-    className="
-      text-3xl font-semibold tracking-tight
-      text-[#163b50]
-      sm:text-4xl md:text-5xl
-    "
+    className="text-3xl font-semibold tracking-tight text-[#163b50] sm:text-4xl md:text-5xl"
   >
     Why pursue a DBA?
   </h2>
 
   <p
-    className="
-      mx-auto mt-10!
-      text-base leading-8 text-slate-600
-      sm:text-xl!
-    "
+    className="mx-auto mt-10! text-base leading-8 text-slate-600 sm:text-xl!"
   >
     A Doctor of Business Administration can strengthen research
     capability, strategic thinking and specialist expertise. Career
@@ -396,14 +383,7 @@ export function ValueSection() {
   {valuePillars.map(({ title, text }, index) => (
     <article
       key={title}
-      className="
-        group relative z-0 h-[520px] cursor-pointer
-        overflow-hidden rounded-xl bg-[#163b50]
-        transition-all duration-500 ease-out
-        hover:z-20 hover:-translate-y-2 hover:scale-[1.04]
-        hover:shadow-2xl hover:shadow-[#163b50]/40
-        motion-reduce:transition-none
-      "
+      className="group relative z-0 h-[520px] cursor-pointer overflow-hidden rounded-xl bg-[#163b50] transition-all duration-500 ease-out hover:z-20 hover:-translate-y-2 hover:scale-[1.04] hover:shadow-2xl hover:shadow-[#163b50]/40 motion-reduce:transition-none"
     >
       {/* Background Image */}
       {valueImages[index] && (
@@ -411,59 +391,30 @@ export function ValueSection() {
           src={valueImages[index]}
           alt={title}
           loading="lazy"
-          className="
-            absolute inset-0 h-full w-full object-cover
-            transition-transform duration-700 ease-out
-            group-hover:scale-110
-          "
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
       )}
 
       {/* Gradient Overlay */}
       <div
-        className="
-          absolute inset-0
-          bg-gradient-to-t
-          from-[#001b2b]/95
-          via-[#001b2b]/40
-          to-[#001b2b]/10
-          transition-all duration-500
-          group-hover:via-[#001b2b]/55
-        "
+        className="absolute inset-0 bg-gradient-to-t from-[#001b2b]/95 via-[#001b2b]/40 to-[#001b2b]/10 transition-all duration-500 group-hover:via-[#001b2b]/55"
       />
 
       {/* Hover Border */}
       <div
-        className="
-          pointer-events-none absolute inset-0 z-20
-          rounded-xl border border-white/10
-          transition-colors duration-500
-          group-hover:border-[#f5c451]/70
-        "
+        className="pointer-events-none absolute inset-0 z-20 rounded-xl border border-white/10 transition-colors duration-500 group-hover:border-[#f5c451]/70"
       />
 
       {/* Number */}
       <span
-        className="
-          absolute left-6 top-6 z-10
-          text-2xl font-semibold text-white
-          transition-all duration-300
-          group-hover:translate-x-1
-          group-hover:text-[#f5c451]
-        "
+        className="absolute left-6 top-6 z-10 text-2xl font-semibold text-white transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#f5c451]"
       >
         {String(index + 1).padStart(2, "0")}
       </span>
 
       {/* Card Content */}
       <div
-        className="
-          absolute inset-x-0 bottom-0 z-10
-          flex flex-col items-center
-          px-6! pb-12! text-center! text-white!
-          transition-transform! duration-500! ease-out!
-          group-hover:-translate-y-2!
-        "
+        className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center px-6! pb-12! text-center! text-white! transition-transform! duration-500! ease-out! group-hover:-translate-y-2!"
       >
    
 
@@ -472,38 +423,20 @@ export function ValueSection() {
 
         {/* Heading */}
         <h3
-          className="
-          mb-4 mt-2 text-center text-xl
-            font-semibold leading-tight text-white
-            transition-colors duration-300
-            group-hover:text-[#f5c451]
-            sm:text-3xl
-          "
+          className="mb-4 mt-2 text-center text-xl font-semibold leading-tight text-white transition-colors duration-300 group-hover:text-[#f5c451] sm:text-3xl"
         >
           {title}
         </h3>
 
         {/* Description */}
         <p
-          className="
-            m-0! max-w-sm! text-center! text-sm!
-            leading-7! text-white/90!
-            transition-colors! duration-300!
-            group-hover:text-white!
-            sm:text-base!
-          "
+          className="m-0! max-w-sm! text-center! text-sm! leading-7! text-white/90! transition-colors! duration-300! group-hover:text-white! sm:text-base!"
         >
           {text}
         </p>
                {/* Accent Line */}
         <div
-          className="
-            mt-5! h-1! w-11! rounded-full!
-            bg-[#91c7ed]!
-            transition-all! duration-500!
-            group-hover:w-20!
-            group-hover:bg-[#f5c451]!
-          "
+          className="mt-5! h-1! w-11! rounded-full! bg-[#91c7ed]! transition-all! duration-500! group-hover:w-20! group-hover:bg-[#f5c451]!"
         />
       </div>
     

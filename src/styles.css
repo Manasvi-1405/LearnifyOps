@@ -8400,13 +8400,8 @@ main {
     height: 300px;
   }
 }
-////
-
-/* Container Spacing */
-.dba-journey-section {
-  padding: 5rem 0 6rem;
-  background-color: #ffffff !important; /* Clean light background matching screenshot */
-}
+/* Removed a malformed separator and its ignored legacy spacing override.
+   Keep the currently rendered section spacing and background unchanged. */
 
 .dba-journey-section .section-intro h2 {
   color: var(--obsidian-darkest, #102f30);
