@@ -147,7 +147,7 @@
     "src/components/content/HeroSection.jsx": "9cacd91ff2784658f0cc38504050aae5bb0e423a196829ce5f1b1c61e678caa1",
     "src/components/content/LandingSections.jsx": "45c342adab43c39504fc35a37f432d93a901df55f0d485f76b2fb6b05c00e6cb",
     "src/components/content/PageHero.jsx": "fbe23b6e6a0632f5fe91df1ec32370c164f3fc9d51cd715fb0e4e048ad902229",
-    "src/components/content/ProgrammeSections.jsx": "7d07d0b2a84cb76ab4a7c0b5688ec7e96ed05e31d7f2deeaac8b7d2942b86876",
+    "src/components/content/ProgrammeSections.jsx": "f03590d36cbcfd0218b99b0e3e9a9e36e18266d2c5ade47f9ceb0e255a0474ce",
     "src/components/content/UniversitySections.jsx": "9e7d59ccac4bcfca7d9c5085587645049ddc0c73cdc6455e8cba9b1ffba0cbcd",
     "src/components/layout/Footer.jsx": "a8f5abdd3880f39ef2faa3377394c8ff37489962dcb9bfefaa922b7a5964fedb",
     "src/components/layout/Header.jsx": "f325e1493f656e1d5a6170068562628c264dc4033afd4e17cfd65a562625b0c8",
@@ -308,7 +308,7 @@
       "h1s": [
         "A research-led DBA for experienced professionals."
       ],
-      "bodySha256": "aaf5ed43faa0c44eab9840642ee6deba9f7f9b2f904b9ab6f3500f5b580f41cd",
+      "bodySha256": "402065de7b4a28626683b59c822e730e07f895f4a79c7ea7dc0329de63ade9ad",
       "descriptions": [
         {
           "name": "description",
