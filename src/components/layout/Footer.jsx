@@ -1,6 +1,6 @@
 import Link from "../navigation/Link.jsx";
 import { BrandLogo } from "./Header.jsx";
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer({ navigate, logo }) {
   return (
@@ -32,6 +32,29 @@ export default function Footer({ navigate, logo }) {
           <strong>Talk to our team</strong>
           <a href="mailto:info@learnifyops.com"><Mail size={16} aria-hidden="true" />info@learnifyops.com</a>
           <a href="tel:+447447177848"><Phone size={16} aria-hidden="true" />+44 7447 177848</a>
+
+          {/* Social Links */}
+          <div className="footer-socials" style={{ display: "flex", gap: "12px", marginTop: "10px", alignItems: "center" }}>
+            <a
+              href="https://www.linkedin.com/company/133354615/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LearnifyOps on LinkedIn"
+              className="footer-social-link"
+            >
+              <Linkedin size={18} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.instagram.com/learnifyops?psln=ZjJkdTlsMHh5bTc4&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LearnifyOps on Instagram"
+              className="footer-social-link"
+            >
+              <Instagram size={18} aria-hidden="true" />
+            </a>
+          </div>
+
           <Link className="footer-contact-cta" to="/contact" navigate={navigate}>Book a consultation <ArrowUpRight size={15} aria-hidden="true" /></Link>
         </div>
       </div>
