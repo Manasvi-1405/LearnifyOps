@@ -1,0 +1,230 @@
+{
+  "shared": {
+    "preservedMetadata": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "keywords",
+        "content": "Doctor of Business Administration, DBA UK, DBA programme, DBA eligibility, international DBA, online DBA, DBA universities, applied business research doctorate"
+      },
+      {
+        "name": "robots",
+        "content": "index, follow"
+      },
+      {
+        "property": "og:title",
+        "content": "Doctor of Business Administration (DBA) | LearnifyOps"
+      },
+      {
+        "property": "og:description",
+        "content": "Compare international DBA pathways, review your eligibility and receive personalised admissions guidance from application through enrolment."
+      },
+      {
+        "property": "og:image",
+        "content": "https://learnifyops.com/assets/dba-executive-hero.png"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Doctor of Business Administration (DBA) | LearnifyOps"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Compare international DBA pathways, review your eligibility and receive personalised admissions guidance from application through enrolment."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://learnifyops.com/assets/dba-executive-hero.png"
+      }
+    ],
+    "preservedLinks": [
+      {
+        "rel": "manifest",
+        "href": "/site.webmanifest"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "sizes": "16x16 32x32 48x48",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": "anonymous"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LearnifyOps",
+        "description": "DBA programme comparison, admissions guidance and onboarding support for experienced professionals considering international doctoral pathways.",
+        "email": "info@learnifyops.com",
+        "telephone": "+447447177848",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 7084, 58 Peregrine Road, Hainault",
+          "addressLocality": "Ilford",
+          "addressRegion": "Essex",
+          "postalCode": "IG6 3SZ",
+          "addressCountry": "GB"
+        },
+        "areaServed": [
+          "United Kingdom",
+          "Europe",
+          "Middle East",
+          "Asia",
+          "International"
+        ],
+        "sameAs": []
+      }
+    ]
+  },
+  "routes": {
+    "/": {
+      "title": "Doctor of Business Administration (DBA) | LearnifyOps",
+      "h1s": [
+        "Lead with Knowledge.<span class=\"block! text-[#c7b68c]!\">Grow with Purpose.</span>"
+      ],
+      "bodySha256": "fa6e3d55b36b7b6d27ca240c420908589fe126e2f09506ac4a1f43182c8f1f1b"
+    },
+    "/program": {
+      "title": "DBA Programme | LearnifyOps",
+      "h1s": [
+        "A research-led DBA for experienced professionals."
+      ],
+      "bodySha256": "402065de7b4a28626683b59c822e730e07f895f4a79c7ea7dc0329de63ade9ad"
+    },
+    "/curriculum": {
+      "title": "Curriculum | LearnifyOps",
+      "h1s": [
+        "Modular coursework leading to a defence-ready dissertation."
+      ],
+      "bodySha256": "41192b6a2ab03d5429e258aca5e506fd4fbb3dc6e80e86ea377e945d9c15cb75"
+    },
+    "/experience": {
+      "title": "Experience | LearnifyOps",
+      "h1s": [
+        "Learn within a globally connected executive cohort."
+      ],
+      "bodySha256": "87b270dc017b209f77bfc71f17cea2f6e7570283a0d8436dec260a5b38f5043b"
+    },
+    "/admissions": {
+      "title": "Admissions | LearnifyOps",
+      "h1s": [
+        "Start with a profile review before selecting your DBA pathway."
+      ],
+      "bodySha256": "16a00349a7185f67dcced30f510967f6fb91f0b0ba6767da287e00e5c1f6200a"
+    },
+    "/partnership": {
+      "title": "Universities | LearnifyOps",
+      "h1s": [
+        "Compare DBA pathways before you apply."
+      ],
+      "bodySha256": "9f224ed4f808104649f86c2cfd62008f31edcd7ee3c8b594370528b087505cf3"
+    },
+    "/contact": {
+      "title": "Contact | LearnifyOps",
+      "h1s": [
+        "Explore DBA admissions pathways with an academic advisor."
+      ],
+      "bodySha256": "a81e2d8f542dfbe42af735776ee7a6b5bd92c25785b2169e15e16284cd6b9214"
+    },
+    "/doctoral": {
+      "title": "Doctoral | LearnifyOps",
+      "h1s": [
+        "Choose your doctoral pathway"
+      ],
+      "bodySha256": "63246970381494b7ab2b2616dab8ba1f7baaebcce873aa402617bbc0a802ef01"
+    },
+    "/search": {
+      "title": "Search | LearnifyOps",
+      "h1s": [
+        "What are you looking for?"
+      ],
+      "bodySha256": "96bc61ae95bb3a459d51a5ffe07c483897afdf65c24a25b097d965016b0f8c95"
+    },
+    "/universities/kennedy-university": {
+      "title": "Kennedy University | LearnifyOps",
+      "h1s": [
+        "Kennedy University DBA"
+      ],
+      "bodySha256": "73c190ba152ba55972e16315023cd080748b56af24ce30a04877ca97bb9b6799"
+    },
+    "/universities/birchwood-university": {
+      "title": "Birchwood University | LearnifyOps",
+      "h1s": [
+        "Birchwood University DBA"
+      ],
+      "bodySha256": "f4db5954205b1ac287b05ea30d3593bd142a6b286b4a5f689beffa50b3560a38"
+    },
+    "/universities/florida-coastal-university": {
+      "title": "Florida Coastal University | LearnifyOps",
+      "h1s": [
+        "Florida Coastal University DBA"
+      ],
+      "bodySha256": "dea9824eaac436fbf1d7a10b3acf4089f66d8e2c8b511877134e17b19065ff85"
+    },
+    "/universities/london-school-of-business-and-science": {
+      "title": "London School of Business and Science | LearnifyOps",
+      "h1s": [
+        "London School of Business and Science DBA Pathway"
+      ],
+      "bodySha256": "188b63ceafa23005e89bc979e33a47798edc8bcf7e4a4b50851bc26b8e02957c"
+    },
+    "/universities/dunster-business-school": {
+      "title": "Dunster Business School | LearnifyOps",
+      "h1s": [
+        "Dunster Business School DBA"
+      ],
+      "bodySha256": "ee6050f6c8ee3be778c7bf59f01fb3020a72a7a708625bf051dcb3a5673bc0bd"
+    },
+    "/universities/emit": {
+      "title": "EMIT | LearnifyOps",
+      "h1s": [
+        "EMIT DBA Pathway"
+      ],
+      "bodySha256": "9a62c2984e16868c50bab34c612a7e452125bac1f9752b486b0c077df64c816f"
+    }
+  }
+}

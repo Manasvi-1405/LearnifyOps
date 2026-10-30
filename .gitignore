@@ -1,4 +1,8 @@
 node_modules
 dist
+.next
+out
 .env
 .DS_Store
+.audit-cache/
+reports/seo-review/

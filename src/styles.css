@@ -5075,6 +5075,17 @@
 .editorial-home h2,
 .editorial-home h3 { color: var(--ed-ink); font-family: Inter, sans-serif; }
 .editorial-home h2 { font-size: clamp(1.7rem, 3.15vw, 3rem); line-height: 1.12; letter-spacing: -0.045em; }
+/* Alternate carousel labels retain the original h3 appearance without adding
+   a second semantic heading for the same story. */
+.editorial-story-label {
+  display: block;
+  margin: 0 0 0.75rem;
+  font-family: Inter, sans-serif;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 .editorial-home p { color: var(--ed-muted); }
 .editorial-home .btn { min-height: 2.75rem; border-radius: 3px; font-size: 0.76rem; }
 .editorial-home .btn-primary { background: var(--ed-green); color: #fff !important; box-shadow: none; }
@@ -8389,13 +8400,8 @@ main {
     height: 300px;
   }
 }
-////
-
-/* Container Spacing */
-.dba-journey-section {
-  padding: 5rem 0 6rem;
-  background-color: #ffffff !important; /* Clean light background matching screenshot */
-}
+/* Removed a malformed separator and its ignored legacy spacing override.
+   Keep the currently rendered section spacing and background unchanged. */
 
 .dba-journey-section .section-intro h2 {
   color: var(--obsidian-darkest, #102f30);

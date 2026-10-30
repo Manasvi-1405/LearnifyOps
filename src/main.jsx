@@ -1,13 +1,13 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles.css";
 import { createRouteHelpers } from "./hooks/useRoute.js";
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import FloatingContact from "./components/FloatingContact.jsx";
 import { UniversityDetailPage } from "./components/content/UniversitySections.jsx";
 import { DownloadGateModal } from "./components/content/AdmissionsSections.jsx";
-import HomePage from "./pages/HomePage.jsx";
+import HomePage from "./views/HomePage.jsx";
 import {
   AdmissionsPage,
   ContactPage,
@@ -15,7 +15,7 @@ import {
   ExperiencePage,
   PartnershipPage,
   ProgramPage
-} from "./pages/ProgramPages.jsx";
+} from "./views/ProgramPages.jsx";
 import {
   britInstituteUrl,
   getUniversityByPath,
@@ -23,17 +23,22 @@ import {
   megaMenus,
   navItems
 } from "./data/siteContent.js";
-import Doctoral from "./pages/Doctoral.jsx";
-import SearchPage from "./pages/SearchPage.jsx";
+import Doctoral from "./views/Doctoral.jsx";
+import SearchPage from "./views/SearchPage.jsx";
 
 const useRoute = createRouteHelpers({ navItems, getUniversityByPath });
 
-function App() {
-  const { path, navigate } = useRoute();
+export default function App({ initialPath = "/" }) {
+  const { path, navigate } = useRoute(initialPath);
   const [formStatus, setFormStatus] = useState("");
   const [formState, setFormState] = useState("idle");
-  const [cookieDismissed, setCookieDismissed] = useState(() => localStorage.getItem("learnifyops-cookie-note") === "dismissed");
+  // localStorage is browser-only; read it after the server-rendered page hydrates.
+  const [cookieDismissed, setCookieDismissed] = useState(true);
   const [downloadRequest, setDownloadRequest] = useState(null);
+
+  useEffect(() => {
+    setCookieDismissed(localStorage.getItem("learnifyops-cookie-note") === "dismissed");
+  }, []);
 
   useEffect(() => {
     document.querySelectorAll(".reveal").forEach((element) => element.classList.remove("visible"));
@@ -124,5 +129,3 @@ function App() {
     </>
   );
 }
-
-createRoot(document.getElementById("root")).render(<App />);
