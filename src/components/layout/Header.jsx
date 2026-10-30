@@ -250,8 +250,9 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
     setOpenMega(null);
   };
 
-  const toggleNavigation = () => {
-    const compactViewport = window.matchMedia("(max-width: 1024px)").matches;
+const toggleNavigation = () => {
+    // 1083px tak mobile drawer layout activate hoga
+    const compactViewport = window.matchMedia("(max-width: 1083px)").matches;
     const headerHeight = Math.ceil(
       headerRef.current?.getBoundingClientRect().height || 80
     );
