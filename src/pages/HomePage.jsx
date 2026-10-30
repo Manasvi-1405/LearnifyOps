@@ -188,49 +188,54 @@ function HomePage({ navigate }) {
   return (
     <div className="editorial-home w-full! overflow-x-hidden!">
       {/* ================= 1. HERO ================= */}
-      <section
-        className="editorial-world-hero relative! mt-0! min-h-[580px]! sm:min-h-[640px]! md:min-h-[720px]! lg:min-h-screen! w-full! overflow-hidden! bg-black! flex! flex-col! justify-between!"
-        style={{
-          backgroundImage: "url('/assets/hero-dashboard.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Contrast Overlays */}
-        <div className="absolute! inset-0! z-0! bg-black/45!" />
-        <div className="absolute! inset-0! z-0! bg-gradient-to-r! from-black/85! via-black/50! to-black/20!" />
-        <div className="absolute! inset-0! z-0! bg-gradient-to-t! from-black/80! via-transparent! to-black/30!" />
+   <section
+  className="editorial-world-hero relative! mt-0! min-h-[580px]! sm:min-h-[640px]! md:min-h-[720px]! lg:min-h-screen! w-full! overflow-hidden! bg-black! flex! flex-col! justify-between!"
+  style={{
+    backgroundImage: "url('/assets/hero-dashboard.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  {/* Contrast Overlays */}
+  <div className="absolute! inset-0! z-0! bg-black/45!" />
+  <div className="absolute! inset-0! z-0! bg-gradient-to-r! from-black/85! via-black/50! to-black/20!" />
+  <div className="absolute! inset-0! z-0! bg-gradient-to-t! from-black/80! via-transparent! to-black/30!" />
 
-        {/* Hero Sparkles */}
-        <div className="editorial-hero-sparkles relative! z-10! pointer-events-none!" aria-hidden="true">
-          {Array.from({ length: 14 }, (_, index) => (
-            <span key={index} />
-          ))}
-        </div>
+  {/* Hero Sparkles */}
+  <div className="editorial-hero-sparkles relative! z-10! pointer-events-none!" aria-hidden="true">
+    {Array.from({ length: 14 }, (_, index) => (
+      <span key={index} />
+    ))}
+  </div>
 
-        {/* Hero Content */}
-        <div className="relative! z-20! flex! flex-1! items-center! px-4! sm:px-8! md:px-12! lg:px-16! py-16! sm:py-20! lg:py-24!">
-          <div className="w-full! px-4! py-6! sm:px-6! sm:py-8! lg:px-10! lg:py-12!">
-            <p className="mb-3! text-xs! font-semibold! uppercase! tracking-[0.2em]! text-[#c7b68c]! sm:text-sm!">
-              Your Next Chapter
-            </p>
+  {/* Hero Content */}
+  <div className="relative! z-20! flex! flex-1! items-center! px-4! sm:px-8! md:px-12! lg:px-16! py-16! sm:py-20! lg:py-24!">
+    <div className="w-full! px-2! py-6! sm:px-6! sm:py-8! lg:px-10! lg:py-12!">
+      {/* Eyebrow: text-xs -> text-sm */}
+      <p className="mb-3! text-sm! font-semibold! uppercase! tracking-[0.2em]! text-[#c7b68c]!">
+        Your Next Chapter
+      </p>
 
-            <h1 className="max-w-3xl! text-2xl! font-semibold! leading-tight! tracking-tight! text-white! sm:text-3xl! md:text-4xl! lg:text-5xl!">
-              Lead with Knowledge.
-              <span className="block! text-[#c7b68c]!">
-                Grow with Purpose.
-              </span>
-            </h1>
-       <h3 className="font-serif! text-lg! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.25]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl!">
-  Online certifications, AI training, and career support. Learn, qualify, get hired
-</h3>
+      {/* Main Heading: text-2xl -> text-[32px] (or text-3xl) */}
+      <h1 className="max-w-3xl! text-[32px]! font-semibold! leading-[1.2]! tracking-tight! text-white! sm:text-3xl! md:text-4xl! lg:text-5xl!">
+        Lead with Knowledge.
+        <span className="block! text-[#c7b68c]!">
+          Grow with Purpose.
+        </span>
+      </h1>
 
-            <p className="mt-4! max-w-2xl! text-sm! leading-6! text-gray-300! sm:text-base! sm:leading-7!">
-              Your journey towards leadership, innovation, and academic excellence starts here.
-            </p>
+      {/* Subheading: text-lg -> text-xl (sm stays text-3xl) */}
+      <h3 className="mt-3! font-serif! text-xl! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.3]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl!">
+        Online certifications, AI training, and career support. Learn, qualify, get hired
+      </h3>
 
-            <div className="mt-8! sm:mt-10!">
+      {/* Body: text-sm -> text-base (sm remains sm:text-base) */}
+      <p className="mt-4! max-w-2xl! text-base! leading-7! text-gray-300!">
+        Your journey towards leadership, innovation, and academic excellence starts here.
+      </p>
+
+      <div className="mt-8! sm:mt-10!">
         <Link
           to="/contact"
           navigate={navigate}
@@ -239,9 +244,9 @@ function HomePage({ navigate }) {
           Start your career journey
         </Link>
       </div>
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
 
       {/* ================= 2. FEATURED PATHWAY ================= */}
     <section className="editorial-spotlight section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! w-full! bg-white">
@@ -286,53 +291,62 @@ function HomePage({ navigate }) {
 </section>
 
       {/* ================= 3. PURPOSE ================= */}
-      <section className="editorial-purpose section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-slate-50!">
-        <div className="container mx-auto! max-w-7xl!">
-          <div className="editorial-statement mb-12! sm:mb-16! text-center! max-w-4xl! mx-auto!">
-            <p className="text-lg! sm:text-2xl! md:text-3xl! leading-relaxed! text-slate-800! font-serif!">
-              LearnifyOps connects experienced professionals with the{" "}
-              <strong className="text-slate-950! font-semibold!">
-                research tools, university pathways and admissions guidance
-              </strong>{" "}
-              to examine challenges that matter — and make a considered contribution to the future of business.
-            </p>
-          </div>
+   <section className="editorial-purpose section py-12! sm:py-18! md:py-24! px-5! sm:px-8! md:px-12! bg-slate-50!">
+  <div className="container mx-auto! max-w-7xl!">
+    {/* Editorial Statement */}
+    <div className="editorial-statement mb-10! sm:mb-16! text-center! max-w-4xl! mx-auto!">
+      {/* Mobile me text-lg se bada karke text-xl kar diya */}
+      <p className="text-xl! sm:text-2xl! md:text-3xl! leading-relaxed! sm:leading-relaxed! text-slate-800! font-serif!">
+        LearnifyOps connects experienced professionals with the{" "}
+        <strong className="text-slate-950! font-semibold!">
+          research tools, university pathways and admissions guidance
+        </strong>{" "}
+        to examine challenges that matter — and make a considered contribution to the future of business.
+      </p>
+    </div>
 
-          <div className="editorial-principles grid! grid-cols-1! sm:grid-cols-2! lg:grid-cols-4! gap-6! sm:gap-8!">
-            {[
-              [
-                "learning",
-                "Applied research",
-                "Turn a real management challenge into a structured doctoral investigation.",
-              ],
-              [
-                "research",
-                "Global perspective",
-                "Compare options and study alongside professionals across markets and industries.",
-              ],
-              [
-                "leadership",
-                "Executive community",
-                "Learn within a focused peer network built around practical leadership experience.",
-              ],
-              [
-                "global",
-                "Guided decisions",
-                "Move from initial profile review to programme selection with confidence.",
-              ],
-            ].map(([type, title, text]) => (
-              <article
-                className="editorial-principle purpose-medallion rounded-2xl! bg-white! p-6! sm:p-7! border! border-slate-200/80! shadow-xs! hover:shadow-md! transition-all! text-center! flex! flex-col! items-center!"
-                key={title}
-              >
-                <PurposeMedallion type={type} />
-                <h3 className="text-base! sm:text-lg! font-bold! text-slate-900! mb-2!">{title}</h3>
-                <p className="text-xs! sm:text-sm! text-slate-600! leading-relaxed!">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Cards Grid */}
+    <div className="editorial-principles grid! grid-cols-1! sm:grid-cols-2! lg:grid-cols-4! gap-5! sm:gap-8!">
+      {[
+        [
+          "learning",
+          "Applied research",
+          "Turn a real management challenge into a structured doctoral investigation.",
+        ],
+        [
+          "research",
+          "Global perspective",
+          "Compare options and study alongside professionals across markets and industries.",
+        ],
+        [
+          "leadership",
+          "Executive community",
+          "Learn within a focused peer network built around practical leadership experience.",
+        ],
+        [
+          "global",
+          "Guided decisions",
+          "Move from initial profile review to programme selection with confidence.",
+        ],
+      ].map(([type, title, text]) => (
+        <article
+          className="editorial-principle purpose-medallion rounded-2xl! bg-white! p-6! sm:p-7! border! border-slate-200/80! shadow-xs! hover:shadow-md! transition-all! text-center! flex! flex-col! items-center!"
+          key={title}
+        >
+          <PurposeMedallion type={type} />
+          {/* Card Title: text-base se badhakar text-lg kar diya */}
+          <h3 className="text-lg! sm:text-lg! font-bold! text-slate-900! mb-2! mt-2!">
+            {title}
+          </h3>
+          {/* Card Description: text-xs se badhakar text-sm/text-[15px] kar diya */}
+          <p className="text-[15px]! sm:text-sm! text-slate-600! leading-relaxed!">
+            {text}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= 4. STORIES & CAROUSEL ================= */}
       <section className="editorial-stories section py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-white!">
@@ -590,13 +604,15 @@ function HomePage({ navigate }) {
       </section>
 
       {/* ================= 7. GLOBAL OUTLOOK / LOCATIONS ================= */}
-<section className="editorial-locations py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! w-full! overflow-hidden! bg-white">
+<section className="editorial-locations py-12! sm:py-18! md:py-24! px-5! sm:px-8! md:px-12! w-full! overflow-hidden! bg-white">
   <div className="container mx-auto! max-w-7xl! w-full!">
     <div className="text-center! mb-10! sm:mb-12!">
-      <div className="editorial-label text-xs font-bold uppercase tracking-[0.2em] text-[#008c75] mb-2">
+      {/* Eyebrow Label: text-xs -> text-sm */}
+      <div className="editorial-label text-sm! sm:text-xs! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
         OUR GLOBAL OUTLOOK
       </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+      {/* Section Title: text-2xl -> text-[28px] (sm par text-3xl) */}
+      <h2 className="text-[28px]! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight!">
         A learning network built across borders.
       </h2>
     </div>
@@ -628,7 +644,7 @@ function HomePage({ navigate }) {
           key={i}
           className="group flex! flex-col! justify-between! w-full! overflow-hidden! rounded-2xl bg-white border border-slate-200 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
         >
-          <div className="h-48! xs:h-52! sm:h-56! md:h-60! w-full! overflow-hidden! bg-slate-900">
+          <div className="h-52! sm:h-56! md:h-60! w-full! overflow-hidden! bg-slate-900">
             <img
               src={card.img}
               alt={card.title}
@@ -636,23 +652,26 @@ function HomePage({ navigate }) {
             />
           </div>
 
-          <div className="flex! flex-col! items-center! p-5! sm:p-6! text-center! flex-1! justify-between! w-full!">
+          <div className="flex! flex-col! items-center! p-6! sm:p-6! text-center! flex-1! justify-between! w-full!">
             <div className="w-full!">
-              <div className="mx-auto! mb-3! h-[3px]! w-8! bg-[#008c75] transition-colors group-hover:bg-[#c79500]" />
-              <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#c79500] transition-colors leading-snug">
+              <div className="mx-auto! mb-3! h-[3px]! w-9! bg-[#008c75] transition-colors group-hover:bg-[#c79500]" />
+              {/* Card Title: text-base -> text-lg (18px) */}
+              <h3 className="text-lg! sm:text-lg! font-bold! text-slate-900! group-hover:text-[#c79500]! transition-colors! leading-snug!">
                 {card.title}
               </h3>
-              <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
+              {/* Card Description: text-xs -> text-[15px] */}
+              <p className="mt-2.5! text-[15px]! sm:text-sm! leading-relaxed! text-slate-600!">
                 {card.desc}
               </p>
             </div>
 
+            {/* Bottom Button: slightly bigger touch target for mobile (h-10 w-10) */}
             <Link
               to="/contact"
               navigate={navigate}
-              className="mt-5! inline-flex! h-9! w-9! shrink-0! items-center!  justify-center! rounded-full border border-slate-300 text-slate-800 transition-all group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
+              className="mt-6! inline-flex! h-10! w-10! sm:h-9! sm:w-9! shrink-0! items-center! justify-center! rounded-full border border-slate-300 text-slate-800 transition-all group-hover:border-[#c79500] group-hover:bg-[#c79500] group-hover:text-white"
             >
-              <ArrowRight size={15} />
+              <ArrowRight size={17} />
             </Link>
           </div>
         </article>
@@ -662,90 +681,100 @@ function HomePage({ navigate }) {
 </section>
 
       {/* ================= 8. START HERE / EVENTS ================= */}
-      <section className="editorial-events py-14! sm:py-18! md:py-24! px-4! sm:px-8! md:px-12! bg-slate-50!">
-        <div className="container mx-auto! max-w-7xl!">
-          <div className="flex! flex-col! sm:flex-row! sm:items-end! justify-between! gap-4! mb-8! sm:mb-10!">
-            <div>
-              <div className="editorial-label text-xs! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
-                START HERE
-              </div>
-              <h2 className="text-2xl! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight!">
-                Plan your next conversation.
-              </h2>
-            </div>
-
-            <Link
-              className="editorial-text-link inline-flex! items-center! gap-2! text-xs! sm:text-sm! font-bold! text-[#173f43]! hover:text-[#c79500]! transition-colors!"
-              to="/contact"
-              navigate={navigate}
-            >
-              <span>Request a prospectus</span>
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="grid! grid-cols-1! md:grid-cols-2! lg:grid-cols-3! gap-6!">
-            {[
-              {
-                num: "01",
-                tag: "CONSULTATION",
-                title: "Book a DBA consultation",
-                desc: "Discuss your profile, interests and potential next steps.",
-                img: "/assets/consult1.jpg",
-                link: "/contact",
-              },
-              {
-                num: "02",
-                tag: "UNIVERSITY OPTIONS",
-                title: "Compare partner pathways",
-                desc: "Review structure, study formats and institutional information.",
-                img: "/assets/universitry-option.jpg",
-                link: "/partnership",
-              },
-              {
-                num: "03",
-                tag: "CURRICULUM",
-                title: "Explore the framework",
-                desc: "See the learning and research phases involved in a DBA.",
-                img: "/assets/consult.jpg",
-                link: "/curriculum",
-              },
-            ].map((event, i) => (
-              <Link
-                key={i}
-                to={event.link}
-                navigate={navigate}
-                className="group relative! block! h-[380px]! sm:h-[440px]! md:h-[480px]! overflow-hidden! rounded-2xl! shadow-sm! hover:shadow-xl! transition-all! duration-300!"
-              >
-                <img
-                  src={event.img}
-                  alt={event.title}
-                  className="absolute! inset-0! h-full! w-full! object-cover! transition-transform! duration-700! group-hover:scale-105!"
-                />
-
-                <div className="absolute! inset-0! bg-gradient-to-t! from-[#001b2b]/95! via-[#001b2b]/35! to-transparent!" />
-
-                <span className="absolute! left-5! top-5! z-10! text-xl! font-bold! text-white! transition-colors! group-hover:text-[#f5c451]!">
-                  {event.num}
-                </span>
-
-                <div className="absolute! inset-x-0! bottom-0! z-10! flex! flex-col! items-center! px-6! pb-8! text-center! text-white!">
-                  <div className="mb-3! h-[3px]! w-9! rounded-full! bg-[#91c7ed]! transition-colors! group-hover:bg-[#f5c451]!" />
-                  <small className="mb-2! block! text-[11px]! font-bold! tracking-[0.2em]! text-white/90! uppercase! group-hover:text-[#f5c451]!">
-                    {event.tag}
-                  </small>
-                  <h3 className="mb-2! text-xl! sm:text-2xl! font-bold! leading-tight! group-hover:text-[#f5c451]! transition-colors!">
-                    {event.title}
-                  </h3>
-                  <p className="max-w-xs! text-xs! sm:text-sm! text-slate-200! group-hover:text-white! transition-colors!">
-                    {event.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+   <section className="editorial-events py-12! sm:py-18! md:py-24! px-5! sm:px-8! md:px-12! bg-slate-50!">
+  <div className="container mx-auto! max-w-7xl!">
+    <div className="flex! flex-col! sm:flex-row! sm:items-end! justify-between! gap-4! mb-8! sm:mb-10!">
+      <div>
+        {/* Sub-label: text-xs -> text-sm */}
+        <div className="editorial-label text-sm! font-bold! uppercase! tracking-[0.2em]! text-[#008c75]! mb-2!">
+          START HERE
         </div>
-      </section>
+        {/* Section Title: text-2xl -> text-[28px] (sm par text-3xl ho jayega) */}
+        <h2 className="text-[28px]! sm:text-3xl! md:text-4xl! font-bold! text-slate-900! leading-tight!">
+          Plan your next conversation.
+        </h2>
+      </div>
+
+      {/* Link: text-xs -> text-base */}
+      <Link
+        className="editorial-text-link inline-flex! items-center! gap-2! text-base! sm:text-sm! font-bold! text-[#173f43]! hover:text-[#c79500]! transition-colors!"
+        to="/contact"
+        navigate={navigate}
+      >
+        <span>Request a prospectus</span>
+        <ArrowRight size={18} />
+      </Link>
+    </div>
+
+    <div className="grid! grid-cols-1! md:grid-cols-2! lg:grid-cols-3! gap-6!">
+      {[
+        {
+          num: "01",
+          tag: "CONSULTATION",
+          title: "Book a DBA consultation",
+          desc: "Discuss your profile, interests and potential next steps.",
+          img: "/assets/consult1.jpg",
+          link: "/contact",
+        },
+        {
+          num: "02",
+          tag: "UNIVERSITY OPTIONS",
+          title: "Compare partner pathways",
+          desc: "Review structure, study formats and institutional information.",
+          img: "/assets/universitry-option.jpg",
+          link: "/partnership",
+        },
+        {
+          num: "03",
+          tag: "CURRICULUM",
+          title: "Explore the framework",
+          desc: "See the learning and research phases involved in a DBA.",
+          img: "/assets/consult.jpg",
+          link: "/curriculum",
+        },
+      ].map((event, i) => (
+        <Link
+          key={i}
+          to={event.link}
+          navigate={navigate}
+          className="group relative! block! h-[400px]! sm:h-[440px]! md:h-[480px]! overflow-hidden! rounded-2xl! shadow-sm! hover:shadow-xl! transition-all! duration-300!"
+        >
+          <img
+            src={event.img}
+            alt={event.title}
+            className="absolute! inset-0! h-full! w-full! object-cover! transition-transform! duration-700! group-hover:scale-105!"
+          />
+
+          <div className="absolute! inset-0! bg-gradient-to-t! from-[#001b2b]/95! via-[#001b2b]/40! to-transparent!" />
+
+          {/* Number: text-xl -> text-2xl */}
+          <span className="absolute! left-5! top-5! z-10! text-2xl! font-bold! text-white! transition-colors! group-hover:text-[#f5c451]!">
+            {event.num}
+          </span>
+
+          <div className="absolute! inset-x-0! bottom-0! z-10! flex! flex-col! items-center! px-6! pb-8! text-center! text-white!">
+            <div className="mb-3! h-[3px]! w-9! rounded-full! bg-[#91c7ed]! transition-colors! group-hover:bg-[#f5c451]!" />
+
+            {/* Tag Badge: text-[11px] -> text-xs */}
+            <small className="mb-2! block! text-xs! font-bold! tracking-[0.2em]! text-white/90! uppercase! group-hover:text-[#f5c451]!">
+              {event.tag}
+            </small>
+
+            {/* Card Title: text-xl -> text-[22px] */}
+            <h3 className="mb-2! text-[22px]! sm:text-2xl! font-bold! leading-tight! group-hover:text-[#f5c451]! transition-colors!">
+              {event.title}
+            </h3>
+
+            {/* Card Description: text-xs -> text-[15px] */}
+            <p className="max-w-xs! text-[15px]! sm:text-sm! leading-relaxed! text-slate-200! group-hover:text-white! transition-colors!">
+              {event.desc}
+            </p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= 9. CLOSING ================= */}
       <section className="editorial-closing py-16! sm:py-20! lg:py-24! px-4! sm:px-8! md:px-12! bg-[#061714]! text-white!">

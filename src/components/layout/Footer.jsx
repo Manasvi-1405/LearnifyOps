@@ -46,7 +46,7 @@ export default function Footer({ navigate, logo }) {
             </a>
             <a
               href="https://www.instagram.com/learnifyops?psln=ZjJkdTlsMHh5bTc4&utm_source=qr"
-              target="_blank"
+              target="_blank"cd
               rel="noopener noreferrer"
               aria-label="LearnifyOps on Instagram"
               className="footer-social-link"
