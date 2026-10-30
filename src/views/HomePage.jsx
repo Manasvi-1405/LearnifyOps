@@ -217,7 +217,7 @@ function HomePage({ navigate }) {
         Your Next Chapter
       </p>
 
-<<<<<<< HEAD:src/pages/HomePage.jsx
+
       {/* Main Heading: text-2xl -> text-[32px] (or text-3xl) */}
       <h1 className="max-w-3xl! text-[32px]! font-semibold! leading-[1.2]! tracking-tight! text-white! sm:text-3xl! md:text-4xl! lg:text-5xl!">
         Lead with Knowledge.
@@ -225,7 +225,7 @@ function HomePage({ navigate }) {
           Grow with Purpose.
         </span>
       </h1>
-=======
+
             <h1 className="max-w-3xl! text-2xl! font-semibold! leading-tight! tracking-tight! text-white! sm:text-3xl! md:text-4xl! lg:text-5xl!">
               Lead with Knowledge.
               <span className="block! text-[#c7b68c]!">
@@ -235,7 +235,6 @@ function HomePage({ navigate }) {
        <p className="font-serif! text-lg! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.25]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl! mb-3!">
   Online certifications, AI training, and career support. Learn, qualify, get hired
 </p>
->>>>>>> 2a0febce88af48470d656501ca0387835d24d025:src/views/HomePage.jsx
 
       {/* Subheading: text-lg -> text-xl (sm stays text-3xl) */}
       <h3 className="mt-3! font-serif! text-xl! xs:text-2xl! sm:text-3xl! md:text-4xl! lg:text-[42px]! font-normal! leading-[1.3]! tracking-normal! text-[#b6e5c4]! drop-shadow-md! max-w-2xl!">
