@@ -191,7 +191,7 @@ function HomePage({ navigate }) {
    <section
   className="editorial-world-hero relative! mt-0! min-h-[580px]! sm:min-h-[640px]! md:min-h-[720px]! lg:min-h-screen! w-full! overflow-hidden! bg-black! flex! flex-col! justify-between!"
   style={{
-    backgroundImage: "url('/assets/hero-dashboard.jpg')",
+    backgroundImage: "url('/assets/hero-dashboard.webp')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

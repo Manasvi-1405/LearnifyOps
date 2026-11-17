@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef, useState } from "react";
-import { ArrowRight, ChevronDown, Menu, Search, X, MessageCircle } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight, Menu, Search, X, MessageCircle } from "lucide-react";
 import Link from "../navigation/Link.jsx";
 
 function BrandLogo({ logo, variant = "full" }) {
@@ -21,7 +21,7 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
   const menuClassName = [
     "mega-menu",
     `mega-menu-${menu.key}`,
-    menu.type === "doctoral" ? "mega-menu-doctoral" : "",
+    menu.type === "doctoral" ? "mega-menu-doctoral-sidebar" : "",
     open ? "open" : ""
   ]
     .filter(Boolean)
@@ -31,61 +31,71 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
     <div className={menuClassName} id={id} role="region" aria-label={`${menu.label} menu`}>
       <div className="mega-menu-main">
         <div className="mega-menu-content">
-          {/* Doctoral Program Format */}
+          {/* Doctoral Program: Left Sidebar Tabs + Right Side University List */}
           {menu.type === "doctoral" ? (
-            <div className="doctoral-mega-layout">
-              {/* Desktop / Tablet Tabs */}
-              <div className="doctoral-mega-tabs" role="tablist" aria-label="Doctoral categories">
-                {menu.tabs?.map((tab) => (
-                  <button
-                    key={tab.label}
-                    type="button"
-                    className={
-                      activeDoctoralTab?.label === tab.label
-                        ? "doctoral-mega-tab active"
-                        : "doctoral-mega-tab"
-                    }
-                    onMouseEnter={() => setActiveTab(tab.label)}
-                    onFocus={() => setActiveTab(tab.label)}
-                    onClick={() => setActiveTab(tab.label)}
-                    role="tab"
-                    aria-selected={activeDoctoralTab?.label === tab.label}
-                  >
-                    <span>{tab.label}</span>
-                    <ChevronDown size={14} aria-hidden="true" className="doctoral-tab-arrow" />
-                  </button>
-                ))}
+            <div className="doctoral-vertical-layout">
+              {/* Optional Header Intro */}
+              <div className="doctoral-layout-header">
+                <span className="doctoral-badge-title">{menu.label || "DOCTORAL"}</span>
+                <p className="doctoral-tagline">
+                  {menu.subtitle ||
+                    "Doctoral pathways and honorary recognition from globally accredited institutions."}
+                </p>
               </div>
 
-              {/* Desktop / Tablet Panel */}
-              <div className="doctoral-mega-panel" role="tabpanel">
-                {activeDoctoralTab?.items?.map((item) =>
-                  item.to ? (
-                    <Link
-                      key={item.title}
-                      to={item.to}
-                      navigate={navigate}
-                      className="doctoral-mega-item doctoral-mega-link"
-                      onNavigate={onNavigate}
-                    >
-                      <div>
-                        <strong>{item.title}</strong>
-                        <p className="item-desc">{item.text}</p>
-                      </div>
-                      <ArrowRight size={16} aria-hidden="true" />
-                    </Link>
-                  ) : (
-                    <article className="doctoral-mega-item" key={item.title}>
-                      <div>
-                        <strong>{item.title}</strong>
-                        <p className="item-desc">{item.text}</p>
-                      </div>
-                    </article>
-                  )
-                )}
+              <div className="doctoral-main-grid">
+                {/* Left Side Buttons (DBA, PhD, etc.) */}
+                <div className="doctoral-left-tabs" role="tablist" aria-label="Doctoral categories">
+                  {menu.tabs?.map((tab) => {
+                    const isActive = activeDoctoralTab?.label === tab.label;
+                    return (
+                      <button
+                        key={tab.label}
+                        type="button"
+                        className={`doctoral-side-btn ${isActive ? "active" : ""}`}
+                        onMouseEnter={() => setActiveTab(tab.label)}
+                        onFocus={() => setActiveTab(tab.label)}
+                        onClick={() => setActiveTab(tab.label)}
+                        role="tab"
+                        aria-selected={isActive}
+                      >
+                        <span className="doctoral-side-btn-text">{tab.label}</span>
+                        <ChevronRight size={16} aria-hidden="true" className="doctoral-side-chevron" />
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Side University List */}
+                <div className="doctoral-right-panel" role="tabpanel">
+                  {activeDoctoralTab?.items?.map((item) =>
+                    item.to ? (
+                      <Link
+                        key={item.title}
+                        to={item.to}
+                        navigate={navigate}
+                        className="doctoral-item-row"
+                        onNavigate={onNavigate}
+                      >
+                        <div className="item-details">
+                          <strong className="item-title">{item.title}</strong>
+                          {item.text && <p className="item-desc">{item.text}</p>}
+                        </div>
+                        <ArrowRight size={16} aria-hidden="true" className="item-arrow" />
+                      </Link>
+                    ) : (
+                      <article className="doctoral-item-row" key={item.title}>
+                        <div className="item-details">
+                          <strong className="item-title">{item.title}</strong>
+                          {item.text && <p className="item-desc">{item.text}</p>}
+                        </div>
+                      </article>
+                    )
+                  )}
+                </div>
               </div>
 
-              {/* Extra Small Screen (<442px) Accordion List view without horizontal scroll */}
+              {/* Extra Small Screen (<442px) Accordion List view */}
               <div className="xs-compact-list-view">
                 {menu.tabs?.map((tab) => (
                   <div key={tab.label} className="xs-category-group">
@@ -120,7 +130,7 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
                 <div className="mega-menu-column" key={column.title}>
                   <strong className="column-title">{column.title}</strong>
                   {column.intro && <p className="mega-menu-column-intro">{column.intro}</p>}
-                  
+
                   {/* Standard Card List */}
                   <div className="column-standard-cards">
                     {column.items?.map((item) =>
@@ -250,8 +260,7 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
     setOpenMega(null);
   };
 
-const toggleNavigation = () => {
-    // 1083px tak mobile drawer layout activate hoga
+  const toggleNavigation = () => {
     const compactViewport = window.matchMedia("(max-width: 1083px)").matches;
     const headerHeight = Math.ceil(
       headerRef.current?.getBoundingClientRect().height || 80
@@ -279,15 +288,167 @@ const toggleNavigation = () => {
   return (
     <Fragment>
       <style>{`
-        /* Default mobile view: hide extra small bullet list */
+        /* =========================================================
+           LIGHT THEME DOCTORAL (SIDEBAR BUTTONS + RIGHT LIST)
+           ========================================================= */
+        .mega-menu-doctoral-sidebar {
+          background: #ffffff !important;
+          border-radius: 16px !important;
+          border: 1px solid #e2e8f0 !important;
+          box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12) !important;
+          padding: 24px 28px !important;
+          max-width: 820px !important;
+          width: 90vw !important;
+        }
+
+        .doctoral-vertical-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .doctoral-layout-header {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          border-bottom: 1px solid #f1f5f9;
+          padding-bottom: 12px;
+        }
+
+        .doctoral-badge-title {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #d97706;
+          letter-spacing: 0.08em;
+        }
+
+        .doctoral-tagline {
+          margin: 0;
+          font-size: 0.88rem;
+          color: #64748b;
+          line-height: 1.4;
+        }
+
+        /* 2-Column Structure: Left Buttons + Right Programs */
+        .doctoral-main-grid {
+          display: grid;
+          grid-template-columns: 210px 1fr;
+          gap: 28px;
+          align-items: start;
+        }
+
+        /* Left Side Vertical Button Tabs */
+        .doctoral-left-tabs {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          border-right: 1px solid #e2e8f0;
+          padding-right: 16px;
+        }
+
+        .doctoral-side-btn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 14px;
+          border-radius: 8px;
+          border: none;
+          background: transparent;
+          color: #475569;
+          font-size: 0.92rem;
+          font-weight: 600;
+          cursor: pointer;
+          text-align: left;
+          transition: all 0.2s ease;
+        }
+
+        .doctoral-side-btn:hover {
+          background: #f8fafc;
+          color: #0f172a;
+        }
+
+        /* Active Tab Highlight (Emerald / Primary Green Theme) */
+        .doctoral-side-btn.active {
+          background: #00875a;
+          color: #ffffff;
+        }
+
+        .doctoral-side-chevron {
+          opacity: 0.7;
+          transition: transform 0.2s ease;
+        }
+
+        .doctoral-side-btn.active .doctoral-side-chevron {
+          opacity: 1;
+          transform: translateX(2px);
+        }
+
+        /* Right Side Program List */
+        .doctoral-right-panel {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .doctoral-item-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 14px;
+          border-radius: 8px;
+          text-decoration: none;
+          border: 1px solid transparent;
+          transition: all 0.2s ease;
+        }
+
+        .doctoral-item-row:hover {
+          background: #f8fafc;
+          border-color: #e2e8f0;
+        }
+
+        .item-details {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+
+        .item-title {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #0f172a;
+        }
+
+        .doctoral-item-row:hover .item-title {
+          color: #00875a;
+        }
+
+        .item-desc {
+          margin: 0;
+          font-size: 0.83rem;
+          color: #64748b;
+          line-height: 1.4;
+        }
+
+        .item-arrow {
+          color: #00875a;
+          flex-shrink: 0;
+          opacity: 0.6;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .doctoral-item-row:hover .item-arrow {
+          opacity: 1;
+          transform: translateX(3px);
+        }
+
+        /* Mobile View (< 442px) */
         .xs-compact-list-view,
         .xs-bullet-list {
           display: none;
         }
 
-        /* Ekdum choti screen (<= 442px) ke liye styles */
         @media screen and (max-width: 442px) {
-          /* Dropdown container ko full width aur zero horizontal overflow set karna */
           .mega-menu {
             max-height: none !important;
             overflow: visible !important;
@@ -298,23 +459,14 @@ const toggleNavigation = () => {
             background: transparent !important;
           }
 
-          .mega-menu-main,
-          .mega-menu-content {
-            overflow: visible !important;
-            max-height: none !important;
-            padding: 0 !important;
-          }
-
-          /* Hide bulk cards and heavy descriptions */
           .column-standard-cards,
-          .doctoral-mega-tabs,
-          .doctoral-mega-panel,
+          .doctoral-main-grid,
+          .doctoral-layout-header,
           .mega-menu-column-intro,
           .item-desc {
             display: none !important;
           }
 
-          /* Show clean bullet point links */
           .xs-compact-list-view,
           .xs-bullet-list {
             display: flex !important;
@@ -327,7 +479,7 @@ const toggleNavigation = () => {
 
           .xs-bullet-item {
             display: list-item !important;
-            color: #d97706; /* Bullet marker color */
+            color: #00875a;
             font-size: 0.88rem;
           }
 
@@ -336,29 +488,6 @@ const toggleNavigation = () => {
             color: #1e293b;
             text-decoration: none;
             font-weight: 500;
-            display: inline-block;
-            line-height: 1.4;
-          }
-
-          .xs-bullet-item a:hover {
-            color: #d97706;
-          }
-
-          .xs-category-heading,
-          .column-title {
-            font-size: 0.82rem !important;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748b;
-            font-weight: 700;
-            display: block;
-            margin-top: 8px;
-          }
-
-          .mega-menu-footer {
-            padding: 8px 4px !important;
-            font-size: 0.82rem;
-            border-top: 1px dashed #e2e8f0;
           }
         }
       `}</style>
