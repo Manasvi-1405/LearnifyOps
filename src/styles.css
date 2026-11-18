@@ -9668,3 +9668,66 @@ body.compact-nav-open .floating-contact {
     gap: 0.55rem;
   }
 }
+
+/* Compact drawer: Doctoral sidebar layout stacks (category chips on top,
+   full-width programme list below) instead of a cramped two-column grid */
+@media screen and (max-width: 1084px) {
+  nav.center-pill-nav.mobile-open .doctoral-layout-header {
+    padding: 0 4px 10px;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-main-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-left-tabs {
+    flex-direction: row;
+    gap: 6px;
+    padding: 0 0 10px;
+    border-right: 0;
+    border-bottom: 1px solid #eef2f6;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-left-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-side-btn {
+    width: auto;
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-side-btn.active {
+    border-color: #00875a;
+    background: #00875a;
+    color: #ffffff;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-side-chevron {
+    display: none;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-item-row {
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-item-row .item-title {
+    font-size: 0.9rem;
+  }
+
+  nav.center-pill-nav.mobile-open .doctoral-item-row .item-desc {
+    font-size: 0.78rem;
+  }
+}
