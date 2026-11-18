@@ -197,6 +197,8 @@ function MegaMenu({ id, menu, navigate, open, onNavigate }) {
   );
 }
 
+const COMPACT_NAV_QUERY = "(max-width: 1084px)";
+
 export default function Header({ path, navigate, megaMenus = [], logo }) {
   const [open, setOpen] = useState(false);
   const [openMega, setOpenMega] = useState(null);
@@ -255,35 +257,53 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
     };
   }, []);
 
+  // Lock page scroll while the compact drawer is open and close it when the
+  // viewport grows back to the desktop layout.
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const compactQuery = window.matchMedia(COMPACT_NAV_QUERY);
+    const closeOnDesktop = (event) => {
+      if (!event.matches) {
+        setOpen(false);
+        setOpenMega(null);
+      }
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.body.classList.add("compact-nav-open");
+    compactQuery.addEventListener("change", closeOnDesktop);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.body.classList.remove("compact-nav-open");
+      compactQuery.removeEventListener("change", closeOnDesktop);
+    };
+  }, [open]);
+
   const closeMenus = () => {
     setOpen(false);
     setOpenMega(null);
   };
 
+  // Hover/focus previews belong to the desktop mega menu only; inside the
+  // compact drawer the sections behave as tap-to-toggle accordions.
+  const previewMega = (key) => {
+    if (!open) setOpenMega(key);
+  };
+
   const toggleNavigation = () => {
-    const compactViewport = window.matchMedia("(max-width: 1083px)").matches;
     const headerHeight = Math.ceil(
       headerRef.current?.getBoundingClientRect().height || 80
     );
 
-    setMobileMenuTop(compactViewport ? headerHeight : null);
+    setMobileMenuTop(headerHeight);
     setOpen((current) => !current);
     setOpenMega(null);
   };
 
   const mobileMenuStyle =
-    open && mobileMenuTop
-      ? {
-          position: "fixed",
-          zIndex: 1001,
-          top: `${mobileMenuTop}px`,
-          right: 0,
-          bottom: 0,
-          left: 0,
-          height: "calc(100vh - " + mobileMenuTop + "px)",
-          overflowY: "auto"
-        }
-      : undefined;
+    open && mobileMenuTop ? { "--mobile-menu-top": `${mobileMenuTop}px` } : undefined;
 
   return (
     <Fragment>
@@ -497,7 +517,9 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
         className={`floating-scroll-header ${isVisible ? "nav-visible" : "nav-hidden"} ${
           isAtTop ? "at-top" : "scrolled"
         }`}
-        onMouseLeave={() => setOpenMega(null)}
+        onMouseLeave={() => {
+          if (!open) setOpenMega(null);
+        }}
       >
         <div className="header-container">
           <Link className="brand" to="/" navigate={navigate} aria-label="Home">
@@ -513,8 +535,8 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
               <div
                 key={menu.key}
                 className="mega-nav-item"
-                onMouseEnter={() => setOpenMega(menu.key)}
-                onFocus={() => setOpenMega(menu.key)}
+                onMouseEnter={() => previewMega(menu.key)}
+                onFocus={() => previewMega(menu.key)}
               >
                 <button
                   className={`pill-nav-btn ${openMega === menu.key ? "active" : ""}`}
@@ -543,20 +565,32 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
               to="/partnership"
               navigate={navigate}
               className={`pill-nav-link ${path === "/partnership" ? "active" : ""}`}
-              onMouseEnter={() => setOpenMega(null)}
+              onMouseEnter={() => previewMega(null)}
               onNavigate={closeMenus}
             >
-              Universities
+              <span>Universities</span>
+              <ArrowRight size={16} className="mobile-nav-arrow" aria-hidden="true" />
             </Link>
 
             <Link
               to="/admissions"
               navigate={navigate}
               className={`pill-nav-link ${path === "/admissions" ? "active" : ""}`}
-              onMouseEnter={() => setOpenMega(null)}
+              onMouseEnter={() => previewMega(null)}
               onNavigate={closeMenus}
             >
-              For Businesses
+              <span>For Businesses</span>
+              <ArrowRight size={16} className="mobile-nav-arrow" aria-hidden="true" />
+            </Link>
+
+            <Link
+              to="/contact"
+              navigate={navigate}
+              className="mobile-nav-enquire"
+              onNavigate={closeMenus}
+            >
+              <MessageCircle size={18} strokeWidth={2} aria-hidden="true" />
+              <span>Enquire Now</span>
             </Link>
           </nav>
 
@@ -568,7 +602,7 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
                 closeMenus();
                 navigate("/search");
               }}
-              onMouseEnter={() => setOpenMega(null)}
+              onMouseEnter={() => previewMega(null)}
               aria-label="Search"
             >
               <Search size={20} strokeWidth={2.2} aria-hidden="true" />
@@ -578,7 +612,7 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
               to="/contact"
               className="pill-enquire-btn"
               navigate={navigate}
-              onMouseEnter={() => setOpenMega(null)}
+              onMouseEnter={() => previewMega(null)}
               onNavigate={closeMenus}
             >
               <MessageCircle size={18} strokeWidth={2} />
@@ -588,7 +622,8 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
             <button
               className="mobile-nav-toggle"
               type="button"
-              aria-label="Toggle navigation"
+              aria-label={open ? "Close navigation" : "Open navigation"}
+              aria-expanded={open}
               onClick={toggleNavigation}
             >
               {open ? <X size={24} /> : <Menu size={24} />}
@@ -598,7 +633,7 @@ export default function Header({ path, navigate, megaMenus = [], logo }) {
       </header>
 
       <div
-        className={openMega ? "mega-page-overlay open" : "mega-page-overlay"}
+        className={openMega || open ? "mega-page-overlay open" : "mega-page-overlay"}
         aria-hidden="true"
       />
     </Fragment>
